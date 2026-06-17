@@ -394,7 +394,10 @@ export default function Home() {
           {/* Hero Right Content (Featured Cards) */}
           <div className="lg:col-span-5 flex flex-col gap-5">
             {/* Card 1: Institutions */}
-            <div className="bg-[#FAF8F5]/90 border border-[#4A6B52]/15 rounded-2xl p-6 shadow-sm relative group hover:shadow-md transition-all duration-200">
+            <div className="bg-gradient-to-br from-[#F0F5FA] to-white/95 border border-[#4A6B52]/15 rounded-2xl p-6 shadow-sm relative group hover:shadow-md transition-all duration-200 overflow-hidden">
+              {/* Top blue line on hover */}
+              <div className="absolute top-0 inset-x-0 h-[3px] bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10" />
+              
               <div className="absolute top-6 right-6 text-[#1F2922]/50 group-hover:text-[#1F2922] transition-colors">
                 <ArrowUpRight className="w-5 h-5" />
               </div>
@@ -410,14 +413,17 @@ export default function Home() {
               </p>
               <a 
                 href="#heatmap" 
-                className="inline-flex items-center gap-1 text-xs font-bold text-[#1F2922] bg-[#E6EBE4] px-4 py-2 rounded-lg hover:bg-[#D4DDD1] transition"
+                className="inline-flex items-center gap-1 text-xs font-bold text-white bg-[#071E3D] hover:bg-[#030E1C] px-5 py-2.5 rounded-full shadow-sm transition duration-200 group/btn"
               >
-                Explore Research
+                Explore Research <ArrowUpRight className="w-3.5 h-3.5 ml-0.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </a>
             </div>
 
             {/* Card 2: Individuals */}
-            <div className="bg-[#FAF8F5]/90 border border-[#4A6B52]/15 rounded-2xl p-6 shadow-sm relative group hover:shadow-md transition-all duration-200">
+            <div className="bg-gradient-to-br from-[#EDF5F0] to-white/95 border border-[#4A6B52]/15 rounded-2xl p-6 shadow-sm relative group hover:shadow-md transition-all duration-200 overflow-hidden">
+              {/* Top black line on hover */}
+              <div className="absolute top-0 inset-x-0 h-[3px] bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10" />
+              
               <div className="absolute top-6 right-6 text-[#1F2922]/50 group-hover:text-[#1F2922] transition-colors">
                 <ArrowUpRight className="w-5 h-5" />
               </div>
@@ -434,11 +440,11 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-2.5">
                 <a 
                   href="#contact" 
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#FAF8F5] bg-[#1F2922] px-4 py-2 rounded-lg hover:bg-[#2A392F] transition"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-white bg-[#1F2922] hover:bg-[#0E1510] px-5 py-2.5 rounded-full shadow-sm transition duration-200 group/btn"
                 >
-                  Talk to an Advisor
+                  Talk to an Advisor <ArrowUpRight className="w-3.5 h-3.5 ml-0.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </a>
-                <span className="border border-[#4A6B52]/20 rounded-lg px-3 py-2 text-[10px] font-bold text-[#1F2922]/60 uppercase bg-white/50">
+                <span className="border border-[#4A6B52]/20 rounded-full px-4 py-2.5 text-[10px] font-bold text-[#1F2922]/60 uppercase bg-white/50 shadow-sm">
                   SEBI Registered Advisor
                 </span>
               </div>
