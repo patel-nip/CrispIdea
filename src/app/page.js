@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { 
   Layers, 
@@ -47,8 +47,20 @@ export default function Home() {
   // Methodology active tab
   const [methodologyTab, setMethodologyTab] = useState("research"); // "research" | "wealth"
 
-  // People Accordions active index
-  const [activePersonIndex, setActivePersonIndex] = useState(0);
+  // Active leader for detail modal popup
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  // Scroll reference and helper for the experts slider
+  const expertScrollRef = useRef(null);
+  const scrollExperts = (direction) => {
+    if (expertScrollRef.current) {
+      const scrollAmount = 324; // card width (300) + gap (24)
+      expertScrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
 
   // Pricing active tab
   const [pricingTab, setPricingTab] = useState("research"); // "research" | "wealth"
@@ -67,27 +79,149 @@ export default function Home() {
     setActiveFaq(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  // Dummy team descriptions
+  // Team leaders data
   const teamDetails = [
     {
       name: "Shejal Ajmera",
       role: "Founder & Head of Research",
-      bio: "Shejal has over 20 years of experience in equity research and investment analysis. She has led research desks at premier financial institutions and has a deep track record in technology and industrial sectors, defining CrispIdea's rigorous QoM frameworks.",
+      image: "/team/shejal.jpg",
+      quote: "“Conviction comes from research. Everything we build at CrispIdea starts there.”",
+      stats: [
+        { label: "Experience", value: "15+ Years" },
+        { label: "Forecast Hit-Rate", value: "~80%" },
+        { label: "Coverage Platforms", value: "Refinitiv · FactSet · S&P" },
+        { label: "Currently Leads", value: "Research at CrispIdea" }
+      ],
+      paragraphs: [
+        "Shejal is the Founder and CEO of CrispIdea, with 15+ years across global financial markets. Under her leadership, CrispIdea has become a recognised research voice on Refinitiv, FactSet and S&P Global — used by venture funds, private equity firms, investment banks and corporates.",
+        "Her edge sits at the intersection of capital markets, macro and disruptive technology — sharpened by years in Seattle and Bangalore. She has been featured on CNBC-Asia and quoted in The Economic Times and The Street.",
+        "MBA (Finance), NMIMS Mumbai. Specialization in Communications, University of Dallas. GS10kW at NSRCEL-IIM Bangalore alumna."
+      ]
     },
     {
       name: "Malay Shah",
       role: "Co-Founder & Principal Advisor",
-      bio: "Malay is a seasoned wealth advisor with over 18 years of experience structuring multi-generational family office accounts and managing discretionary portfolios. He leads CrispIdea's wealth management advisory.",
+      image: "/team/malay.webp",
+      quote: "“Great advice is research, translated into a plan a client can actually live with.”",
+      stats: [
+        { label: "Experience", value: "25+ Years" },
+        { label: "Scaled ARR From", value: "$1M → $300M+" },
+        { label: "Consulting At", value: "McKinsey · EY · A&M" },
+        { label: "Certification", value: "NISM Investment Advisor" }
+      ],
+      paragraphs: [
+        "Malay co-founded CrispIdea to fuse AI-enabled equity research with personalised wealth management. 25+ years across SaaS, management consulting and transaction advisory — including Chief Growth Officer at LeadSquared and Chief Business Officer at Ai Palette.",
+        "Two decades of consulting at EY, Alvarez & Marsal, McKinsey and Infosys Consulting, advising Microsoft, Reliance, Alibaba, Wipro, Harman and HP-Compaq on GTM, digital transformation and deal advisory.",
+        "MBA (Finance). NISM-certified Investment Advisor. Based in Bangalore, with operating experience across the US, Europe, MEA and SEA."
+      ]
     },
     {
       name: "Chetan Parikh",
       role: "Advisor",
-      bio: "Chetan is a renowned value investor, financial writer, and co-founder of Jeetay Investments. He provides macro asset allocation guidance and qualitative Quality of Management (QoM) oversight.",
+      image: "/team/chetan.png",
+      quote: "“Value investing is patience disciplined by process — and process begins with research.”",
+      stats: [
+        { label: "Experience", value: "25+ Years" },
+        { label: "Co-Promoter", value: "Jeetay Investments (PMS)" },
+        { label: "Education", value: "Wharton MBA · Top 2%" },
+        { label: "Recognition", value: "Business India — India's Best Investors" }
+      ],
+      paragraphs: [
+        "Chetan is co-promoter of Jeetay Investments, a SEBI-registered portfolio management firm, with 25+ years of equity and investment experience. He is visiting faculty at Jamnalal Bajaj Institute of Management Studies (University of Bombay).",
+        "He is also co-promoter of capitalideasonline.com, a well-regarded investment resource. His writing has appeared in Business Standard, Business World, The Economic Times and Business India.",
+        "MBA (Finance), Wharton — graduated with distinction in the top 2% of the class. BSc Statistics & Economics, University of Bombay (Economics record holder)."
+      ]
     },
     {
       name: "Pankaj Rungta",
       role: "Advisor",
-      bio: "Pankaj is a strategic advisor specialized in corporate growth planning, capital allocation policies, and pre-IPO advisory, helping align institutional research with corporate strategy.",
+      image: "/team/pankaj.png",
+      quote: "“Capital follows clarity. Our job is to give clients both — the conviction and the structure.”",
+      stats: [
+        { label: "Experience", value: "20+ Years" },
+        { label: "Deal Value Advised", value: "USD 500M+" },
+        { label: "Focus", value: "Cross-border M&A · PE" },
+        { label: "Education", value: "NYU Stern MBA" }
+      ],
+      paragraphs: [
+        "Pankaj is a prominent independent advisor on cross-border M&A and private equity investments in India, with 20+ years of experience. He has advised Indian and foreign firms on deals aggregating more than USD 500mn.",
+        "He has worked across industries with large global organisations including MetLife, Hewlett Packard and General Motors in the United States.",
+        "MBA (Finance), NYU Stern. MS Mechanical Engineering, University of Toledo. BE Mechanical Engineering, S.G.S.I.T.S Indore."
+      ]
+    }
+  ];
+
+  // Analyst experts data
+  const expertsData = [
+    {
+      name: "Aishwarya Dinesh",
+      role: "Research Associate I",
+      image: "/team/Aishwarya_Dinesh.png",
+      focus: [
+        "Covers Retail & E-commerce sector",
+        "Consumer demand and unit economics",
+        "Tracks listed and pre-IPO consumer plays"
+      ]
+    },
+    {
+      name: "Abhishek Rai",
+      role: "Research Analyst",
+      image: "/team/Abhishek_Rai.png",
+      focus: [
+        "Covers Aerospace & Defence sector",
+        "Order book, capex and execution modeling",
+        "Tracks global defence cycles"
+      ]
+    },
+    {
+      name: "Satish Gaonkar",
+      role: "Research Analyst",
+      image: "/team/Satish_Gaonkar.png",
+      focus: [
+        "Covers Software & Cloud infrastructure",
+        "Hyperscaler capex and SaaS metrics",
+        "Deep-dive notes on infra names"
+      ]
+    },
+    {
+      name: "Prajwal Nagpure",
+      role: "Research Analyst",
+      image: "/team/Prajwal_Nagpure.png",
+      focus: [
+        "Covers Semiconductors globally",
+        "Foundry, fabless and equipment value chain",
+        "AI compute and memory cycle tracking"
+      ]
+    },
+    {
+      name: "Prerana Chowdhery",
+      role: "Sector Analyst",
+      image: "/team/Prerana_Chowdhery.png",
+      focus: [
+        "Cross-sector thematic and screening work",
+        "Builds sector primers and comp sheets",
+        "Supports customised research mandates"
+      ]
+    },
+    {
+      name: "Kedhar Krisshnan",
+      role: "Investment Consultant",
+      image: "/team/Kedhar_Krisshnan.png",
+      focus: [
+        "Manages client portfolios for Wealth Management",
+        "Goal planning and asset allocation reviews",
+        "Single point of contact for advised clients"
+      ]
+    },
+    {
+      name: "Vanisha Singh",
+      role: "Marketing Lead",
+      image: "/team/Vanisha_Singh.png",
+      focus: [
+        "Owns end-to-end marketing at CrispIdea",
+        "Brand, content and campaign execution",
+        "Distribution of research and thought leadership"
+      ]
     }
   ];
 
@@ -1046,41 +1180,33 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Accordion List */}
+          {/* Leaders List */}
           <div className="space-y-4">
-            {teamDetails.map((person, idx) => {
-              const isOpen = activePersonIndex === idx;
+            {teamDetails.map((person) => {
               return (
                 <div 
                   key={person.name}
-                  className="bg-white border border-[#4A6B52]/10 rounded-2xl overflow-hidden shadow-sm transition-all duration-200"
+                  onClick={() => setSelectedLeader(person)}
+                  className="bg-white border border-[#4A6B52]/10 rounded-2xl p-5 md:p-6 flex items-center justify-between shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
                 >
-                  <button
-                    onClick={() => setActivePersonIndex(isOpen ? -1 : idx)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
-                  >
-                    <div className="flex items-center gap-4">
-                      {/* Avatar initials placeholder */}
-                      <div className="w-12 h-12 rounded-full bg-[#1F2922] text-[#FAF8F5] font-serif font-bold text-sm flex items-center justify-center">
-                        {person.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                      <div>
-                        <h4 className="text-base font-bold text-[#1F2922]">{person.name}</h4>
-                        <p className="text-xs text-[#1F2922]/50 font-medium">{person.role}</p>
-                      </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 relative bg-[#FAF8F5] border border-[#4A6B52]/10">
+                      <Image 
+                        src={person.image} 
+                        alt={person.name} 
+                        fill
+                        sizes="56px"
+                        className="object-cover"
+                      />
                     </div>
-                    <span className="w-8 h-8 rounded-full border border-[#4A6B52]/10 flex items-center justify-center text-[#1F2922] text-lg font-bold shrink-0">
-                      {isOpen ? '−' : '+'}
-                    </span>
-                  </button>
-
-                  {isOpen && (
-                    <div className="px-6 pb-6 pt-2 border-t border-[#4A6B52]/5 text-xs md:text-sm text-[#1F2922]/70 leading-relaxed font-medium animate-in fade-in duration-200">
-                      <p className="bg-[#FAF8F5] p-4 rounded-xl border border-[#4A6B52]/5">
-                        {person.bio}
-                      </p>
+                    <div>
+                      <h4 className="text-base font-bold text-[#1F2922] group-hover:text-[#4A6B52] transition-colors">{person.name}</h4>
+                      <p className="text-xs text-[#1F2922]/50 font-medium">{person.role}</p>
                     </div>
-                  )}
+                  </div>
+                  <span className="w-8 h-8 rounded-full border border-[#4A6B52]/10 flex items-center justify-center text-[#1F2922]/40 text-sm font-bold shrink-0 group-hover:bg-[#FAF8F5] group-hover:text-[#1F2922] transition duration-200">
+                    ↗
+                  </span>
                 </div>
               );
             })}
@@ -1107,127 +1233,77 @@ export default function Home() {
             
             {/* Left/Right slider buttons */}
             <div className="hidden md:flex gap-2">
-              <button className="w-10 h-10 rounded-full border border-[#4A6B52]/15 flex items-center justify-center text-[#1F2922]/60 hover:bg-[#FAF8F5] transition">
+              <button 
+                onClick={() => scrollExperts("left")}
+                className="w-10 h-10 rounded-full border border-[#4A6B52]/15 flex items-center justify-center text-[#1F2922]/60 hover:bg-[#FAF8F5] transition cursor-pointer focus:outline-none"
+                aria-label="Scroll left"
+              >
                 &larr;
               </button>
-              <button className="w-10 h-10 rounded-full border border-[#4A6B52]/15 flex items-center justify-center text-[#1F2922]/60 hover:bg-[#FAF8F5] transition">
+              <button 
+                onClick={() => scrollExperts("right")}
+                className="w-10 h-10 rounded-full border border-[#4A6B52]/15 flex items-center justify-center text-[#1F2922]/60 hover:bg-[#FAF8F5] transition cursor-pointer focus:outline-none"
+                aria-label="Scroll right"
+              >
                 &rarr;
               </button>
             </div>
           </div>
 
-          {/* Expert Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            {/* Expert 1 */}
-            <div className="bg-[#FAF8F5]/30 border border-[#4A6B52]/10 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm group hover:border-[#4A6B52]/20 transition">
-              {/* Photo Area */}
-              <div className="bg-gradient-to-br from-[#E6EBE4] to-white h-52 relative flex items-end justify-center pt-6">
-                <div className="absolute top-4 right-4 text-[#1F2922]/30 group-hover:text-blue-700 transition">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-                {/* Initials placeholder */}
-                <div className="w-28 h-28 rounded-full bg-[#1F2922]/5 border-2 border-white flex items-center justify-center text-3xl font-serif font-bold text-[#1F2922]/60 mb-6 shadow">
-                  AD
-                </div>
-              </div>
-              {/* Details */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922]">Aishwarya Dinesh</h4>
-                  <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider mb-4">Research Associate I</p>
+          {/* Expert Cards Scroll Container */}
+          <div 
+            ref={expertScrollRef}
+            className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pt-4 pb-4 px-1"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {expertsData.map((expert) => (
+              <div 
+                key={expert.name}
+                className="min-w-[280px] md:min-w-[300px] w-[300px] bg-[#030E29] border border-[#4A6B52]/10 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm group hover:border-[#4A6B52]/30 transition shrink-0"
+              >
+                {/* Photo Area */}
+                <div className="h-64 relative overflow-hidden flex items-end">
+                  <img 
+                    src={expert.image} 
+                    alt={expert.name}
+                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Dark blue gradient overlay at the bottom of the photo */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030E29] via-[#030E29]/20 to-transparent" />
                   
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] block mb-2">FOCUS</span>
-                  <ul className="text-xs text-[#1F2922]/70 space-y-1.5 font-medium mb-6">
-                    <li>• Covers Retail & E-commerce sector</li>
-                    <li>• Consumer demand and unit economics</li>
-                    <li>• Tracks listed and pre-IPO consumer plays</li>
-                  </ul>
+                  {/* Name and Title positioned over the bottom of the photo */}
+                  <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between z-10">
+                    <div className="text-left">
+                      <h4 className="text-base font-serif font-bold text-white leading-tight">{expert.name}</h4>
+                      <p className="text-[10px] text-white/60 font-semibold tracking-wide mt-0.5">{expert.role}</p>
+                    </div>
+                    <a 
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white/85 hover:text-white transition shrink-0"
+                      aria-label={`${expert.name}'s LinkedIn`}
+                    >
+                      <Linkedin className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+                {/* Details */}
+                <div className="p-5 flex-1 flex flex-col justify-between bg-[#030E29]">
+                  <div className="text-left">
+                    <span className="text-[9px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-3">FOCUS</span>
+                    <ul className="text-xs text-white/70 space-y-2 font-medium">
+                      {expert.focus.map((item, i) => (
+                        <li key={i} className="flex items-start gap-1.5 leading-relaxed">
+                          <span className="text-[#4A6B52] shrink-0 mt-0.5">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Expert 2 */}
-            <div className="bg-[#FAF8F5]/30 border border-[#4A6B52]/10 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm group hover:border-[#4A6B52]/20 transition">
-              {/* Photo Area */}
-              <div className="bg-gradient-to-br from-[#E6EBE4] to-white h-52 relative flex items-end justify-center pt-6">
-                <div className="absolute top-4 right-4 text-[#1F2922]/30 group-hover:text-blue-700 transition">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-                <div className="w-28 h-28 rounded-full bg-[#1F2922]/5 border-2 border-white flex items-center justify-center text-3xl font-serif font-bold text-[#1F2922]/60 mb-6 shadow">
-                  AR
-                </div>
-              </div>
-              {/* Details */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922]">Abhishek Rai</h4>
-                  <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider mb-4">Research Analyst</p>
-                  
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] block mb-2">FOCUS</span>
-                  <ul className="text-xs text-[#1F2922]/70 space-y-1.5 font-medium mb-6">
-                    <li>• Covers Aerospace & Defence sector</li>
-                    <li>• Order book, capex and execution modeling</li>
-                    <li>• Tracks global defence cycles</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Expert 3 */}
-            <div className="bg-[#FAF8F5]/30 border border-[#4A6B52]/10 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm group hover:border-[#4A6B52]/20 transition">
-              {/* Photo Area */}
-              <div className="bg-gradient-to-br from-[#E6EBE4] to-white h-52 relative flex items-end justify-center pt-6">
-                <div className="absolute top-4 right-4 text-[#1F2922]/30 group-hover:text-blue-700 transition">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-                <div className="w-28 h-28 rounded-full bg-[#1F2922]/5 border-2 border-white flex items-center justify-center text-3xl font-serif font-bold text-[#1F2922]/60 mb-6 shadow">
-                  SG
-                </div>
-              </div>
-              {/* Details */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922]">Satish Gaonkar</h4>
-                  <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider mb-4">Research Analyst</p>
-                  
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] block mb-2">FOCUS</span>
-                  <ul className="text-xs text-[#1F2922]/70 space-y-1.5 font-medium mb-6">
-                    <li>• Covers Software & Cloud infrastructure</li>
-                    <li>• Hyperscaler capex and SaaS metrics</li>
-                    <li>• Deep-dive notes on infra names</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Expert 4 */}
-            <div className="bg-[#FAF8F5]/30 border border-[#4A6B52]/10 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm group hover:border-[#4A6B52]/20 transition">
-              {/* Photo Area */}
-              <div className="bg-gradient-to-br from-[#E6EBE4] to-white h-52 relative flex items-end justify-center pt-6">
-                <div className="absolute top-4 right-4 text-[#1F2922]/30 group-hover:text-blue-700 transition">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-                <div className="w-28 h-28 rounded-full bg-[#1F2922]/5 border-2 border-white flex items-center justify-center text-3xl font-serif font-bold text-[#1F2922]/60 mb-6 shadow">
-                  PN
-                </div>
-              </div>
-              {/* Details */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922]">Prajwal Nagpure</h4>
-                  <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider mb-4">Research Analyst</p>
-                  
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] block mb-2">FOCUS</span>
-                  <ul className="text-xs text-[#1F2922]/70 space-y-1.5 font-medium mb-6">
-                    <li>• Covers Semiconductors globally</li>
-                    <li>• Foundry, fabless value chains</li>
-                    <li>• AI compute and memory cycle tracking</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
@@ -2073,6 +2149,96 @@ export default function Home() {
           </span>
         </div>
       </footer>
+
+      {/* LEADER DETAIL MODAL */}
+      {selectedLeader && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          {/* Backdrop blur overlay */}
+          <div 
+            onClick={() => setSelectedLeader(null)}
+            className="fixed inset-0 bg-[#1F2922]/20 backdrop-blur-md transition-opacity duration-300"
+          />
+          
+          {/* Modal Container */}
+          <div className="bg-white border border-[#4A6B52]/15 rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl relative z-10 max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedLeader(null)}
+              className="absolute top-6 right-6 w-8 h-8 rounded-full border border-[#4A6B52]/10 flex items-center justify-center text-[#1F2922]/55 hover:text-[#1F2922] hover:bg-[#FAF8F5] transition focus:outline-none z-20 cursor-pointer"
+              aria-label="Close modal"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            {/* Modal Body */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 p-6 md:p-10">
+              
+              {/* Left Column (Avatar, Name, Role, Quote) */}
+              <div className="md:col-span-5 flex flex-col items-start text-left">
+                <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden relative mb-6 border border-[#4A6B52]/10 bg-[#FAF8F5]">
+                  <Image 
+                    src={selectedLeader.image} 
+                    alt={selectedLeader.name} 
+                    fill
+                    sizes="(max-width: 768px) 112px, 128px"
+                    className="object-cover"
+                  />
+                </div>
+                
+                <h3 className="text-2xl font-serif font-bold text-[#1F2922] mb-1 leading-tight">
+                  {selectedLeader.name}
+                </h3>
+                <p className="text-xs text-[#1F2922]/50 font-bold uppercase tracking-wider mb-4">
+                  {selectedLeader.role}
+                </p>
+
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-[#4A6B52]/15 text-[#1F2922]/60 hover:text-[#4A6B52] hover:bg-[#FAF8F5] transition mb-6"
+                  aria-label={`${selectedLeader.name}'s LinkedIn`}
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+
+                <div className="border-l-2 border-[#4A6B52] pl-4 py-1.5 mb-6">
+                  <p className="text-xs md:text-sm text-[#1F2922]/70 leading-relaxed font-semibold italic">
+                    {selectedLeader.quote}
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column (Stats Grid, Paragraphs) */}
+              <div className="md:col-span-7 flex flex-col justify-start">
+                
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-8">
+                  {selectedLeader.stats.map((stat) => (
+                    <div key={stat.label} className="border-b border-[#4A6B52]/10 pb-3">
+                      <span className="text-[9px] uppercase font-bold text-[#4A6B52]/50 tracking-wider block mb-0.5">
+                        {stat.label}
+                      </span>
+                      <span className="text-base font-serif font-bold text-[#1F2922] leading-snug block">
+                        {stat.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Paragraphs */}
+                <div className="space-y-4 text-xs md:text-sm text-[#1F2922]/75 leading-relaxed font-medium text-left">
+                  {selectedLeader.paragraphs.map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

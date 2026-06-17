@@ -146,3 +146,12 @@ h1.font-semibold, h2.font-semibold, h3.font-semibold, h4.font-semibold, h5.font-
   font-weight: 400 !important;
 }
 
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
