@@ -455,12 +455,12 @@ export default function Home() {
       </section>
 
       {/* STATS GRID ROW */}
-      <section className="bg-white border-b border-[#4A6B52]/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y divide-[#4A6B52]/10 border-x border-[#4A6B52]/10">
+      <section className="py-20 md:py-24 px-6 lg:px-12 bg-[#FAF8F5] border-b border-[#4A6B52]/10">
+        <div className="max-w-7xl mx-auto bg-white border border-[rgba(74,107,82,0.15)] rounded-[24px] overflow-hidden shadow-sm grid grid-cols-2 md:grid-cols-4 divide-x divide-y divide-[#4A6B52]/10">
           
           {/* Stat 1 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <Layers className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <Layers className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">25</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">Deep Tech Sub-Sector Coverage</p>
@@ -468,8 +468,8 @@ export default function Home() {
           </div>
           
           {/* Stat 2 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <FileText className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <FileText className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">3,000 +</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">Research Reports & Data Points</p>
@@ -477,8 +477,8 @@ export default function Home() {
           </div>
           
           {/* Stat 3 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <Building className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <Building className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">2,500 +</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">Global Institutions Served</p>
@@ -486,8 +486,8 @@ export default function Home() {
           </div>
 
           {/* Stat 4 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <DollarSign className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <DollarSign className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">250 + Cr</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">Retail Assets Under Advisory</p>
@@ -495,8 +495,8 @@ export default function Home() {
           </div>
 
           {/* Stat 5 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <TrendingUp className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <TrendingUp className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">21% +</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">1 Year Alpha</p>
@@ -504,8 +504,8 @@ export default function Home() {
           </div>
 
           {/* Stat 6 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <Briefcase className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <Briefcase className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">100 + yrs</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">Combined Founding Team Experience</p>
@@ -513,8 +513,8 @@ export default function Home() {
           </div>
 
           {/* Stat 7 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <TrendingUp className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <TrendingUp className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">$10 Tn</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">Incremental Market Cap Driven</p>
@@ -522,8 +522,8 @@ export default function Home() {
           </div>
 
           {/* Stat 8 */}
-          <div className="p-6 md:p-8 flex flex-col justify-between h-36">
-            <Users className="w-4 h-4 text-[#4A6B52]" />
+          <div className="py-8 px-6 md:px-8 flex flex-col justify-between h-40 bg-white hover:bg-[#FAF8F5] transition duration-200 group/stat cursor-default">
+            <Users className="w-4 h-4 text-[#4A6B52] group-hover/stat:scale-110 transition duration-200" />
             <div>
               <p className="text-3xl font-serif font-bold text-[#1F2922] font-mono leading-none mb-2">85%</p>
               <p className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-wider">Research Call Precision</p>
