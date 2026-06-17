@@ -899,14 +899,14 @@ export default function About() {
 
       {/* CHOOSE YOUR PATH / BOTTOM CTA SECTION */}
       <section id="contact" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
-        <div className="max-w-5xl mx-auto bg-white border border-[#4A6B52]/15 rounded-3xl p-8 md:p-12 text-center shadow-md">
-          <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+        <div className="max-w-5xl mx-auto bg-gradient-to-r from-[#EAF2FA] via-white to-[#EDF5EE] border border-[#4A6B52]/10 rounded-3xl p-8 md:p-12 text-center shadow-sm">
+          <span className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-[0.2em] block mb-3">
             GET STARTED
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-serif text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto font-normal">
             Let's build conviction together.
           </h2>
-          <p className="text-sm text-[#1F2922]/60 max-w-lg mx-auto mb-10 font-semibold">
+          <p className="text-sm text-[#1F2922]/60 max-w-lg mx-auto mb-10 leading-relaxed">
             Whether you're an institution evaluating coverage or an individual planning your next decade — we'll route you to the right team within one business day.
           </p>
 
@@ -914,28 +914,28 @@ export default function About() {
             {/* Institution button */}
             <a 
               href="/#institutional-consult"
-              className="bg-[#1F2922] text-[#FAF8F5] border border-transparent p-6 rounded-2xl hover:bg-black transition duration-200 text-left flex flex-col justify-between min-h-[140px] shadow relative group"
+              className="bg-gradient-to-br from-[#0C2A4E] to-[#04152A] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
             >
-              <div className="absolute top-6 right-6 text-white/50 group-hover:text-white transition">
-                <ArrowUpRight className="w-6 h-6" />
-              </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-[#FAF8F5]/60 tracking-wider block mb-1">FOR INSTITUTIONS</span>
-                <span className="text-xl font-serif font-bold">Talk to research</span>
+                <span className="text-[10px] uppercase font-bold text-[#7CA2C8] tracking-wider block mb-1">FOR INSTITUTIONS</span>
+                <span className="text-xl font-serif font-medium text-white">Talk to research</span>
+              </div>
+              <div className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
+                <ArrowUpRight className="w-5 h-5" />
               </div>
             </a>
 
             {/* Individual button */}
             <a 
               href="/#wealth-consult"
-              className="bg-[#4A6B52] text-[#FAF8F5] border border-transparent p-6 rounded-2xl hover:bg-[#3E5944] transition duration-200 text-left flex flex-col justify-between min-h-[140px] shadow relative group"
+              className="bg-gradient-to-br from-[#123A23] to-[#05150C] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
             >
-              <div className="absolute top-6 right-6 text-white/50 group-hover:text-white transition">
-                <ArrowUpRight className="w-6 h-6" />
-              </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-white/60 tracking-wider block mb-1">FOR INDIVIDUALS</span>
-                <span className="text-xl font-serif font-bold">Book a wealth consult</span>
+                <span className="text-[10px] uppercase font-bold text-[#8EAC95] tracking-wider block mb-1">FOR INDIVIDUALS</span>
+                <span className="text-xl font-serif font-medium text-white">Book a wealth consult</span>
+              </div>
+              <div className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
+                <ArrowUpRight className="w-5 h-5" />
               </div>
             </a>
           </div>

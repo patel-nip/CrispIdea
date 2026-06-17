@@ -155,3 +155,18 @@ h1.font-semibold, h2.font-semibold, h3.font-semibold, h4.font-semibold, h5.font-
   scrollbar-width: none;
 }
 
+/* Infinite Marquee Scroll Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.3333%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 35s linear infinite;
+}
+

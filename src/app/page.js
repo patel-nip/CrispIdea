@@ -225,6 +225,39 @@ export default function Home() {
     }
   ];
 
+  const insightsData = [
+    {
+      id: "article1",
+      title: "NRE vs NRO vs FCNR Choosing the Right Account Structure for Your Indian Assets",
+      linkTitle: "NRE vs NRO vs FCNR: Choosing the Right Account Structure for Your Indian Assets",
+      link: "#article1",
+      date: "May 21, 2026",
+      desc: "Why Your Account Choice Matters More Than You Think. Most NRIs open a bank account in India because their bank...",
+      tags: "Finance · Banking",
+      gradient: "from-amber-400 to-rose-400"
+    },
+    {
+      id: "article2",
+      title: "Food and Beverage Industry Restructuring Why Acquisitions, Separations, and Partnerships Are Rising",
+      linkTitle: "Food and Beverage Industry Restructuring: Why Acquisitions, Separations, and Partnerships Are Rising",
+      link: "#article2",
+      date: "May 19, 2026",
+      desc: "The global food and beverage industry restructuring is becoming one of the most important global business trends as companies respond...",
+      tags: "Consumables · Corporate",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      id: "article3",
+      title: "Technology & Deep Tech Equity Research The Complete Guide for Institutional Investors",
+      linkTitle: "Technology & Deep Tech Equity Research: The Complete Guide for Institutional Investors",
+      link: "#article3",
+      date: "May 19, 2026",
+      desc: "AI & Machine Learning · Semiconductors · Cloud & SaaS · Cybersecurity · Quantum Computing · Data Infrastructure · IoT...",
+      tags: "Deep Tech · Semiconductors",
+      gradient: "from-cyan-500 to-blue-500"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#1F2922] font-sans selection:bg-[#4A6B52]/20 selection:text-[#1F2922]">
       
@@ -1371,9 +1404,9 @@ export default function Home() {
       </section>
 
       {/* INSIGHTS CAROUSEL SECTION */}
-      <section id="insights" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
+      <section id="insights" className="py-20 border-b border-[#4A6B52]/10 bg-white overflow-hidden">
+        {/* Section Header */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-end mb-16">
             <div className="text-left">
               <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
@@ -1388,107 +1421,54 @@ export default function Home() {
               All insights <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
+        </div>
 
-          {/* Cards slider row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Card 1 */}
-            <div className="flex flex-col h-full bg-white border border-[#4A6B52]/10 rounded-2xl overflow-hidden shadow-sm group hover:border-[#4A6B52]/20 transition">
-              {/* Graphic Cover */}
-              <div className="bg-[#1F2922] p-6 text-white relative min-h-[180px] flex flex-col justify-between overflow-hidden">
-                <span className="text-[8px] font-bold tracking-widest text-[#FAF8F5]/50 uppercase">CRISPidea&reg;</span>
-                <h4 className="text-base font-bold font-serif max-w-[85%] mt-4">
-                  NRE vs NRO vs FCNR Choosing the Right Account Structure for Your Indian Assets
-                </h4>
-                <div className="flex justify-between items-end mt-4">
-                  <span className="text-[9px] font-bold text-white bg-white/10 px-3 py-1 rounded-full uppercase">READ NOW</span>
-                  <span className="text-[8px] font-mono text-white/55">www.crispidea.com</span>
-                </div>
-                {/* Colorful circle element */}
-                <div className="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-gradient-to-tr from-amber-400 to-rose-400 opacity-80 blur-[2px]"></div>
-              </div>
-              {/* Text Info */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <a href="#article1" className="text-sm font-bold text-blue-600 hover:underline block mb-2">
-                    NRE vs NRO vs FCNR: Choosing the Right Account Structure for Your Indian Assets
-                  </a>
-                  <span className="text-[10px] text-[#1F2922]/40 font-semibold block mb-3">May 21, 2026</span>
-                  <p className="text-xs text-[#1F2922]/65 leading-relaxed mb-6">
-                    Why Your Account Choice Matters More Than You Think. Most NRIs open a bank account in India because their bank...
-                  </p>
-                </div>
-                <div className="border-t border-[#4A6B52]/5 pt-4 flex justify-between items-center mt-auto">
-                  <span className="text-[9px] font-semibold text-[#1F2922]/50">Finance · Banking</span>
-                  <span className="text-xs font-bold text-[#1F2922] flex items-center gap-1 group-hover:text-[#4A6B52]">Read More &raquo;</span>
-                </div>
-              </div>
-            </div>
+        {/* Full-width marquee container */}
+        <div className="relative w-full overflow-hidden py-4">
+          {/* Fade overlays at left and right edges (connected doors) */}
+          <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-            {/* Card 2 */}
-            <div className="flex flex-col h-full bg-white border border-[#4A6B52]/10 rounded-2xl overflow-hidden shadow-sm group hover:border-[#4A6B52]/20 transition">
-              {/* Graphic Cover */}
-              <div className="bg-[#1F2922] p-6 text-white relative min-h-[180px] flex flex-col justify-between overflow-hidden">
-                <span className="text-[8px] font-bold tracking-widest text-[#FAF8F5]/50 uppercase">CRISPidea&reg;</span>
-                <h4 className="text-base font-bold font-serif max-w-[85%] mt-4">
-                  Food and Beverage Industry Restructuring Why Acquisitions, Separations, and Partnerships Are Rising
-                </h4>
-                <div className="flex justify-between items-end mt-4">
-                  <span className="text-[9px] font-bold text-white bg-white/10 px-3 py-1 rounded-full uppercase">READ NOW</span>
-                  <span className="text-[8px] font-mono text-white/55">www.crispidea.com</span>
+          {/* Marquee Track */}
+          <div className="flex gap-6 animate-marquee hover:[animation-play-state:paused] w-max px-6 md:px-12 items-stretch">
+            {[...insightsData, ...insightsData, ...insightsData].map((item, idx) => (
+              <div 
+                key={`${item.id}-${idx}`}
+                className="flex flex-col h-[430px] md:h-[470px] bg-white border border-[#4A6B52]/10 rounded-2xl overflow-hidden shadow-sm group hover:border-[#4A6B52]/20 transition w-[290px] md:w-[380px] shrink-0"
+              >
+                {/* Graphic Cover */}
+                <div className="bg-[#1F2922] p-6 text-white relative min-h-[180px] flex flex-col justify-between overflow-hidden">
+                  <span className="text-[8px] font-bold tracking-widest text-[#FAF8F5]/50 uppercase">CRISPidea&reg;</span>
+                  <h4 className="text-base font-bold font-serif max-w-[85%] mt-4 leading-snug">
+                    {item.title}
+                  </h4>
+                  <div className="flex justify-between items-end mt-4 z-10">
+                    <span className="text-[9px] font-bold text-white bg-white/10 px-3 py-1 rounded-full uppercase">READ NOW</span>
+                    <span className="text-[8px] font-mono text-white/55">www.crispidea.com</span>
+                  </div>
+                  {/* Colorful circle element */}
+                  <div className={`absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-gradient-to-tr ${item.gradient} opacity-80 blur-[2px]`}></div>
                 </div>
-                <div className="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 opacity-80 blur-[2px]"></div>
-              </div>
-              {/* Text Info */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <a href="#article2" className="text-sm font-bold text-blue-600 hover:underline block mb-2">
-                    Food and Beverage Industry Restructuring: Why Acquisitions, Separations, and Partnerships Are Rising
-                  </a>
-                  <span className="text-[10px] text-[#1F2922]/40 font-semibold block mb-3">May 19, 2026</span>
-                  <p className="text-xs text-[#1F2922]/65 leading-relaxed mb-6">
-                    The global food and beverage industry restructuring is becoming one of the most important global business trends as companies respond...
-                  </p>
-                </div>
-                <div className="border-t border-[#4A6B52]/5 pt-4 flex justify-between items-center mt-auto">
-                  <span className="text-[9px] font-semibold text-[#1F2922]/50">Consumables · Corporate</span>
-                  <span className="text-xs font-bold text-[#1F2922] flex items-center gap-1 group-hover:text-[#4A6B52]">Read More &raquo;</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="flex flex-col h-full bg-white border border-[#4A6B52]/10 rounded-2xl overflow-hidden shadow-sm group hover:border-[#4A6B52]/20 transition">
-              {/* Graphic Cover */}
-              <div className="bg-[#1F2922] p-6 text-white relative min-h-[180px] flex flex-col justify-between overflow-hidden">
-                <span className="text-[8px] font-bold tracking-widest text-[#FAF8F5]/50 uppercase">CRISPidea&reg;</span>
-                <h4 className="text-base font-bold font-serif max-w-[85%] mt-4">
-                  Technology & Deep Tech Equity Research The Complete Guide for Institutional Investors
-                </h4>
-                <div className="flex justify-between items-end mt-4">
-                  <span className="text-[9px] font-bold text-white bg-white/10 px-3 py-1 rounded-full uppercase">READ NOW</span>
-                  <span className="text-[8px] font-mono text-white/55">www.crispidea.com</span>
-                </div>
-                <div className="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500 opacity-80 blur-[2px]"></div>
-              </div>
-              {/* Text Info */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <a href="#article3" className="text-sm font-bold text-blue-600 hover:underline block mb-2">
-                    Technology & Deep Tech Equity Research: The Complete Guide for Institutional Investors
-                  </a>
-                  <span className="text-[10px] text-[#1F2922]/40 font-semibold block mb-3">May 19, 2026</span>
-                  <p className="text-xs text-[#1F2922]/65 leading-relaxed mb-6">
-                    AI & Machine Learning · Semiconductors · Cloud & SaaS · Cybersecurity · Quantum Computing · Data Infrastructure · IoT...
-                  </p>
-                </div>
-                <div className="border-t border-[#4A6B52]/5 pt-4 flex justify-between items-center mt-auto">
-                  <span className="text-[9px] font-semibold text-[#1F2922]/50">Deep Tech · Semiconductors</span>
-                  <span className="text-xs font-bold text-[#1F2922] flex items-center gap-1 group-hover:text-[#4A6B52]">Read More &raquo;</span>
+                {/* Text Info */}
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <a href={item.link} className="text-sm font-bold text-blue-600 hover:underline block mb-2 leading-snug">
+                      {item.linkTitle}
+                    </a>
+                    <span className="text-[10px] text-[#1F2922]/40 font-semibold block mb-3">{item.date}</span>
+                    <p className="text-xs text-[#1F2922]/65 leading-relaxed mb-6">
+                      {item.desc}
+                    </p>
+                  </div>
+                  <div className="border-t border-[#4A6B52]/5 pt-4 flex justify-between items-center mt-auto">
+                    <span className="text-[9px] font-semibold text-[#1F2922]/50">{item.tags}</span>
+                    <span className="text-xs font-bold text-[#1F2922] flex items-center gap-1 group-hover:text-[#4A6B52] transition-colors">
+                      Read More &raquo;
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
@@ -2033,14 +2013,14 @@ export default function Home() {
 
       {/* CHOOSE YOUR PATH SECTION */}
       <section id="contact" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
-        <div className="max-w-5xl mx-auto bg-white border border-[#4A6B52]/15 rounded-3xl p-8 md:p-12 text-center shadow-md">
-          <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+        <div className="max-w-5xl mx-auto bg-gradient-to-r from-[#EAF2FA] via-white to-[#EDF5EE] border border-[#4A6B52]/10 rounded-3xl p-8 md:p-12 text-center shadow-sm">
+          <span className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-[0.2em] block mb-3">
             GET STARTED
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-serif text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto font-normal">
             Choose your path. Both lead to the same research engine.
           </h2>
-          <p className="text-sm text-[#1F2922]/60 max-w-lg mx-auto mb-10">
+          <p className="text-sm text-[#1F2922]/60 max-w-lg mx-auto mb-10 leading-relaxed">
             Tell us who you are — we'll route you to the right team within one business day.
           </p>
 
@@ -2048,28 +2028,28 @@ export default function Home() {
             {/* Institution button */}
             <a 
               href="#institutional-consult"
-              className="bg-[#1F2922] text-[#FAF8F5] border border-transparent p-6 rounded-2xl hover:bg-black transition duration-200 text-left flex flex-col justify-between min-h-[140px] shadow relative group"
+              className="bg-gradient-to-br from-[#0C2A4E] to-[#04152A] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
             >
-              <div className="absolute top-6 right-6 text-white/50 group-hover:text-white transition">
-                <ArrowUpRight className="w-6 h-6" />
-              </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-[#FAF8F5]/60 tracking-wider block mb-1">FOR INSTITUTIONS</span>
-                <span className="text-xl font-serif font-bold">Talk to research</span>
+                <span className="text-[10px] uppercase font-bold text-[#7CA2C8] tracking-wider block mb-1">FOR INSTITUTIONS</span>
+                <span className="text-xl font-serif font-medium text-white">Talk to research</span>
+              </div>
+              <div className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
+                <ArrowUpRight className="w-5 h-5" />
               </div>
             </a>
 
             {/* Individual button */}
             <a 
               href="#wealth-consult"
-              className="bg-[#4A6B52] text-[#FAF8F5] border border-transparent p-6 rounded-2xl hover:bg-[#3E5944] transition duration-200 text-left flex flex-col justify-between min-h-[140px] shadow relative group"
+              className="bg-gradient-to-br from-[#123A23] to-[#05150C] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
             >
-              <div className="absolute top-6 right-6 text-white/50 group-hover:text-white transition">
-                <ArrowUpRight className="w-6 h-6" />
-              </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-white/60 tracking-wider block mb-1">FOR INDIVIDUALS</span>
-                <span className="text-xl font-serif font-bold">Book a wealth consult</span>
+                <span className="text-[10px] uppercase font-bold text-[#8EAC95] tracking-wider block mb-1">FOR INDIVIDUALS</span>
+                <span className="text-xl font-serif font-medium text-white">Book a wealth consult</span>
+              </div>
+              <div className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
+                <ArrowUpRight className="w-5 h-5" />
               </div>
             </a>
           </div>

@@ -1687,36 +1687,44 @@ export default function ResearchPage() {
       {/* CHOOSE YOUR PATH GET STARTED SECTION */}
       <section className="py-20 px-6 lg:px-12 bg-[#FAF8F5] border-b border-[#4A6B52]/10">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-[#FAF8F5] border border-[#4A6B52]/10 rounded-3xl p-12 text-center shadow-sm relative overflow-hidden bg-grid">
-            <span className="text-[10px] font-bold text-[#4A6B52] uppercase tracking-wider block mb-4">
+          <div className="bg-gradient-to-r from-[#EAF2FA] via-white to-[#EDF5EE] border border-[#4A6B52]/10 rounded-3xl p-8 md:p-12 text-center shadow-sm">
+            <span className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-[0.2em] block mb-3">
               GET STARTED
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-serif text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto font-normal">
               Choose your path. Both lead to the same research engine.
             </h2>
-            <p className="text-xs md:text-sm text-[#1F2922]/60 mt-2 max-w-xl mx-auto mb-10 leading-relaxed">
+            <p className="text-sm text-[#1F2922]/60 max-w-lg mx-auto mb-10 leading-relaxed">
               Tell us who you are — we'll route you to the right team within one business day.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {/* Institution button */}
               <a 
                 href="#contact"
-                className="bg-[#0B132B] border border-[#4A6B52]/10 rounded-2xl p-8 text-left hover:scale-[1.02] hover:bg-[#121E3F] transition-all duration-200 block shadow-sm"
+                className="bg-gradient-to-br from-[#0C2A4E] to-[#04152A] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
               >
-                <span className="text-[9px] font-bold text-blue-400 block uppercase tracking-wider mb-2">FOR INSTITUTIONS</span>
-                <span className="text-xl font-serif font-bold text-white flex justify-between items-center">
-                  Talk to research <ArrowUpRight className="w-5 h-5" />
-                </span>
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-[#7CA2C8] tracking-wider block mb-1">FOR INSTITUTIONS</span>
+                  <span className="text-xl font-serif font-medium text-white">Talk to research</span>
+                </div>
+                <div className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
+                  <ArrowUpRight className="w-5 h-5" />
+                </div>
               </a>
 
+              {/* Individual button */}
               <a 
                 href="#contact"
-                className="bg-[#122A17] border border-[#4A6B52]/10 rounded-2xl p-8 text-left hover:scale-[1.02] hover:bg-[#1C3A22] transition-all duration-200 block shadow-sm"
+                className="bg-gradient-to-br from-[#123A23] to-[#05150C] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
               >
-                <span className="text-[9px] font-bold text-[#4A6B52] block uppercase tracking-wider mb-2">FOR INDIVIDUALS</span>
-                <span className="text-xl font-serif font-bold text-white flex justify-between items-center">
-                  Book a wealth consult <ArrowUpRight className="w-5 h-5" />
-                </span>
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-[#8EAC95] tracking-wider block mb-1">FOR INDIVIDUALS</span>
+                  <span className="text-xl font-serif font-medium text-white">Book a wealth consult</span>
+                </div>
+                <div className="text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
+                  <ArrowUpRight className="w-5 h-5" />
+                </div>
               </a>
             </div>
           </div>
