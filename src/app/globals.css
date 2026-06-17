@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF8F5;
+  --color-cream-light: #FDFDFB;
+  --color-cream-card: #FAF8F5;
+  --color-cream-green: #E6EBE4;
+  --color-forest: #4A6B52;
+  --color-forest-dark: #1F2922;
+  --color-forest-green: #4A6B52;
+  --color-charcoal: #1F2922;
+  --color-charcoal-dark: #1F2922;
+  
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), sans-serif;
+}
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #1F2922;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom visual utilities */
+.bg-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(74, 107, 82, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 107, 82, 0.04) 1px, transparent 1px);
+}
+
+.bg-grid-subtle {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(74, 107, 82, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 107, 82, 0.02) 1px, transparent 1px);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A6B52/20;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4A6B52/40;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card container refinements */
+div[class*="border-[#4A6B52]"].rounded-2xl,
+div[class*="border-[#4A6B52]"].rounded-3xl,
+div[class*="border-[#4A6B52]/10"].rounded-2xl,
+div[class*="border-[#4A6B52]/10"].rounded-3xl,
+div[class*="border-[#4A6B52]/15"].rounded-2xl,
+div[class*="border-[#4A6B52]/15"].rounded-3xl,
+.hover-card-premium {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+div[class*="border-[#4A6B52]"].rounded-2xl:hover,
+div[class*="border-[#4A6B52]"].rounded-3xl:hover,
+div[class*="border-[#4A6B52]/10"].rounded-2xl:hover,
+div[class*="border-[#4A6B52]/10"].rounded-3xl:hover,
+div[class*="border-[#4A6B52]/15"].rounded-2xl:hover,
+div[class*="border-[#4A6B52]/15"].rounded-3xl:hover,
+.hover-card-premium:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0) !important;
+  box-shadow: 0 20px 35px -12px rgba(31, 41, 34, 0.12), 
+              0 0 0 1.5px rgba(74, 107, 82, 0.25) !important;
+  border-color: rgba(74, 107, 82, 0.4) !important;
+}
+
+/* Premium dark green gradients for containers */
+.bg-\[\#0A2417\], 
+[class*="bg-[#0A2417]"] {
+  background: linear-gradient(145deg, #05190e 0%, #0c2b1b 50%, #030f08 100%) !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 
+              0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.bg-\[\#0A2417\]::after,
+[class*="bg-[#0A2417]"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0% 0%, rgba(74, 107, 82, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.bg-\[\#0E2F1F\],
+[class*="bg-[#0E2F1F]"] {
+  background: linear-gradient(145deg, #072014 0%, #0f3523 50%, #04140c 100%) !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 
+              0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.bg-\[\#0E2F1F\]::after,
+[class*="bg-[#0E2F1F]"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0% 0%, rgba(74, 107, 82, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Global Heading Font-Weight Adjustments: reduce heading thicknesses slightly and make hero headings match other sections */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+h1.font-black, h2.font-black, h3.font-black, h4.font-black, h5.font-black, h6.font-black {
+  font-weight: 500 !important;
+}
+h1.font-extrabold, h2.font-extrabold, h3.font-extrabold, h4.font-extrabold, h5.font-extrabold, h6.font-extrabold {
+  font-weight: 500 !important;
+}
+h1.font-bold, h2.font-bold, h3.font-bold, h4.font-bold, h5.font-bold, h6.font-bold {
+  font-weight: 500 !important;
+}
+h1.font-semibold, h2.font-semibold, h3.font-semibold, h4.font-semibold, h5.font-semibold, h6.font-semibold {
+  font-weight: 400 !important;
+}
+

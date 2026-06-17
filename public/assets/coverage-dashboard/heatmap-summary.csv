@@ -1,0 +1,21 @@
+Ticker,CompanyName,Industry,CMP,Target,Upside,UpsideValue
+AAPL,Apple Inc.,Technology,175.50,210.00,+19.66%,19.66
+NVDA,NVIDIA Corp.,Technology,950.00,1100.00,+15.79%,15.79
+TSLA,Tesla Inc.,Automotive,175.00,220.00,+25.71%,25.71
+AMZN,Amazon.com Inc.,Consumer Cyclical,180.00,205.00,+13.89%,13.89
+MSFT,Microsoft Corp.,Technology,420.00,480.00,+14.28%,14.28
+GOOGL,Alphabet Inc.,Technology,170.00,195.00,+14.71%,14.71
+META,Meta Platforms,Technology,480.00,520.00,+8.33%,8.33
+AMD,Advanced Micro Devices,Technology,160.00,190.00,+18.75%,18.75
+NFLX,Netflix Inc.,Communication Services,610.00,680.00,+11.48%,11.48
+JPM,JPMorgan Chase & Co.,Financial Services,195.00,215.00,+10.26%,10.26
+V,Visa Inc.,Financial Services,275.00,290.00,+5.45%,5.45
+DIS,Walt Disney Co.,Communication Services,115.00,130.00,+13.04%,13.04
+JNJ,Johnson & Johnson,Healthcare,155.00,165.00,+6.45%,6.45
+PFE,Pfizer Inc.,Healthcare,28.00,26.00,-7.14%,-7.14
+XOM,Exxon Mobil Corp.,Energy,115.00,125.00,+8.70%,8.70
+KO,Coca-Cola Co.,Consumer Defensive,60.00,64.00,+6.67%,6.67
+PEP,PepsiCo Inc.,Consumer Defensive,170.00,185.00,+8.82%,8.82
+COST,Costco Wholesale,Consumer Cyclical,725.00,800.00,+10.34%,10.34
+WMT,Walmart Inc.,Consumer Defensive,60.00,65.00,+8.33%,8.33
+NKE,Nike Inc.,Consumer Cyclical,95.00,90.00,-5.26%,-5.26
