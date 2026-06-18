@@ -229,24 +229,24 @@ export default function ResearchPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1F2922] font-sans selection:bg-[#4A6B52]/20 selection:text-[#1F2922]">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#031333] font-sans selection:bg-[#a8c940]/20 selection:text-[#031333]">
       
       {/* HEADER / NAVIGATION BAR */}
-      <header className="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#4A6B52]/10 px-6 lg:px-12 py-4">
+      <header className="sticky top-0 z-50 bg-[#F8FAFC]/90 backdrop-blur-md border-b border-[#a8c940]/10 px-6 lg:px-12 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 select-none cursor-pointer">
-            <div className="bg-[#1F2922] text-[#FAF8F5] w-8 h-8 rounded-lg flex items-center justify-center font-bold font-serif text-lg">
+            <div className="bg-[#031333] text-[#F8FAFC] w-8 h-8 rounded-lg flex items-center justify-center font-bold font-serif text-lg">
               C
             </div>
-            <span className="font-sans font-bold text-lg tracking-tight text-[#1F2922]">CrispIdea</span>
+            <span className="font-sans font-bold text-lg tracking-tight text-[#031333]">Crisp<span className="text-[#a8c940]">Idea</span></span>
           </a>
 
           {/* Center Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="/about" className="text-[#1F2922]/70 hover:text-[#1F2922] transition">About us</a>
-            <a href="/insights" className="text-[#1F2922]/70 hover:text-[#1F2922] transition">Insights</a>
-            <a href="#pricing" className="text-[#1F2922]/70 hover:text-[#1F2922] transition">Pricing</a>
+            <a href="/about" className="text-[#031333]/70 hover:text-[#031333] transition">About us</a>
+            <a href="/insights" className="text-[#031333]/70 hover:text-[#031333] transition">Insights</a>
+            <a href="#pricing" className="text-[#031333]/70 hover:text-[#031333] transition">Pricing</a>
             
             {/* Research Dropdown */}
             <div 
@@ -256,9 +256,9 @@ export default function ResearchPage() {
               <div className="flex items-center gap-0.5 py-1.5">
                 <a 
                   href="/research"
-                  className="flex items-center gap-1.5 text-[#4A6B52] hover:text-[#4A6B52] transition"
+                  className="flex items-center gap-1.5 text-[#a8c940] hover:text-[#a8c940] transition"
                 >
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#0077bd]"></span>
                   <span>Research</span>
                 </a>
                 <button
@@ -269,7 +269,7 @@ export default function ResearchPage() {
                     e.stopPropagation();
                     setResearchOpen(researchOpen === 2 ? 0 : 2);
                   }}
-                  className="p-0.5 text-[#4A6B52] hover:text-[#4A6B52] transition cursor-pointer focus:outline-none"
+                  className="p-0.5 text-[#a8c940] hover:text-[#a8c940] transition cursor-pointer focus:outline-none"
                   aria-label="Toggle Research menu"
                 >
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${researchOpen ? 'rotate-180' : ''}`} />
@@ -277,39 +277,39 @@ export default function ResearchPage() {
               </div>
               
               {!!researchOpen && (
-                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#F8FAFC] border border-[#a8c940]/15 p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <a 
                     href="/equity-research" 
                     onClick={() => setResearchOpen(false)}
-                    className="block px-4 py-2.5 rounded-lg hover:bg-[#E6EBE4] transition"
+                    className="block px-4 py-2.5 rounded-lg hover:bg-[#F2F6E6] transition"
                   >
-                    <div className="font-bold text-xs text-[#1F2922]">Equity Research</div>
-                    <div className="text-[10px] text-[#1F2922]/60 mt-0.5 font-medium">Company reports &bull; 2,000+ stocks</div>
+                    <div className="font-bold text-xs text-[#031333]">Equity Research</div>
+                    <div className="text-[10px] text-[#031333]/60 mt-0.5 font-medium">Company reports &bull; 2,000+ stocks</div>
                   </a>
                   <a 
                     href="/thematic-research" 
                     onClick={() => setResearchOpen(false)}
-                    className="block px-4 py-2.5 rounded-lg hover:bg-[#E6EBE4] transition mt-1"
+                    className="block px-4 py-2.5 rounded-lg hover:bg-[#F2F6E6] transition mt-1"
                   >
-                    <div className="font-bold text-xs text-[#1F2922]">Thematic Research</div>
-                    <div className="text-[10px] text-[#1F2922]/60 mt-0.5 font-medium">Sector &amp; cross-industry themes</div>
+                    <div className="font-bold text-xs text-[#031333]">Thematic Research</div>
+                    <div className="text-[10px] text-[#031333]/60 mt-0.5 font-medium">Sector &amp; cross-industry themes</div>
                   </a>
                 </div>
               )}
             </div>
 
-            <a href="/wealth-management" className="flex items-center gap-1.5 text-[#1F2922] hover:text-[#4A6B52] transition">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1F2922]"></span>
+            <a href="/wealth-management" className="flex items-center gap-1.5 text-[#031333] hover:text-[#a8c940] transition">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#031333]"></span>
               <span>Wealth Management</span>
             </a>
           </nav>
 
           {/* Right Action */}
           <div className="flex items-center gap-5">
-            <a href="#signin" className="text-sm font-medium text-[#1F2922]/70 hover:text-[#1F2922] transition">Sign in</a>
+            <a href="#signin" className="text-sm font-medium text-[#031333]/70 hover:text-[#031333] transition">Sign in</a>
             <a 
               href="#contact" 
-              className="bg-[#1F2922] text-[#FAF8F5] text-sm font-semibold py-2 px-5 rounded-full hover:bg-[#2A392F] transition duration-200 shadow-sm"
+              className="bg-[#031333] text-[#F8FAFC] text-sm font-semibold py-2 px-5 rounded-full hover:bg-[#2A392F] transition duration-200 "
             >
               Talk to us
             </a>
@@ -318,142 +318,142 @@ export default function ResearchPage() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden pt-12 md:pt-20 pb-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-grid">
+      <section className="relative overflow-hidden pt-12 md:pt-20 pb-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-grid">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Hero Left Content */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
-            <span className="bg-white/80 backdrop-blur-sm border border-[#4A6B52]/15 rounded-full px-3 py-1 text-xs font-medium flex items-center gap-1.5 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+            <span className="bg-white/80 backdrop-blur-sm border border-[#a8c940]/15 rounded-full px-3 py-1 text-xs font-medium flex items-center gap-1.5 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd]"></span>
               RESEARCH
             </span>
 
-            <h1 className="text-4xl md:text-6xl font-serif font-black tracking-tight text-[#1F2922] leading-[1.08] mb-6">
-              Independent research<br />that institutions actually<br /><span className="text-blue-600">act on.</span>
+            <h1 className="text-4xl md:text-6xl font-serif font-black tracking-tight text-[#031333] leading-[1.08] mb-6">
+              Independent research<br />that institutions actually<br /><span className="text-[#0077bd]">act on.</span>
             </h1>
 
-            <p className="text-base md:text-lg text-[#1F2922]/75 leading-relaxed max-w-2xl mb-8">
+            <p className="text-base md:text-lg text-[#031333]/75 leading-relaxed max-w-2xl mb-8">
               7,000+ stocks under our screen. 300+ deep-tech names under coverage. Equity, thematic and customised research — built on a Q · P · V · T discipline and trusted by allocators across the world.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-12">
               <a 
                 href="#contact" 
-                className="bg-[#1F2922] text-[#FAF8F5] text-sm font-semibold py-3 px-6 rounded-full hover:bg-[#2A392F] transition duration-200 shadow-sm flex items-center gap-2"
+                className="bg-[#031333] text-[#F8FAFC] text-sm font-semibold py-3 px-6 rounded-full hover:bg-[#2A392F] transition duration-200 flex items-center gap-2"
               >
                 Talk to research <ArrowUpRight className="w-4 h-4" />
               </a>
               <a 
                 href="#recent-reports" 
-                className="bg-white border border-[#4A6B52]/20 text-[#1F2922] text-sm font-semibold py-3 px-6 rounded-full hover:bg-[#FAF8F5] transition duration-200 shadow-sm"
+                className="bg-white border border-[#a8c940]/20 text-[#031333] text-sm font-semibold py-3 px-6 rounded-full hover:bg-[#F8FAFC] transition duration-200 "
               >
                 See sample reports
               </a>
             </div>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-[#4A6B52]/10 w-full">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-[#a8c940]/10 w-full">
               <div>
-                <span className="text-2xl md:text-3xl font-serif font-bold text-[#1F2922] block">1,800+</span>
-                <span className="text-[10px] uppercase font-bold text-[#1F2922]/40 tracking-wider">CLIENTS</span>
+                <span className="text-2xl md:text-3xl font-serif font-bold text-[#031333] block">1,800+</span>
+                <span className="text-[10px] uppercase font-bold text-[#031333]/40 tracking-wider">CLIENTS</span>
               </div>
               <div>
-                <span className="text-2xl md:text-3xl font-serif font-bold text-[#1F2922] block">7,000+</span>
-                <span className="text-[10px] uppercase font-bold text-[#1F2922]/40 tracking-wider">STOCKS SCREENED</span>
+                <span className="text-2xl md:text-3xl font-serif font-bold text-[#031333] block">7,000+</span>
+                <span className="text-[10px] uppercase font-bold text-[#031333]/40 tracking-wider">STOCKS SCREENED</span>
               </div>
               <div>
-                <span className="text-2xl md:text-3xl font-serif font-bold text-[#1F2922] block">300+</span>
-                <span className="text-[10px] uppercase font-bold text-[#1F2922]/40 tracking-wider">DEEP-TECH NAMES</span>
+                <span className="text-2xl md:text-3xl font-serif font-bold text-[#031333] block">300+</span>
+                <span className="text-[10px] uppercase font-bold text-[#031333]/40 tracking-wider">DEEP-TECH NAMES</span>
               </div>
               <div>
-                <span className="text-2xl md:text-3xl font-serif font-bold text-[#1F2922] block">25+</span>
-                <span className="text-[10px] uppercase font-bold text-[#1F2922]/40 tracking-wider">SUB-SECTORS</span>
+                <span className="text-2xl md:text-3xl font-serif font-bold text-[#031333] block">25+</span>
+                <span className="text-[10px] uppercase font-bold text-[#031333]/40 tracking-wider">SUB-SECTORS</span>
               </div>
             </div>
           </div>
 
           {/* Hero Right Content: Stock coverage card layout */}
           <div className="lg:col-span-5 flex justify-center w-full">
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 shadow-xl w-full max-w-[450px]">
-              <div className="flex items-center justify-between border-b border-[#4A6B52]/10 pb-4 mb-4">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 w-full max-w-[450px]">
+              <div className="flex items-center justify-between border-b border-[#a8c940]/10 pb-4 mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="bg-[#1F2922] text-[#FAF8F5] w-8 h-8 rounded-lg flex items-center justify-center font-bold font-serif text-sm">
+                  <div className="bg-[#031333] text-[#F8FAFC] w-8 h-8 rounded-lg flex items-center justify-center font-bold font-serif text-sm">
                     C
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs text-[#1F2922]">CrispIdea · Equity Research</h4>
-                    <span className="text-[9px] uppercase font-bold text-[#4A6B52] tracking-wider block mt-0.5">INITIATING COVERAGE · BUY</span>
+                    <h4 className="font-bold text-xs text-[#031333]">CrispIdea · Equity Research</h4>
+                    <span className="text-[9px] uppercase font-bold text-[#a8c940] tracking-wider block mt-0.5">INITIATING COVERAGE · BUY</span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-[8px] font-bold text-[#1F2922]/40 block uppercase">TARGET</span>
-                  <span className="text-lg font-bold font-mono text-blue-600">₹2,840</span>
+                  <span className="text-[8px] font-bold text-[#031333]/40 block uppercase">TARGET</span>
+                  <span className="text-lg font-bold font-mono text-[#0077bd]">₹2,840</span>
                 </div>
               </div>
 
               {/* CMP / Upside / Rating Grid */}
               <div className="grid grid-cols-3 gap-2 mb-6">
-                <div className="bg-[#FAF8F5] border border-[#4A6B52]/10 rounded-xl p-3 text-center">
-                  <span className="text-[9px] text-[#1F2922]/50 font-semibold block uppercase">CMP</span>
-                  <span className="text-sm font-bold font-mono text-[#1F2922]">₹2,210</span>
+                <div className="bg-[#F8FAFC] border border-[#a8c940]/10 rounded-xl p-3 text-center">
+                  <span className="text-[9px] text-[#031333]/50 font-semibold block uppercase">CMP</span>
+                  <span className="text-sm font-bold font-mono text-[#031333]">₹2,210</span>
                 </div>
-                <div className="bg-[#FAF8F5] border border-[#4A6B52]/10 rounded-xl p-3 text-center">
-                  <span className="text-[9px] text-[#1F2922]/50 font-semibold block uppercase">UPSIDE</span>
-                  <span className="text-sm font-bold font-mono text-blue-600">+28.5%</span>
+                <div className="bg-[#F8FAFC] border border-[#a8c940]/10 rounded-xl p-3 text-center">
+                  <span className="text-[9px] text-[#031333]/50 font-semibold block uppercase">UPSIDE</span>
+                  <span className="text-sm font-bold font-mono text-[#0077bd]">+28.5%</span>
                 </div>
-                <div className="bg-[#FAF8F5] border border-[#4A6B52]/10 rounded-xl p-3 text-center">
-                  <span className="text-[9px] text-[#1F2922]/50 font-semibold block uppercase">RATING</span>
-                  <span className="text-sm font-bold font-serif text-[#1F2922]">BUY</span>
+                <div className="bg-[#F8FAFC] border border-[#a8c940]/10 rounded-xl p-3 text-center">
+                  <span className="text-[9px] text-[#031333]/50 font-semibold block uppercase">RATING</span>
+                  <span className="text-sm font-bold font-serif text-[#031333]">BUY</span>
                 </div>
               </div>
 
               {/* Slider Metrics */}
               <div className="space-y-4 mb-6">
                 <div>
-                  <div className="flex justify-between text-[10px] font-bold text-[#1F2922]/70 mb-1">
+                  <div className="flex justify-between text-[10px] font-bold text-[#031333]/70 mb-1">
                     <span>Quality</span>
                     <span className="font-mono">86</span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#1F2922] rounded-full" style={{ width: "86%" }}></div>
+                    <div className="h-full bg-[#031333] rounded-full" style={{ width: "86%" }}></div>
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between text-[10px] font-bold text-[#1F2922]/70 mb-1">
+                  <div className="flex justify-between text-[10px] font-bold text-[#031333]/70 mb-1">
                     <span>Performance</span>
                     <span className="font-mono">74</span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#1F2922] rounded-full" style={{ width: "74%" }}></div>
+                    <div className="h-full bg-[#031333] rounded-full" style={{ width: "74%" }}></div>
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between text-[10px] font-bold text-[#1F2922]/70 mb-1">
+                  <div className="flex justify-between text-[10px] font-bold text-[#031333]/70 mb-1">
                     <span>Valuation</span>
                     <span className="font-mono">68</span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#1F2922] rounded-full" style={{ width: "68%" }}></div>
+                    <div className="h-full bg-[#031333] rounded-full" style={{ width: "68%" }}></div>
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between text-[10px] font-bold text-[#1F2922]/70 mb-1">
+                  <div className="flex justify-between text-[10px] font-bold text-[#031333]/70 mb-1">
                     <span>Technicals</span>
                     <span className="font-mono">81</span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#1F2922] rounded-full" style={{ width: "81%" }}></div>
+                    <div className="h-full bg-[#031333] rounded-full" style={{ width: "81%" }}></div>
                   </div>
                 </div>
               </div>
 
-              <p className="text-[11px] text-[#1F2922]/70 italic leading-relaxed border-t border-[#4A6B52]/5 pt-4 mb-4">
+              <p className="text-[11px] text-[#031333]/70 italic leading-relaxed border-t border-[#a8c940]/5 pt-4 mb-4">
                 Excerpt — "Capex cycle and order book give multi-year revenue visibility; margin expansion likely as ramp normalises..."
               </p>
 
               <div className="flex items-center justify-between text-[10px] font-bold">
-                <span className="text-[#1F2922]/40 tracking-wider">32-PAGE REPORT</span>
-                <a href="#recent-reports" className="text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                <span className="text-[#031333]/40 tracking-wider">32-PAGE REPORT</span>
+                <a href="#recent-reports" className="text-[#0077bd] hover:text-[#0077bd] flex items-center gap-1">
                   READ FULL <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
@@ -464,134 +464,134 @@ export default function ResearchPage() {
       </section>
 
       {/* TRUSTED BY CLIENTS BANNER */}
-      <section className="py-12 bg-white border-b border-[#4A6B52]/10 px-6 lg:px-12">
+      <section className="py-12 bg-white border-b border-[#a8c940]/10 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="text-[10px] font-bold text-[#4A6B52] uppercase tracking-wider block mb-6">
+          <span className="text-[10px] font-bold text-[#a8c940] uppercase tracking-wider block mb-6">
             TRUSTED CLIENTS
           </span>
-          <h3 className="text-2xl md:text-3xl font-serif text-[#1F2922] mb-8 leading-tight">
+          <h3 className="text-2xl md:text-3xl font-serif text-[#031333] mb-8 leading-tight">
             Trusted by 1,800+ clients across the world
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-45 select-none grayscale">
-            <span className="font-serif font-black text-[#1F2922] tracking-tight text-lg">T. Rowe Price</span>
-            <span className="font-serif font-black text-[#1F2922] tracking-tight text-lg">Capital Group</span>
-            <span className="font-serif font-black text-[#1F2922] tracking-tight text-lg">Vanguard</span>
-            <span className="font-serif font-black text-[#1F2922] tracking-tight text-lg">BNP Paribas</span>
-            <span className="font-serif font-black text-[#1F2922] tracking-tight text-lg">BlackRock</span>
-            <span className="font-serif font-black text-[#1F2922] tracking-tight text-lg">Goldman Sachs</span>
-            <span className="font-serif font-black text-[#1F2922] tracking-tight text-lg">Morgan Stanley</span>
+            <span className="font-serif font-black text-[#031333] tracking-tight text-lg">T. Rowe Price</span>
+            <span className="font-serif font-black text-[#031333] tracking-tight text-lg">Capital Group</span>
+            <span className="font-serif font-black text-[#031333] tracking-tight text-lg">Vanguard</span>
+            <span className="font-serif font-black text-[#031333] tracking-tight text-lg">BNP Paribas</span>
+            <span className="font-serif font-black text-[#031333] tracking-tight text-lg">BlackRock</span>
+            <span className="font-serif font-black text-[#031333] tracking-tight text-lg">Goldman Sachs</span>
+            <span className="font-serif font-black text-[#031333] tracking-tight text-lg">Morgan Stanley</span>
           </div>
         </div>
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-left">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               OUR RESEARCH SERVICES
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight max-w-xl mb-4">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight max-w-xl mb-4">
               Three formats. One research-first DNA.
             </h2>
-            <p className="text-xs md:text-sm text-[#1F2922]/70 max-w-2xl leading-relaxed">
+            <p className="text-xs md:text-sm text-[#031333]/70 max-w-2xl leading-relaxed">
               Whether you need standing coverage, a sector deep-dive or a custom mandate, every output is built on the same Q · P · V · T discipline.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {/* Card 1 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-8 flex flex-col justify-between shadow-sm">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-8 flex flex-col justify-between ">
               <div>
-                <div className="bg-blue-50 text-blue-600 w-10 h-10 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-[#0077bd]/10 text-[#0077bd] w-10 h-10 rounded-xl flex items-center justify-center mb-6">
                   <FileText className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-[#1F2922] mb-3">Equity Research</h3>
-                <p className="text-xs text-[#1F2922]/60 mb-6 leading-relaxed">Deep fundamental coverage on listed companies.</p>
-                <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium mb-8">
+                <h3 className="text-xl font-serif font-bold text-[#031333] mb-3">Equity Research</h3>
+                <p className="text-xs text-[#031333]/60 mb-6 leading-relaxed">Deep fundamental coverage on listed companies.</p>
+                <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium mb-8">
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Initiating coverage, quarterly updates and event notes</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Detailed financial models with 3-statement build-up</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>BUY / SELL / HOLD calls with target price and upside</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Coverage across India and global deep-tech names</span>
                   </li>
                 </ul>
               </div>
-              <a href="#recent-reports" className="bg-[#1F2922] text-[#FAF8F5] text-xs font-semibold py-3 px-6 rounded-lg text-center hover:bg-[#2A392F] transition duration-200 flex items-center justify-center gap-1">
+              <a href="#recent-reports" className="bg-[#031333] text-[#F8FAFC] text-xs font-semibold py-3 px-6 rounded-lg text-center hover:bg-[#2A392F] transition duration-200 flex items-center justify-center gap-1">
                 Explore equity reports ↗
               </a>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-8 flex flex-col justify-between shadow-sm">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-8 flex flex-col justify-between ">
               <div>
-                <div className="bg-[#4A6B52]/10 text-[#4A6B52] w-10 h-10 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-[#a8c940]/10 text-[#a8c940] w-10 h-10 rounded-xl flex items-center justify-center mb-6">
                   <Layers className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-[#1F2922] mb-3">Thematic Research</h3>
-                <p className="text-xs text-[#1F2922]/60 mb-6 leading-relaxed">Sector & macro themes for global allocators.</p>
-                <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium mb-8">
+                <h3 className="text-xl font-serif font-bold text-[#031333] mb-3">Thematic Research</h3>
+                <p className="text-xs text-[#031333]/60 mb-6 leading-relaxed">Sector & macro themes for global allocators.</p>
+                <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium mb-8">
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Multi-year structural themes — AI, energy transition, EV, biotech</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Sector primers, value-chain maps and pricing dynamics</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Cross-asset implications and basket ideas</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Quarterly theme dashboards and screeners</span>
                   </li>
                 </ul>
               </div>
-              <a href="#heatmap" className="bg-[#1F2922] text-[#FAF8F5] text-xs font-semibold py-3 px-6 rounded-lg text-center hover:bg-[#2A392F] transition duration-200 flex items-center justify-center gap-1">
+              <a href="#heatmap" className="bg-[#031333] text-[#F8FAFC] text-xs font-semibold py-3 px-6 rounded-lg text-center hover:bg-[#2A392F] transition duration-200 flex items-center justify-center gap-1">
                 Explore thematic reports ↗
               </a>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-8 flex flex-col justify-between shadow-sm">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-8 flex flex-col justify-between ">
               <div>
                 <div className="bg-slate-100 text-slate-700 w-10 h-10 rounded-xl flex items-center justify-center mb-6">
                   <Settings className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-[#1F2922] mb-3">Customised Research</h3>
-                <p className="text-xs text-[#1F2922]/60 mb-6 leading-relaxed">Bespoke studies tailored to client mandates.</p>
-                <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium mb-8">
+                <h3 className="text-xl font-serif font-bold text-[#031333] mb-3">Customised Research</h3>
+                <p className="text-xs text-[#031333]/60 mb-6 leading-relaxed">Bespoke studies tailored to client mandates.</p>
+                <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium mb-8">
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Scoped research-on-demand for funds, family offices and corporates</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Competitor benchmarking and market-sizing studies</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>Diligence support and channel-check programs</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd] mt-1.5 shrink-0"></span>
                     <span>White-label reports and analyst access</span>
                   </li>
                 </ul>
               </div>
-              <a href="#contact" className="bg-[#1F2922] text-[#FAF8F5] text-xs font-semibold py-3 px-6 rounded-lg text-center hover:bg-[#2A392F] transition duration-200 flex items-center justify-center gap-1">
+              <a href="#contact" className="bg-[#031333] text-[#F8FAFC] text-xs font-semibold py-3 px-6 rounded-lg text-center hover:bg-[#2A392F] transition duration-200 flex items-center justify-center gap-1">
                 Talk to our team ↗
               </a>
             </div>
@@ -600,18 +600,18 @@ export default function ResearchPage() {
       </section>
 
       {/* RECENT REPORTS CAROUSEL */}
-      <section id="recent-reports" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white overflow-hidden">
+      <section id="recent-reports" className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto relative">
           
           <div className="flex justify-between items-end mb-12">
             <div>
-              <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+              <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
                 RECENT REPORTS
               </span>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight">
                 A peek into our equity<br />& thematic shelf.
               </h2>
-              <p className="text-xs md:text-sm text-[#1F2922]/60 mt-2">
+              <p className="text-xs md:text-sm text-[#031333]/60 mt-2">
                 Tap the arrows to flip through recent published work — initiating notes, deep-dives and theme primers.
               </p>
             </div>
@@ -619,13 +619,13 @@ export default function ResearchPage() {
             <div className="flex gap-2">
               <button 
                 onClick={handlePrevReport}
-                className="w-10 h-10 rounded-full border border-[#4A6B52]/20 flex items-center justify-center hover:bg-[#FAF8F5] transition focus:outline-none"
+                className="w-10 h-10 rounded-full border border-[#a8c940]/20 flex items-center justify-center hover:bg-[#F8FAFC] transition focus:outline-none"
               >
                 <ChevronRight className="w-5 h-5 rotate-180" />
               </button>
               <button 
                 onClick={handleNextReport}
-                className="w-10 h-10 rounded-full border border-[#4A6B52]/20 flex items-center justify-center hover:bg-[#FAF8F5] transition focus:outline-none"
+                className="w-10 h-10 rounded-full border border-[#a8c940]/20 flex items-center justify-center hover:bg-[#F8FAFC] transition focus:outline-none"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -641,7 +641,7 @@ export default function ResearchPage() {
               {[...reportsList, reportsList[0], reportsList[1], reportsList[2]].map((card, i) => (
                 <div 
                   key={i} 
-                  className="w-full md:w-[calc((100%-48px)/3)] shrink-0 bg-white border border-[#4A6B52]/10 rounded-[24px] flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md hover:border-[#4A6B52]/25 hover:-translate-y-1.5 transition-all duration-300 h-[390px] md:h-[400px] group"
+                  className="w-full md:w-[calc((100%-48px)/3)] shrink-0 bg-white border border-[#a8c940]/10 rounded-[24px] flex flex-col justify-between overflow-hidden hover:hover:border-[#a8c940]/25 hover:-translate-y-1.5 transition-all duration-300 h-[390px] md:h-[400px] group hover-card-premium"
                 >
                   {/* Image wrapper */}
                   <div className="pt-4 px-4 relative shrink-0">
@@ -657,8 +657,8 @@ export default function ResearchPage() {
                   </div>
 
                   {/* Date strip */}
-                  <div className="bg-[#EAF2FA]/50 text-[#1F2922]/70 text-[11px] font-bold py-2.5 px-4 flex items-center justify-center gap-1.5 mt-3 border-y border-[#4A6B52]/5">
-                    <Calendar className="w-3.5 h-3.5 text-[#1F2922]/50" />
+                  <div className="bg-[#EAF2FA]/50 text-[#031333]/70 text-[11px] font-bold py-2.5 px-4 flex items-center justify-center gap-1.5 mt-3 border-y border-[#a8c940]/5">
+                    <Calendar className="w-3.5 h-3.5 text-[#031333]/50" />
                     <span>{card.date}</span>
                   </div>
 
@@ -669,7 +669,7 @@ export default function ResearchPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <h4 className="text-sm md:text-base font-bold text-[#1F2922] hover:text-blue-600 leading-snug line-clamp-2 mb-4 font-sans transition-colors cursor-pointer">
+                      <h4 className="text-sm md:text-base font-bold text-[#031333] hover:text-[#0077bd] leading-snug line-clamp-2 mb-4 font-sans transition-colors cursor-pointer">
                         {card.title}
                       </h4>
                     </a>
@@ -679,7 +679,7 @@ export default function ResearchPage() {
                         href={card.link} 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors font-sans hover:underline"
+                        className="text-xs font-bold text-[#0077bd] hover:text-[#0076bb] flex items-center gap-1 transition-colors font-sans hover:underline"
                       >
                         {card.price} Purchase <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
                       </a>
@@ -694,17 +694,17 @@ export default function ResearchPage() {
       </section>
 
       {/* METHODOLOGY SECTION */}
-      <section id="methodology" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
+      <section id="methodology" className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           
           <div className="mb-16">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               OUR METHODOLOGY
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-4 max-w-xl">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight mb-4 max-w-xl">
               Rigorous process.<br />Consistent outcomes.
             </h2>
-            <p className="text-xs md:text-sm text-[#1F2922]/70 max-w-2xl leading-relaxed">
+            <p className="text-xs md:text-sm text-[#031333]/70 max-w-2xl leading-relaxed">
               The Q · P · V · T discipline — quality, performance, valuation and technicals — every call passes the same four-filter funnel.
             </p>
           </div>
@@ -715,25 +715,25 @@ export default function ResearchPage() {
             {/* Step 1 */}
             <div className="relative flex flex-col">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-[#1F2922] text-[#FAF8F5] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
+                <div className="bg-[#031333] text-[#F8FAFC] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
                   Q
                 </div>
-                <div className="h-[1px] bg-[#4A6B52]/20 flex-1 hidden md:block"></div>
-                <ChevronRight className="w-4 h-4 text-[#4A6B52]/40 hidden md:block" />
+                <div className="h-[1px] bg-[#a8c940]/20 flex-1 hidden md:block"></div>
+                <ChevronRight className="w-4 h-4 text-[#a8c940]/40 hidden md:block" />
               </div>
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">01 — QUALITY</span>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922] mb-3 leading-snug">Earnings quality & management integrity</h4>
-                  <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium mb-6">
+                  <span className="text-[10px] font-bold text-[#a8c940] uppercase tracking-wider block mb-2">01 — QUALITY</span>
+                  <h4 className="text-base font-serif font-bold text-[#031333] mb-3 leading-snug">Earnings quality & management integrity</h4>
+                  <p className="text-xs text-[#031333]/65 leading-relaxed font-medium mb-6">
                     Every company is screened for earnings strength, debt risk, market relevance and our proprietary Quality of Management (QoM) score — assessing leadership integrity, capital allocation discipline and governance.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">QoM scoring</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Earnings quality</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Debt risk</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Governance</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">QoM scoring</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Earnings quality</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Debt risk</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Governance</span>
                 </div>
               </div>
             </div>
@@ -741,25 +741,25 @@ export default function ResearchPage() {
             {/* Step 2 */}
             <div className="relative flex flex-col">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-[#1F2922] text-[#FAF8F5] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
+                <div className="bg-[#031333] text-[#F8FAFC] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
                   P
                 </div>
-                <div className="h-[1px] bg-[#4A6B52]/20 flex-1 hidden md:block"></div>
-                <ChevronRight className="w-4 h-4 text-[#4A6B52]/40 hidden md:block" />
+                <div className="h-[1px] bg-[#a8c940]/20 flex-1 hidden md:block"></div>
+                <ChevronRight className="w-4 h-4 text-[#a8c940]/40 hidden md:block" />
               </div>
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">02 — PERFORMANCE</span>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922] mb-3 leading-snug">Consistent growth & benchmark-beating returns</h4>
-                  <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium mb-6">
+                  <span className="text-[10px] font-bold text-[#a8c940] uppercase tracking-wider block mb-2">02 — PERFORMANCE</span>
+                  <h4 className="text-base font-serif font-bold text-[#031333] mb-3 leading-snug">Consistent growth & benchmark-beating returns</h4>
+                  <p className="text-xs text-[#031333]/65 leading-relaxed font-medium mb-6">
                     We narrow to companies with consistent revenue growth, ROE momentum and a track record of beating estimates. For funds, we compare 3/5/10-year returns, benchmark alpha and peer outperformance.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Revenue growth</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">ROE momentum</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Estimate beat</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Alpha</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Revenue growth</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">ROE momentum</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Estimate beat</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Alpha</span>
                 </div>
               </div>
             </div>
@@ -767,25 +767,25 @@ export default function ResearchPage() {
             {/* Step 3 */}
             <div className="relative flex flex-col">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-[#1F2922] text-[#FAF8F5] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
+                <div className="bg-[#031333] text-[#F8FAFC] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
                   V
                 </div>
-                <div className="h-[1px] bg-[#4A6B52]/20 flex-1 hidden md:block"></div>
-                <ChevronRight className="w-4 h-4 text-[#4A6B52]/40 hidden md:block" />
+                <div className="h-[1px] bg-[#a8c940]/20 flex-1 hidden md:block"></div>
+                <ChevronRight className="w-4 h-4 text-[#a8c940]/40 hidden md:block" />
               </div>
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">03 — VALUATION</span>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922] mb-3 leading-snug">Disciplined entry — price must make sense</h4>
-                  <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium mb-6">
+                  <span className="text-[10px] font-bold text-[#a8c940] uppercase tracking-wider block mb-2">03 — VALUATION</span>
+                  <h4 className="text-base font-serif font-bold text-[#031333] mb-3 leading-snug">Disciplined entry — price must make sense</h4>
+                  <p className="text-xs text-[#031333]/65 leading-relaxed font-medium mb-6">
                     We apply DCF and peer multiples to confirm margin of safety, liquidity and price patterns. For funds, we assess risk ratios, cost structures and inflow/outflow dynamics.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">DCF analysis</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Multiples</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Margin of safety</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Liquidity check</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">DCF analysis</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Multiples</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Margin of safety</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Liquidity check</span>
                 </div>
               </div>
             </div>
@@ -793,22 +793,22 @@ export default function ResearchPage() {
             {/* Step 4 */}
             <div className="relative flex flex-col">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-[#1F2922] text-[#FAF8F5] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
+                <div className="bg-[#031333] text-[#F8FAFC] w-12 h-12 rounded-full flex items-center justify-center font-bold font-serif text-lg">
                   T
                 </div>
               </div>
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">04 — TECHNICALS</span>
-                  <h4 className="text-base font-serif font-bold text-[#1F2922] mb-3 leading-snug">Favourable price signals & entry timing</h4>
-                  <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium mb-6">
+                  <span className="text-[10px] font-bold text-[#a8c940] uppercase tracking-wider block mb-2">04 — TECHNICALS</span>
+                  <h4 className="text-base font-serif font-bold text-[#031333] mb-3 leading-snug">Favourable price signals & entry timing</h4>
+                  <p className="text-xs text-[#031333]/65 leading-relaxed font-medium mb-6">
                     Proprietary AI models scan for optimal entry and exit signals — institutional buy propensity, price pattern confirmation and momentum alignment — ensuring we enter at the right time, not just the right price.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">AI signals</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Buy propensity</span>
-                  <span className="bg-[#FAF8F5] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#1F2922]/60">Momentum</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">AI signals</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Buy propensity</span>
+                  <span className="bg-[#F8FAFC] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[8px] font-bold text-[#031333]/60">Momentum</span>
                 </div>
               </div>
             </div>
@@ -819,38 +819,38 @@ export default function ResearchPage() {
       </section>
 
       {/* DEEP TECH SECTORS GRID */}
-      <section className="py-20 px-6 lg:px-12 bg-[#1F2922] text-[#FAF8F5] border-b border-[#4A6B52]/10">
+      <section className="py-20 px-6 lg:px-12 bg-[#031333] text-[#F8FAFC] border-b border-[#a8c940]/10">
         <div className="max-w-7xl mx-auto">
           
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-6">
             <div>
-              <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+              <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
                 DEEP TECH SECTORS WE COVER
               </span>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#FAF8F5] leading-tight">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#F8FAFC] leading-tight">
                 A leading authority in<br />deep-tech research.
               </h2>
-              <p className="text-xs md:text-sm text-[#FAF8F5]/60 mt-3 max-w-xl leading-relaxed">
+              <p className="text-xs md:text-sm text-[#F8FAFC]/60 mt-3 max-w-xl leading-relaxed">
                 300+ publicly traded companies, across 25+ sub-sectors. Click any sector to jump to the matching reports.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-x-8 gap-y-4">
               <div>
-                <span className="text-2xl font-serif font-bold text-[#FAF8F5] block">300+</span>
-                <span className="text-[9px] uppercase font-bold text-[#FAF8F5]/40 tracking-wider">COMPANIES</span>
+                <span className="text-2xl font-serif font-bold text-[#F8FAFC] block">300+</span>
+                <span className="text-[9px] uppercase font-bold text-[#F8FAFC]/40 tracking-wider">COMPANIES</span>
               </div>
-              <div className="border-l border-[#FAF8F5]/10 pl-6">
-                <span className="text-2xl font-serif font-bold text-[#FAF8F5] block">25+</span>
-                <span className="text-[9px] uppercase font-bold text-[#FAF8F5]/40 tracking-wider">SUB-SECTORS</span>
+              <div className="border-l border-[#F8FAFC]/10 pl-6">
+                <span className="text-2xl font-serif font-bold text-[#F8FAFC] block">25+</span>
+                <span className="text-[9px] uppercase font-bold text-[#F8FAFC]/40 tracking-wider">SUB-SECTORS</span>
               </div>
-              <div className="border-l border-[#FAF8F5]/10 pl-6">
-                <span className="text-2xl font-serif font-bold text-[#FAF8F5] block">50+</span>
-                <span className="text-[9px] uppercase font-bold text-[#FAF8F5]/40 tracking-wider">CONSENSUS CONTRIBUTIONS</span>
+              <div className="border-l border-[#F8FAFC]/10 pl-6">
+                <span className="text-2xl font-serif font-bold text-[#F8FAFC] block">50+</span>
+                <span className="text-[9px] uppercase font-bold text-[#F8FAFC]/40 tracking-wider">CONSENSUS CONTRIBUTIONS</span>
               </div>
             </div>
 
-            <a href="#recent-reports" className="bg-transparent border border-white text-white text-xs font-bold py-3 px-6 rounded-full hover:bg-white hover:text-[#1F2922] transition duration-200">
+            <a href="#recent-reports" className="bg-transparent border border-white text-white text-xs font-bold py-3 px-6 rounded-full hover:bg-white hover:text-[#031333] transition duration-200">
               Browse all thematic reports ↗
             </a>
           </div>
@@ -860,31 +860,31 @@ export default function ResearchPage() {
             {sectorCards.map((sector, i) => (
               <div 
                 key={i} 
-                className="bg-[#121A14] border border-[#4A6B52]/20 rounded-2xl p-6 flex flex-col justify-between hover:border-[#4A6B52]/50 transition duration-200"
+                className="bg-[#121A14] border border-[#a8c940]/20 rounded-2xl p-6 flex flex-col justify-between hover:border-[#a8c940]/50 transition duration-200"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="bg-[#1F2922] w-9 h-9 rounded-lg flex items-center justify-center border border-[#4A6B52]/10">
+                    <div className="bg-[#031333] w-9 h-9 rounded-lg flex items-center justify-center border border-[#a8c940]/10">
                       {sector.icon}
                     </div>
-                    <span className="bg-[#1F2922] border border-[#4A6B52]/20 px-2 py-0.5 rounded text-[8px] text-[#FAF8F5]/70 font-mono">
+                    <span className="bg-[#031333] border border-[#a8c940]/20 px-2 py-0.5 rounded text-[8px] text-[#F8FAFC]/70 font-mono">
                       {sector.count}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-serif font-bold text-[#FAF8F5] mb-1">{sector.title}</h3>
-                  <span className="text-[8px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-4">{sector.tag}</span>
+                  <h3 className="text-base font-serif font-bold text-[#F8FAFC] mb-1">{sector.title}</h3>
+                  <span className="text-[8px] uppercase font-bold text-[#a8c940] tracking-wider block mb-4">{sector.tag}</span>
 
                   <div className="flex flex-wrap gap-1.5 mb-6">
                     {sector.subSectors.map((sub, idx) => (
-                      <span key={idx} className="bg-[#1F2922] border border-[#4A6B52]/10 px-2 py-0.5 rounded text-[9px] text-[#FAF8F5]/60 font-medium">
+                      <span key={idx} className="bg-[#031333] border border-[#a8c940]/10 px-2 py-0.5 rounded text-[9px] text-[#F8FAFC]/60 font-medium">
                         {sub}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <a href="#recent-reports" className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 mt-auto pt-4 border-t border-[#FAF8F5]/5">
+                <a href="#recent-reports" className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 mt-auto pt-4 border-t border-[#F8FAFC]/5">
                   {sector.linkText} <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -895,88 +895,90 @@ export default function ResearchPage() {
       </section>
 
       {/* HEATMAP / PERFORMANCE INTEGRATION */}
-      <section id="heatmap" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section id="heatmap" className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-7xl mx-auto">
           
           <div className="mb-12">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               PERFORMANCE
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-3">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight mb-3">
               Calls we made. Targets we hit.
             </h2>
-            <p className="text-xs md:text-sm text-[#1F2922]/60 max-w-xl">
+            <p className="text-xs md:text-sm text-[#031333]/60 max-w-xl">
               A heat map of recommendations where CrispIdea's target price was achieved. Tap on a tile — the chart on the right updates instantly.
             </p>
-            <div className="mt-4 flex items-center gap-2 bg-blue-50 text-blue-800 text-[10px] font-bold py-1 px-3.5 rounded-full w-fit border border-blue-100">
-              <span className="inline-block w-1 h-1 rounded-full bg-blue-600 animate-ping"></span>
+            <div className="mt-4 flex items-center gap-2 bg-[#0077bd]/10 text-[#0076bb] text-[10px] font-bold py-1 px-3.5 rounded-full w-fit border border-blue-100">
+              <span className="inline-block w-1 h-1 rounded-full bg-[#0077bd] animate-ping"></span>
               Tap a tile — brighter green = stronger call
             </div>
           </div>
 
           {/* Embed dashboard */}
-          <ResearchTargetsDashboard />
+          <div className="graph-container">
+            <ResearchTargetsDashboard />
+          </div>
 
         </div>
       </section>
 
       {/* BUILT FOR ALLOCATORS */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           
           <div className="mb-16">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               WHO WE SERVE · WHAT SETS US APART
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-4 max-w-xl">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight mb-4 max-w-xl">
               Built for the people who allocate capital.
             </h2>
-            <p className="text-xs md:text-sm text-[#1F2922]/60 mt-2 max-w-2xl leading-relaxed">
+            <p className="text-xs md:text-sm text-[#031333]/60 mt-2 max-w-2xl leading-relaxed">
               Our research is consumed by professionals who can't afford noise — and need conviction they can defend in an investment committee.
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
-              <span className="bg-white border border-[#4A6B52]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#1F2922]/80">Asset managers & hedge funds</span>
-              <span className="bg-white border border-[#4A6B52]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#1F2922]/80">Family offices & UHNI desks</span>
-              <span className="bg-white border border-[#4A6B52]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#1F2922]/80">Corporates & strategy teams</span>
-              <span className="bg-white border border-[#4A6B52]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#1F2922]/80">Sell-side & wealth distributors</span>
+              <span className="bg-white border border-[#a8c940]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#031333]/80">Asset managers & hedge funds</span>
+              <span className="bg-white border border-[#a8c940]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#031333]/80">Family offices & UHNI desks</span>
+              <span className="bg-white border border-[#a8c940]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#031333]/80">Corporates & strategy teams</span>
+              <span className="bg-white border border-[#a8c940]/15 rounded-full px-3 py-1 text-[10px] font-semibold text-[#031333]/80">Sell-side & wealth distributors</span>
             </div>
           </div>
 
           {/* Cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6">
               <div className="bg-slate-100 text-slate-700 w-9 h-9 rounded-xl flex items-center justify-center mb-6">
                 <Building className="w-5 h-5" />
               </div>
-              <h4 className="text-base font-serif font-bold text-[#1F2922] mb-2">Independent & unbiased</h4>
-              <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium">
+              <h4 className="text-base font-serif font-bold text-[#031333] mb-2">Independent & unbiased</h4>
+              <p className="text-xs text-[#031333]/65 leading-relaxed font-medium">
                 No investment-banking, no broking conflicts. Research that points where the conviction is — not where the deal is.
               </p>
             </div>
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6">
               <div className="bg-slate-100 text-slate-700 w-9 h-9 rounded-xl flex items-center justify-center mb-6">
                 <Layers className="w-5 h-5" />
               </div>
-              <h4 className="text-base font-serif font-bold text-[#1F2922] mb-2">Q · P · V · T discipline</h4>
-              <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium">
+              <h4 className="text-base font-serif font-bold text-[#031333] mb-2">Q · P · V · T discipline</h4>
+              <p className="text-xs text-[#031333]/65 leading-relaxed font-medium">
                 Quality, Performance, Valuation, Technicals — every call passes the same four-filter funnel.
               </p>
             </div>
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6">
               <div className="bg-slate-100 text-slate-700 w-9 h-9 rounded-xl flex items-center justify-center mb-6">
                 <TrendingUp className="w-5 h-5" />
               </div>
-              <h4 className="text-base font-serif font-bold text-[#1F2922] mb-2">Global × India lens</h4>
-              <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium">
+              <h4 className="text-base font-serif font-bold text-[#031333] mb-2">Global × India lens</h4>
+              <p className="text-xs text-[#031333]/65 leading-relaxed font-medium">
                 Coverage across India, US and global deep-tech — connecting macro themes to actionable names.
               </p>
             </div>
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6">
               <div className="bg-slate-100 text-slate-700 w-9 h-9 rounded-xl flex items-center justify-center mb-6">
                 <Users className="w-5 h-5" />
               </div>
-              <h4 className="text-base font-serif font-bold text-[#1F2922] mb-2">Built for allocators</h4>
-              <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium">
+              <h4 className="text-base font-serif font-bold text-[#031333] mb-2">Built for allocators</h4>
+              <p className="text-xs text-[#031333]/65 leading-relaxed font-medium">
                 Designed for funds, family offices and corporates — clean models, decision-ready notes, fast turnaround.
               </p>
             </div>
@@ -986,24 +988,24 @@ export default function ResearchPage() {
       </section>
 
       {/* RESEARCH TEAM SECTION */}
-      <section id="analysts" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section id="analysts" className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-7xl mx-auto">
           
           <div className="mb-16">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               RESEARCH TEAM
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-4 max-w-xl">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight mb-4 max-w-xl">
               Led by a seasoned head of research.
             </h2>
-            <p className="text-xs md:text-sm text-[#1F2922]/65 mt-2 max-w-2xl leading-relaxed">
+            <p className="text-xs md:text-sm text-[#031333]/65 mt-2 max-w-2xl leading-relaxed">
               A bench of sector specialists who turn raw data into decision-ready conviction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left: Shejal Ajmera card */}
-            <div className="lg:col-span-6 bg-[#0B132B] text-white rounded-2xl p-8 flex flex-col justify-between shadow-xl">
+            <div className="lg:col-span-6 bg-[#0B132B] text-white rounded-2xl p-8 flex flex-col justify-between ">
               <div>
                 <span className="text-[10px] uppercase font-bold text-blue-400 tracking-wider block mb-6">HEAD OF RESEARCH</span>
                 <div className="flex items-center gap-4 mb-6">
@@ -1012,10 +1014,10 @@ export default function ResearchPage() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-serif font-bold text-white">Shejal Ajmera</h3>
-                    <span className="text-xs text-[#FAF8F5]/60 mt-0.5 block">Founder & Head of Research, CrispIdea</span>
+                    <span className="text-xs text-[#F8FAFC]/60 mt-0.5 block">Founder & Head of Research, CrispIdea</span>
                   </div>
                 </div>
-                <p className="text-xs text-[#FAF8F5]/70 leading-relaxed font-medium mb-8">
+                <p className="text-xs text-[#F8FAFC]/70 leading-relaxed font-medium mb-8">
                   Shejal leads CrispIdea's research desk, setting the methodology, sector priorities and quality bar across equity, thematic and customised work. She has over 20 years of experience in equity research and investment analysis. She has led research desks at premier financial institutions and has a deep track record in technology and industrial sectors, defining CrispIdea's rigorous QoM frameworks.
                 </p>
               </div>
@@ -1030,45 +1032,45 @@ export default function ResearchPage() {
             </div>
 
             {/* Right: Analysts list */}
-            <div className="lg:col-span-6 bg-[#FAF8F5] border border-[#4A6B52]/10 rounded-2xl p-8 flex flex-col shadow-sm">
-              <span className="text-[10px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-6">ANALYSTS</span>
-              <h3 className="text-xl font-serif font-bold text-[#1F2922] mb-6 pb-4 border-b border-[#4A6B52]/10">Our research desk</h3>
+            <div className="lg:col-span-6 bg-[#F8FAFC] border border-[#a8c940]/10 rounded-2xl p-8 flex flex-col ">
+              <span className="text-[10px] uppercase font-bold text-[#a8c940] tracking-wider block mb-6">ANALYSTS</span>
+              <h3 className="text-xl font-serif font-bold text-[#031333] mb-6 pb-4 border-b border-[#a8c940]/10">Our research desk</h3>
               
               <div className="space-y-4">
-                <div className="flex justify-between items-center py-3.5 border-b border-[#4A6B52]/10">
+                <div className="flex justify-between items-center py-3.5 border-b border-[#a8c940]/10">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#1F2922]/40">01</span>
-                    <span className="text-xs font-bold text-[#1F2922]">Aishwarya Dinesh</span>
+                    <span className="text-xs font-mono text-[#031333]/40">01</span>
+                    <span className="text-xs font-bold text-[#031333]">Aishwarya Dinesh</span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-[#4A6B52] tracking-wider">ANALYST</span>
+                  <span className="text-[10px] uppercase font-bold text-[#a8c940] tracking-wider">ANALYST</span>
                 </div>
-                <div className="flex justify-between items-center py-3.5 border-b border-[#4A6B52]/10">
+                <div className="flex justify-between items-center py-3.5 border-b border-[#a8c940]/10">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#1F2922]/40">02</span>
-                    <span className="text-xs font-bold text-[#1F2922]">Abhishek Rai</span>
+                    <span className="text-xs font-mono text-[#031333]/40">02</span>
+                    <span className="text-xs font-bold text-[#031333]">Abhishek Rai</span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-[#4A6B52] tracking-wider">ANALYST</span>
+                  <span className="text-[10px] uppercase font-bold text-[#a8c940] tracking-wider">ANALYST</span>
                 </div>
-                <div className="flex justify-between items-center py-3.5 border-b border-[#4A6B52]/10">
+                <div className="flex justify-between items-center py-3.5 border-b border-[#a8c940]/10">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#1F2922]/40">03</span>
-                    <span className="text-xs font-bold text-[#1F2922]">Satish Gaonkar</span>
+                    <span className="text-xs font-mono text-[#031333]/40">03</span>
+                    <span className="text-xs font-bold text-[#031333]">Satish Gaonkar</span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-[#4A6B52] tracking-wider">ANALYST</span>
+                  <span className="text-[10px] uppercase font-bold text-[#a8c940] tracking-wider">ANALYST</span>
                 </div>
-                <div className="flex justify-between items-center py-3.5 border-b border-[#4A6B52]/10">
+                <div className="flex justify-between items-center py-3.5 border-b border-[#a8c940]/10">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#1F2922]/40">04</span>
-                    <span className="text-xs font-bold text-[#1F2922]">Prajwal Nagpure</span>
+                    <span className="text-xs font-mono text-[#031333]/40">04</span>
+                    <span className="text-xs font-bold text-[#031333]">Prajwal Nagpure</span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-[#4A6B52] tracking-wider">ANALYST</span>
+                  <span className="text-[10px] uppercase font-bold text-[#a8c940] tracking-wider">ANALYST</span>
                 </div>
                 <div className="flex justify-between items-center py-3.5">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#1F2922]/40">05</span>
-                    <span className="text-xs font-bold text-[#1F2922]">Prerana Chowdhery</span>
+                    <span className="text-xs font-mono text-[#031333]/40">05</span>
+                    <span className="text-xs font-bold text-[#031333]">Prerana Chowdhery</span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-[#4A6B52] tracking-wider">ANALYST</span>
+                  <span className="text-[10px] uppercase font-bold text-[#a8c940] tracking-wider">ANALYST</span>
                 </div>
               </div>
             </div>
@@ -1078,58 +1080,58 @@ export default function ResearchPage() {
       </section>
 
       {/* CLIENT TESTIMONIALS */}
-      <section className="py-20 px-6 lg:px-12 bg-[#FAF8F5] border-b border-[#4A6B52]/10">
+      <section className="py-20 px-6 lg:px-12 bg-[#F8FAFC] border-b border-[#a8c940]/10">
         <div className="max-w-7xl mx-auto">
           
           <div className="mb-16 text-center">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               VOICES
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight">
               Why clients stay with us.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {/* Testimonial 1 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-8 flex flex-col justify-between shadow-sm relative">
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-[#4A6B52]/5" />
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-8 flex flex-col justify-between relative">
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-[#a8c940]/5" />
               <div>
-                <p className="text-xs text-[#1F2922]/80 leading-relaxed font-medium italic mb-8">
+                <p className="text-xs text-[#031333]/80 leading-relaxed font-medium italic mb-8">
                   "CrispIdea's QoM reports are now a standing input in our diligence process. Their analyst team reads situations like an insider would."
                 </p>
               </div>
-              <div className="border-t border-[#4A6B52]/5 pt-4">
-                <span className="text-xs font-bold text-[#1F2922] block">Portfolio Manager</span>
-                <span className="text-[10px] text-[#1F2922]/50 font-semibold block mt-0.5">Global Long/Short Fund, London</span>
+              <div className="border-t border-[#a8c940]/5 pt-4">
+                <span className="text-xs font-bold text-[#031333] block">Portfolio Manager</span>
+                <span className="text-[10px] text-[#031333]/50 font-semibold block mt-0.5">Global Long/Short Fund, London</span>
               </div>
             </div>
 
             {/* Testimonial 2 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-8 flex flex-col justify-between shadow-sm relative">
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-[#4A6B52]/5" />
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-8 flex flex-col justify-between relative">
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-[#a8c940]/5" />
               <div>
-                <p className="text-xs text-[#1F2922]/80 leading-relaxed font-medium italic mb-8">
+                <p className="text-xs text-[#031333]/80 leading-relaxed font-medium italic mb-8">
                   "The plan is simple, the reasoning is rigorous. Every recommendation comes with the research that backs it."
                 </p>
               </div>
-              <div className="border-t border-[#4A6B52]/5 pt-4">
-                <span className="text-xs font-bold text-[#1F2922] block">Senior Tech Executive</span>
-                <span className="text-[10px] text-[#1F2922]/50 font-semibold block mt-0.5">Wealth client, Bengaluru</span>
+              <div className="border-t border-[#a8c940]/5 pt-4">
+                <span className="text-xs font-bold text-[#031333] block">Senior Tech Executive</span>
+                <span className="text-[10px] text-[#031333]/50 font-semibold block mt-0.5">Wealth client, Bengaluru</span>
               </div>
             </div>
 
             {/* Testimonial 3 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-8 flex flex-col justify-between shadow-sm relative">
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-[#4A6B52]/5" />
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-8 flex flex-col justify-between relative">
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-[#a8c940]/5" />
               <div>
-                <p className="text-xs text-[#1F2922]/80 leading-relaxed font-medium italic mb-8">
+                <p className="text-xs text-[#031333]/80 leading-relaxed font-medium italic mb-8">
                   "We replaced two sell-side providers with CrispIdea. Coverage depth and turnaround are in a different league."
                 </p>
               </div>
-              <div className="border-t border-[#4A6B52]/5 pt-4">
-                <span className="text-xs font-bold text-[#1F2922] block">Head of Research</span>
-                <span className="text-[10px] text-[#1F2922]/50 font-semibold block mt-0.5">Asia Pacific Brokerage</span>
+              <div className="border-t border-[#a8c940]/5 pt-4">
+                <span className="text-xs font-bold text-[#031333] block">Head of Research</span>
+                <span className="text-[10px] text-[#031333]/50 font-semibold block mt-0.5">Asia Pacific Brokerage</span>
               </div>
             </div>
           </div>
@@ -1138,19 +1140,19 @@ export default function ResearchPage() {
       </section>
 
       {/* INSIGHTS CAROUSEL */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-7xl mx-auto">
           
           <div className="flex justify-between items-end mb-16">
             <div>
-              <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+              <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
                 INSIGHTS
               </span>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight">
                 Thinking that compounds.
               </h2>
             </div>
-            <a href="https://www.crispidea.com/" className="text-xs font-bold text-[#1F2922] hover:text-[#4A6B52] transition flex items-center gap-1">
+            <a href="https://www.crispidea.com/" className="text-xs font-bold text-[#031333] hover:text-[#a8c940] transition flex items-center gap-1">
               All insights <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -1158,31 +1160,31 @@ export default function ResearchPage() {
           {/* Blogs list */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {/* Blog 1 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between ">
               <div>
-                <div className="aspect-[1.8/1] w-full bg-[#121A14] rounded-xl mb-6 relative flex flex-col justify-between p-4 overflow-hidden border border-[#4A6B52]/10 select-none">
+                <div className="aspect-[1.8/1] w-full bg-[#121A14] rounded-xl mb-6 relative flex flex-col justify-between p-4 overflow-hidden border border-[#a8c940]/10 select-none">
                   <div className="flex justify-between items-start">
                     <span className="text-[10px] font-bold text-white tracking-wider flex items-center gap-1.5 uppercase">
-                      CRISP<span className="text-[#4A6B52]">Idea</span>®
+                      CRISP<span className="text-[#a8c940]">Idea</span>®
                     </span>
                   </div>
                   <div>
                     <h3 className="text-white text-sm font-serif font-semibold leading-snug">Food and Beverage Industry Restructuring</h3>
-                    <p className="text-[8px] text-[#FAF8F5]/50 mt-1 uppercase font-bold tracking-wider">Why Acquisitions, Separations, and Partnerships Are Rising</p>
+                    <p className="text-[8px] text-[#F8FAFC]/50 mt-1 uppercase font-bold tracking-wider">Why Acquisitions, Separations, and Partnerships Are Rising</p>
                   </div>
                   <div className="flex justify-between items-end pt-2">
-                    <span className="text-[8px] text-[#FAF8F5]/40 font-mono">www.crispidea.com</span>
-                    <span className="bg-[#4A6B52]/20 border border-[#4A6B52]/30 text-white rounded text-[8px] py-0.5 px-2 font-bold flex items-center gap-1">READ NOW</span>
+                    <span className="text-[8px] text-[#F8FAFC]/40 font-mono">www.crispidea.com</span>
+                    <span className="bg-[#a8c940]/20 border border-[#a8c940]/30 text-white rounded text-[8px] py-0.5 px-2 font-bold flex items-center gap-1">READ NOW</span>
                   </div>
                 </div>
 
-                <h3 className="text-base font-serif font-bold text-[#1F2922] mb-2 leading-snug hover:text-[#4A6B52] transition">
+                <h3 className="text-base font-serif font-bold text-[#031333] mb-2 leading-snug hover:text-[#a8c940] transition">
                   <a href="https://www.crispidea.com/food-and-beverage-industry-restructuring/" target="_blank" rel="noreferrer">
                     Food and Beverage Industry Restructuring: Why Acquisitions, Separations, and Partnerships Are Rising
                   </a>
                 </h3>
-                <span className="text-[10px] text-[#1F2922]/40 block mb-3 font-semibold uppercase">May 19, 2026</span>
-                <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium mb-6">
+                <span className="text-[10px] text-[#031333]/40 block mb-3 font-semibold uppercase">May 19, 2026</span>
+                <p className="text-xs text-[#031333]/65 leading-relaxed font-medium mb-6">
                   The global Food and beverage industry restructuring is becoming one of the most important global business trends as companies respond...
                 </p>
               </div>
@@ -1190,38 +1192,38 @@ export default function ResearchPage() {
                 href="https://www.crispidea.com/food-and-beverage-industry-restructuring/" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-xs font-bold text-[#1F2922] hover:text-[#4A6B52] flex items-center gap-1"
+                className="text-xs font-bold text-[#031333] hover:text-[#a8c940] flex items-center gap-1"
               >
                 Read More <span className="font-serif">»</span>
               </a>
             </div>
 
             {/* Blog 2 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between ">
               <div>
-                <div className="aspect-[1.8/1] w-full bg-[#121A14] rounded-xl mb-6 relative flex flex-col justify-between p-4 overflow-hidden border border-[#4A6B52]/10 select-none">
+                <div className="aspect-[1.8/1] w-full bg-[#121A14] rounded-xl mb-6 relative flex flex-col justify-between p-4 overflow-hidden border border-[#a8c940]/10 select-none">
                   <div className="flex justify-between items-start">
                     <span className="text-[10px] font-bold text-white tracking-wider flex items-center gap-1.5 uppercase">
-                      CRISP<span className="text-[#4A6B52]">Idea</span>®
+                      CRISP<span className="text-[#a8c940]">Idea</span>®
                     </span>
                   </div>
                   <div>
                     <h3 className="text-white text-sm font-serif font-semibold leading-snug">Technology & Deep Tech Equity Research</h3>
-                    <p className="text-[8px] text-[#FAF8F5]/50 mt-1 uppercase font-bold tracking-wider">The Complete Guide for Institutional Investors</p>
+                    <p className="text-[8px] text-[#F8FAFC]/50 mt-1 uppercase font-bold tracking-wider">The Complete Guide for Institutional Investors</p>
                   </div>
                   <div className="flex justify-between items-end pt-2">
-                    <span className="text-[8px] text-[#FAF8F5]/40 font-mono">www.crispidea.com</span>
-                    <span className="bg-[#4A6B52]/20 border border-[#4A6B52]/30 text-white rounded text-[8px] py-0.5 px-2 font-bold flex items-center gap-1">READ NOW</span>
+                    <span className="text-[8px] text-[#F8FAFC]/40 font-mono">www.crispidea.com</span>
+                    <span className="bg-[#a8c940]/20 border border-[#a8c940]/30 text-white rounded text-[8px] py-0.5 px-2 font-bold flex items-center gap-1">READ NOW</span>
                   </div>
                 </div>
 
-                <h3 className="text-base font-serif font-bold text-[#1F2922] mb-2 leading-snug hover:text-[#4A6B52] transition">
+                <h3 className="text-base font-serif font-bold text-[#031333] mb-2 leading-snug hover:text-[#a8c940] transition">
                   <a href="https://www.crispidea.com/food-and-beverage-industry-restructuring/" target="_blank" rel="noreferrer">
                     Technology & Deep Tech Equity Research: The Complete Guide for Institutional Investors
                   </a>
                 </h3>
-                <span className="text-[10px] text-[#1F2922]/40 block mb-3 font-semibold uppercase">May 19, 2026</span>
-                <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium mb-6">
+                <span className="text-[10px] text-[#031333]/40 block mb-3 font-semibold uppercase">May 19, 2026</span>
+                <p className="text-xs text-[#031333]/65 leading-relaxed font-medium mb-6">
                   AI & Machine Learning · Semiconductors · Cloud & SaaS · Cybersecurity · Quantum Computing · Data Infrastructure · IoT...
                 </p>
               </div>
@@ -1229,38 +1231,38 @@ export default function ResearchPage() {
                 href="https://www.crispidea.com/food-and-beverage-industry-restructuring/" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-xs font-bold text-[#1F2922] hover:text-[#4A6B52] flex items-center gap-1"
+                className="text-xs font-bold text-[#031333] hover:text-[#a8c940] flex items-center gap-1"
               >
                 Read More <span className="font-serif">»</span>
               </a>
             </div>
 
             {/* Blog 3 */}
-            <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+            <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between ">
               <div>
-                <div className="aspect-[1.8/1] w-full bg-[#121A14] rounded-xl mb-6 relative flex flex-col justify-between p-4 overflow-hidden border border-[#4A6B52]/10 select-none">
+                <div className="aspect-[1.8/1] w-full bg-[#121A14] rounded-xl mb-6 relative flex flex-col justify-between p-4 overflow-hidden border border-[#a8c940]/10 select-none">
                   <div className="flex justify-between items-start">
                     <span className="text-[10px] font-bold text-white tracking-wider flex items-center gap-1.5 uppercase">
-                      CRISP<span className="text-[#4A6B52]">Idea</span>®
+                      CRISP<span className="text-[#a8c940]">Idea</span>®
                     </span>
                   </div>
                   <div>
                     <h3 className="text-white text-sm font-serif font-semibold leading-snug">NRE vs NRO vs FCNR</h3>
-                    <p className="text-[8px] text-[#FAF8F5]/50 mt-1 uppercase font-bold tracking-wider">Choosing the Right Account Structure for Your Indian Assets</p>
+                    <p className="text-[8px] text-[#F8FAFC]/50 mt-1 uppercase font-bold tracking-wider">Choosing the Right Account Structure for Your Indian Assets</p>
                   </div>
                   <div className="flex justify-between items-end pt-2">
-                    <span className="text-[8px] text-[#FAF8F5]/40 font-mono">www.crispidea.com</span>
-                    <span className="bg-[#4A6B52]/20 border border-[#4A6B52]/30 text-white rounded text-[8px] py-0.5 px-2 font-bold flex items-center gap-1">READ NOW</span>
+                    <span className="text-[8px] text-[#F8FAFC]/40 font-mono">www.crispidea.com</span>
+                    <span className="bg-[#a8c940]/20 border border-[#a8c940]/30 text-white rounded text-[8px] py-0.5 px-2 font-bold flex items-center gap-1">READ NOW</span>
                   </div>
                 </div>
 
-                <h3 className="text-base font-serif font-bold text-[#1F2922] mb-2 leading-snug hover:text-[#4A6B52] transition">
+                <h3 className="text-base font-serif font-bold text-[#031333] mb-2 leading-snug hover:text-[#a8c940] transition">
                   <a href="https://www.crispidea.com/nre-vs-nro-vs-fcnr-nri-guide/" target="_blank" rel="noreferrer">
                     NRE vs NRO vs FCNR: Choosing the Right Account Structure for Your Indian Assets
                   </a>
                 </h3>
-                <span className="text-[10px] text-[#1F2922]/40 block mb-3 font-semibold uppercase">May 21, 2026</span>
-                <p className="text-xs text-[#1F2922]/65 leading-relaxed font-medium mb-6">
+                <span className="text-[10px] text-[#031333]/40 block mb-3 font-semibold uppercase">May 21, 2026</span>
+                <p className="text-xs text-[#031333]/65 leading-relaxed font-medium mb-6">
                   Why Your Account Choice Matters More Than You Think Most NRIs open a bank account in India because their bank...
                 </p>
               </div>
@@ -1268,7 +1270,7 @@ export default function ResearchPage() {
                 href="https://www.crispidea.com/nre-vs-nro-vs-fcnr-nri-guide/" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-xs font-bold text-[#1F2922] hover:text-[#4A6B52] flex items-center gap-1"
+                className="text-xs font-bold text-[#031333] hover:text-[#a8c940] flex items-center gap-1"
               >
                 Read More <span className="font-serif">»</span>
               </a>
@@ -1279,29 +1281,29 @@ export default function ResearchPage() {
       </section>
 
       {/* PRICING ENGAGEMENTS SECTION */}
-      <section id="pricing" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
+      <section id="pricing" className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           
           <div className="mb-16 text-center">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               ENGAGEMENTS
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight mb-4">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight mb-4">
               Plans for institutions<br />and individuals.
             </h2>
-            <p className="text-xs md:text-sm text-[#1F2922]/60">
+            <p className="text-xs md:text-sm text-[#031333]/60">
               Transparent structures for both research mandates and wealth advisory.
             </p>
           </div>
 
           {/* Toggle buttons */}
-          <div className="flex bg-[#FAF8F5] border border-[#4A6B52]/10 p-1 rounded-full shadow-inner w-fit mx-auto mb-12">
+          <div className="flex bg-[#F8FAFC] border border-[#a8c940]/10 p-1 rounded-full w-fit mx-auto mb-12">
             <button
               onClick={() => setPricingTab("research")}
               className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-1.5 focus:outline-none ${
                 pricingTab === "research"
-                  ? "bg-[#1F2922] text-[#FAF8F5]"
-                  : "text-[#1F2922]/50 hover:text-[#1F2922]"
+                  ? "bg-[#031333] text-[#F8FAFC]"
+                  : "text-[#031333]/50 hover:text-[#031333]"
               }`}
             >
               <Search className="w-3.5 h-3.5" />
@@ -1311,8 +1313,8 @@ export default function ResearchPage() {
               onClick={() => setPricingTab("wealth")}
               className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-1.5 focus:outline-none ${
                 pricingTab === "wealth"
-                  ? "bg-[#1F2922] text-[#FAF8F5]"
-                  : "text-[#1F2922]/50 hover:text-[#1F2922]"
+                  ? "bg-[#031333] text-[#F8FAFC]"
+                  : "text-[#031333]/50 hover:text-[#031333]"
               }`}
             >
               <TrendingUp className="w-3.5 h-3.5" />
@@ -1324,20 +1326,20 @@ export default function ResearchPage() {
           {pricingTab === "research" ? (
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-stretch mb-8">
               {/* Lite */}
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm relative">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between relative hover-card-premium no-hover-translate">
                 <div className="mb-6">
-                  <h4 className="text-lg font-serif font-bold text-[#1F2922] text-center mb-4">Lite</h4>
+                  <h4 className="text-lg font-serif font-bold text-[#031333] text-center mb-4">Lite</h4>
                   <div className="text-center mb-4">
                     <span className="text-3xl font-bold font-mono">$149</span>
-                    <span className="text-xs text-[#1F2922]/50 font-semibold"> /mo</span>
+                    <span className="text-xs text-[#031333]/50 font-semibold"> /mo</span>
                   </div>
-                  <div className="bg-[#FAF8F5] border border-[#4A6B52]/5 rounded-xl p-3.5 text-center mb-6">
-                    <span className="text-xs font-bold text-[#1F2922] block">Company Specific Reports</span>
-                    <span className="text-[10px] text-[#1F2922]/60 mt-0.5 block">15 Downloads / Month</span>
+                  <div className="bg-[#F8FAFC] border border-[#a8c940]/5 rounded-xl p-3.5 text-center mb-6">
+                    <span className="text-xs font-bold text-[#031333] block">Company Specific Reports</span>
+                    <span className="text-[10px] text-[#031333]/60 mt-0.5 block">15 Downloads / Month</span>
                   </div>
 
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-4">WHAT'S INCLUDED ON LITE</span>
-                  <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium">
+                  <span className="text-[9px] uppercase font-bold text-[#a8c940] tracking-wider block mb-4">WHAT'S INCLUDED ON LITE</span>
+                  <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium">
                     <li className="flex justify-between">
                       <span className="opacity-70">Excel Model</span>
                       <X className="w-4 h-4 text-red-500" />
@@ -1365,29 +1367,29 @@ export default function ResearchPage() {
                   </ul>
                 </div>
                 
-                <a href="#buy" className="block text-center text-xs font-bold text-[#1F2922] border border-[#1F2922] py-2.5 rounded-lg hover:bg-[#FAF8F5] transition mt-auto">
+                <a href="#buy" className="block text-center text-xs font-bold text-[#031333] border border-[#031333] py-2.5 rounded-lg hover:bg-[#F8FAFC] transition mt-auto">
                   Buy Now
                 </a>
               </div>
 
               {/* Standard */}
-              <div className="bg-white border-2 border-[#1F2922] rounded-2xl p-6 flex flex-col justify-between shadow-md relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-[#FAF8F5] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5">
+              <div className="bg-white border-2 border-[#031333] rounded-2xl p-6 flex flex-col justify-between relative hover-card-premium no-hover-translate">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-[#F8FAFC] text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5">
                   ★ MOST POPULAR
                 </div>
                 <div className="mb-6">
-                  <h4 className="text-lg font-serif font-bold text-[#1F2922] text-center mb-4">Standard</h4>
+                  <h4 className="text-lg font-serif font-bold text-[#031333] text-center mb-4">Standard</h4>
                   <div className="text-center mb-4">
                     <span className="text-3xl font-bold font-mono">$349</span>
-                    <span className="text-xs text-[#1F2922]/50 font-semibold"> /mo</span>
+                    <span className="text-xs text-[#031333]/50 font-semibold"> /mo</span>
                   </div>
-                  <div className="bg-[#FAF8F5] border border-[#4A6B52]/5 rounded-xl p-3.5 text-center mb-6">
-                    <span className="text-xs font-bold text-[#1F2922] block">Company Specific Reports</span>
-                    <span className="text-[10px] text-[#1F2922]/60 mt-0.5 block">30 Downloads / Month</span>
+                  <div className="bg-[#F8FAFC] border border-[#a8c940]/5 rounded-xl p-3.5 text-center mb-6">
+                    <span className="text-xs font-bold text-[#031333] block">Company Specific Reports</span>
+                    <span className="text-[10px] text-[#031333]/60 mt-0.5 block">30 Downloads / Month</span>
                   </div>
 
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-4">WHAT'S INCLUDED ON STANDARD</span>
-                  <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium">
+                  <span className="text-[9px] uppercase font-bold text-[#a8c940] tracking-wider block mb-4">WHAT'S INCLUDED ON STANDARD</span>
+                  <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium">
                     <li className="flex justify-between">
                       <span className="opacity-70">Excel Model</span>
                       <X className="w-4 h-4 text-red-500" />
@@ -1415,29 +1417,29 @@ export default function ResearchPage() {
                   </ul>
                 </div>
                 
-                <a href="#buy" className="block text-center text-xs font-bold text-[#FAF8F5] bg-[#1F2922] py-2.5 rounded-lg hover:bg-black transition mt-auto">
+                <a href="#buy" className="block text-center text-xs font-bold text-[#F8FAFC] bg-[#031333] py-2.5 rounded-lg hover:bg-black transition mt-auto">
                   Buy Now
                 </a>
               </div>
 
               {/* Premium */}
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm relative">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between relative hover-card-premium no-hover-translate">
                 <div className="mb-6">
-                  <h4 className="text-lg font-serif font-bold text-[#1F2922] text-center mb-4">Premium</h4>
+                  <h4 className="text-lg font-serif font-bold text-[#031333] text-center mb-4">Premium</h4>
                   <div className="text-center mb-4">
                     <span className="text-3xl font-bold font-mono">$699</span>
-                    <span className="text-xs text-[#1F2922]/50 font-semibold"> /mo</span>
+                    <span className="text-xs text-[#031333]/50 font-semibold"> /mo</span>
                   </div>
-                  <div className="bg-[#FAF8F5] border border-[#4A6B52]/5 rounded-xl p-3.5 text-center mb-6">
-                    <span className="text-xs font-bold text-[#1F2922] block">Company Specific Reports</span>
-                    <span className="text-[10px] text-[#1F2922]/60 mt-0.5 block">60 Downloads / Month</span>
+                  <div className="bg-[#F8FAFC] border border-[#a8c940]/5 rounded-xl p-3.5 text-center mb-6">
+                    <span className="text-xs font-bold text-[#031333] block">Company Specific Reports</span>
+                    <span className="text-[10px] text-[#031333]/60 mt-0.5 block">60 Downloads / Month</span>
                   </div>
 
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-4">WHAT'S INCLUDED ON PREMIUM</span>
-                  <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium">
+                  <span className="text-[9px] uppercase font-bold text-[#a8c940] tracking-wider block mb-4">WHAT'S INCLUDED ON PREMIUM</span>
+                  <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium">
                     <li className="flex justify-between">
                       <span className="opacity-70">Excel Model</span>
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                     </li>
                     <li className="flex justify-between">
                       <span className="opacity-70">Report related Q&A</span>
@@ -1445,7 +1447,7 @@ export default function ResearchPage() {
                     </li>
                     <li className="flex justify-between">
                       <span className="opacity-70">Preference Launch</span>
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                     </li>
                     <li className="flex justify-between">
                       <span className="opacity-70">Customised Research</span>
@@ -1457,31 +1459,31 @@ export default function ResearchPage() {
                     </li>
                     <li className="flex justify-between">
                       <span className="opacity-70">Expert Calls</span>
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                     </li>
                   </ul>
                 </div>
                 
-                <a href="#buy" className="block text-center text-xs font-bold text-[#1F2922] border border-[#1F2922] py-2.5 rounded-lg hover:bg-[#FAF8F5] transition mt-auto">
+                <a href="#buy" className="block text-center text-xs font-bold text-[#031333] border border-[#031333] py-2.5 rounded-lg hover:bg-[#F8FAFC] transition mt-auto">
                   Buy Now
                 </a>
               </div>
 
               {/* Sector Insights */}
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm relative">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between relative hover-card-premium no-hover-translate">
                 <div className="mb-6">
-                  <h4 className="text-lg font-serif font-bold text-[#1F2922] text-center mb-4">Sector Insights</h4>
+                  <h4 className="text-lg font-serif font-bold text-[#031333] text-center mb-4">Sector Insights</h4>
                   <div className="text-center mb-4">
                     <span className="text-3xl font-bold font-mono">$1,499</span>
-                    <span className="text-xs text-[#1F2922]/50 font-semibold"> /mo</span>
+                    <span className="text-xs text-[#031333]/50 font-semibold"> /mo</span>
                   </div>
-                  <div className="bg-[#FAF8F5] border border-[#4A6B52]/5 rounded-xl p-3.5 text-center mb-6">
-                    <span className="text-xs font-bold text-[#1F2922] block">Sector Insights</span>
-                    <span className="text-[10px] text-[#1F2922]/60 mt-0.5 block">4 Downloads / Month</span>
+                  <div className="bg-[#F8FAFC] border border-[#a8c940]/5 rounded-xl p-3.5 text-center mb-6">
+                    <span className="text-xs font-bold text-[#031333] block">Sector Insights</span>
+                    <span className="text-[10px] text-[#031333]/60 mt-0.5 block">4 Downloads / Month</span>
                   </div>
 
-                  <span className="text-[9px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-4">WHAT'S INCLUDED ON SECTOR INSIGHTS</span>
-                  <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium">
+                  <span className="text-[9px] uppercase font-bold text-[#a8c940] tracking-wider block mb-4">WHAT'S INCLUDED ON SECTOR INSIGHTS</span>
+                  <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium">
                     <li className="flex justify-between">
                       <span className="opacity-70">Excel Model</span>
                       <X className="w-4 h-4 text-red-500" />
@@ -1492,7 +1494,7 @@ export default function ResearchPage() {
                     </li>
                     <li className="flex justify-between">
                       <span className="opacity-70">Preference Launch</span>
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                     </li>
                     <li className="flex justify-between">
                       <span className="opacity-70">Customised Research</span>
@@ -1504,12 +1506,12 @@ export default function ResearchPage() {
                     </li>
                     <li className="flex justify-between">
                       <span className="opacity-70">Expert Calls</span>
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                     </li>
                   </ul>
                 </div>
                 
-                <a href="#buy" className="block text-center text-xs font-bold text-[#1F2922] border border-[#1F2922] py-2.5 rounded-lg hover:bg-[#FAF8F5] transition mt-auto">
+                <a href="#buy" className="block text-center text-xs font-bold text-[#031333] border border-[#031333] py-2.5 rounded-lg hover:bg-[#F8FAFC] transition mt-auto">
                   Buy Now
                 </a>
               </div>
@@ -1518,92 +1520,92 @@ export default function ResearchPage() {
             /* Wealth Management Pricing cards */
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mb-8 max-w-5xl mx-auto animate-in fade-in slide-in-from-bottom-3 duration-200">
               {/* Wealth Card 1 */}
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm relative">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between relative hover-card-premium no-hover-translate">
                 <div className="mb-6">
-                  <h4 className="text-lg font-serif font-bold text-[#1F2922] text-center mb-4">Fiduciary Advisor</h4>
+                  <h4 className="text-lg font-serif font-bold text-[#031333] text-center mb-4">Fiduciary Advisor</h4>
                   <div className="text-center mb-4">
-                    <span className="text-xs text-[#1F2922]/50 font-semibold block uppercase">FEES STRUCTURING</span>
-                    <span className="text-2xl font-bold font-mono text-[#1F2922]">0.50% / year</span>
+                    <span className="text-xs text-[#031333]/50 font-semibold block uppercase">FEES STRUCTURING</span>
+                    <span className="text-2xl font-bold font-mono text-[#031333]">0.50% / year</span>
                   </div>
-                  <div className="bg-[#FAF8F5] border border-[#4A6B52]/5 rounded-xl p-3.5 text-center mb-6">
-                    <span className="text-xs font-bold text-[#1F2922] block">Assets Under Advisory</span>
-                    <span className="text-[10px] text-[#1F2922]/60 mt-0.5 block">Fiduciary goal planning & allocation</span>
+                  <div className="bg-[#F8FAFC] border border-[#a8c940]/5 rounded-xl p-3.5 text-center mb-6">
+                    <span className="text-xs font-bold text-[#031333] block">Assets Under Advisory</span>
+                    <span className="text-[10px] text-[#031333]/60 mt-0.5 block">Fiduciary goal planning & allocation</span>
                   </div>
-                  <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium">
+                  <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium">
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                       <span>Dedicated Investment Committee reviews</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                       <span>Direct equities + mutual funds execution</span>
                     </li>
                   </ul>
                 </div>
-                <a href="#buy" className="block text-center text-xs font-bold text-[#1F2922] border border-[#1F2922] py-2.5 rounded-lg hover:bg-[#FAF8F5] transition mt-auto">
+                <a href="#buy" className="block text-center text-xs font-bold text-[#031333] border border-[#031333] py-2.5 rounded-lg hover:bg-[#F8FAFC] transition mt-auto">
                   Contact Advisory
                 </a>
               </div>
 
               {/* Wealth Card 2 */}
-              <div className="bg-white border-2 border-[#1F2922] rounded-2xl p-6 flex flex-col justify-between shadow-md relative">
+              <div className="bg-white border-2 border-[#031333] rounded-2xl p-6 flex flex-col justify-between relative hover-card-premium no-hover-translate">
                 <div className="mb-6">
-                  <h4 className="text-lg font-serif font-bold text-[#1F2922] text-center mb-4">Discretionary Portfolio</h4>
+                  <h4 className="text-lg font-serif font-bold text-[#031333] text-center mb-4">Discretionary Portfolio</h4>
                   <div className="text-center mb-4">
-                    <span className="text-xs text-[#1F2922]/50 font-semibold block uppercase">FEES STRUCTURING</span>
-                    <span className="text-2xl font-bold font-mono text-[#1F2922]">1.25% / year</span>
+                    <span className="text-xs text-[#031333]/50 font-semibold block uppercase">FEES STRUCTURING</span>
+                    <span className="text-2xl font-bold font-mono text-[#031333]">1.25% / year</span>
                   </div>
-                  <div className="bg-[#FAF8F5] border border-[#4A6B52]/5 rounded-xl p-3.5 text-center mb-6">
-                    <span className="text-xs font-bold text-[#1F2922] block">Minimum Ticket: ₹50 Lakhs</span>
-                    <span className="text-[10px] text-[#1F2922]/60 mt-0.5 block">Managed accounts under SEBI PMS mandate</span>
+                  <div className="bg-[#F8FAFC] border border-[#a8c940]/5 rounded-xl p-3.5 text-center mb-6">
+                    <span className="text-xs font-bold text-[#031333] block">Minimum Ticket: ₹50 Lakhs</span>
+                    <span className="text-[10px] text-[#031333]/60 mt-0.5 block">Managed accounts under SEBI PMS mandate</span>
                   </div>
-                  <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium">
+                  <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium">
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                       <span>Customized deep-tech sector baskets</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                       <span>Regular rebalancing & tax optimization</span>
                     </li>
                   </ul>
                 </div>
-                <a href="#buy" className="block text-center text-xs font-bold text-[#FAF8F5] bg-[#1F2922] py-2.5 rounded-lg hover:bg-black transition mt-auto">
+                <a href="#buy" className="block text-center text-xs font-bold text-[#F8FAFC] bg-[#031333] py-2.5 rounded-lg hover:bg-black transition mt-auto">
                   Contact Advisory
                 </a>
               </div>
 
               {/* Wealth Card 3 */}
-              <div className="bg-white border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm relative">
+              <div className="bg-white border border-[#a8c940]/10 rounded-2xl p-6 flex flex-col justify-between relative hover-card-premium no-hover-translate">
                 <div className="mb-6">
-                  <h4 className="text-lg font-serif font-bold text-[#1F2922] text-center mb-4">Multi-Family Office</h4>
+                  <h4 className="text-lg font-serif font-bold text-[#031333] text-center mb-4">Multi-Family Office</h4>
                   <div className="text-center mb-4">
-                    <span className="text-xs text-[#1F2922]/50 font-semibold block uppercase">FEES STRUCTURING</span>
-                    <span className="text-2xl font-bold font-mono text-[#1F2922]">Bespoke pricing</span>
+                    <span className="text-xs text-[#031333]/50 font-semibold block uppercase">FEES STRUCTURING</span>
+                    <span className="text-2xl font-bold font-mono text-[#031333]">Bespoke pricing</span>
                   </div>
-                  <div className="bg-[#FAF8F5] border border-[#4A6B52]/5 rounded-xl p-3.5 text-center mb-6">
-                    <span className="text-xs font-bold text-[#1F2922] block">Full Wealth Estate Suite</span>
-                    <span className="text-[10px] text-[#1F2922]/60 mt-0.5 block">For large estates & multi-gen accounts</span>
+                  <div className="bg-[#F8FAFC] border border-[#a8c940]/5 rounded-xl p-3.5 text-center mb-6">
+                    <span className="text-xs font-bold text-[#031333] block">Full Wealth Estate Suite</span>
+                    <span className="text-[10px] text-[#031333]/60 mt-0.5 block">For large estates & multi-gen accounts</span>
                   </div>
-                  <ul className="space-y-3.5 text-xs text-[#1F2922]/80 font-medium">
+                  <ul className="space-y-3.5 text-xs text-[#031333]/80 font-medium">
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                       <span>Direct VC/PE access & deal flow</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#4A6B52]" />
+                      <Check className="w-4 h-4 text-[#a8c940]" />
                       <span>Estate planning, trust setup & compliance</span>
                     </li>
                   </ul>
                 </div>
-                <a href="#buy" className="block text-center text-xs font-bold text-[#1F2922] border border-[#1F2922] py-2.5 rounded-lg hover:bg-[#FAF8F5] transition mt-auto">
+                <a href="#buy" className="block text-center text-xs font-bold text-[#031333] border border-[#031333] py-2.5 rounded-lg hover:bg-[#F8FAFC] transition mt-auto">
                   Request Info
                 </a>
               </div>
             </div>
           )}
 
-          <p className="text-center text-xs font-medium text-[#1F2922]/50 uppercase tracking-wider">
+          <p className="text-center text-xs font-medium text-[#031333]/50 uppercase tracking-wider">
             * With 12 months of subscription, get 1 month free
           </p>
 
@@ -1611,14 +1613,14 @@ export default function ResearchPage() {
       </section>
 
       {/* FAQ QUESTIONS SECTION */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-6xl mx-auto">
           
           <div className="mb-16">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-2">
               QUESTIONS
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1F2922] leading-tight max-w-xl">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#031333] leading-tight max-w-xl">
               Answers, with the same rigor as our reports.
             </h2>
           </div>
@@ -1628,57 +1630,57 @@ export default function ResearchPage() {
             
             {/* Left Column: DEEP TECH RESEARCH */}
             <div>
-              <div className="flex items-center gap-2 mb-6 border-b border-[#4A6B52]/10 pb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span className="text-xs font-bold text-[#1F2922]/80 uppercase tracking-wider">
+              <div className="flex items-center gap-2 mb-6 border-b border-[#a8c940]/10 pb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0077bd]"></span>
+                <span className="text-xs font-bold text-[#031333]/80 uppercase tracking-wider">
                   DEEP TECH RESEARCH
                 </span>
               </div>
 
               <div className="space-y-4">
                 {/* Q1 */}
-                <div className="border border-[#4A6B52]/10 rounded-xl bg-[#FAF8F5]/30 overflow-hidden">
+                <div className="border border-[#a8c940]/10 rounded-xl bg-[#F8FAFC]/30 overflow-hidden">
                   <button
                     onClick={() => toggleFaq("r0")}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#1F2922] focus:outline-none"
+                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#031333] focus:outline-none"
                   >
                     <span>Who uses CrispIdea research?</span>
                     <span className="text-xs font-mono">{faqState.r0 ? '−' : '+'}</span>
                   </button>
                   {faqState.r0 && (
-                    <div className="px-5 pb-4 text-xs text-[#1F2922]/70 leading-relaxed font-medium">
+                    <div className="px-5 pb-4 text-xs text-[#031333]/70 leading-relaxed font-medium">
                       Hedge funds, asset managers, PE/VC firms, brokerages and corporate strategy teams across 18 countries.
                     </div>
                   )}
                 </div>
 
                 {/* Q2 */}
-                <div className="border border-[#4A6B52]/10 rounded-xl bg-[#FAF8F5]/30 overflow-hidden">
+                <div className="border border-[#a8c940]/10 rounded-xl bg-[#F8FAFC]/30 overflow-hidden">
                   <button
                     onClick={() => toggleFaq("r1")}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#1F2922] focus:outline-none"
+                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#031333] focus:outline-none"
                   >
                     <span>Can you build a custom coverage universe?</span>
                     <span className="text-xs font-mono">{faqState.r1 ? '−' : '+'}</span>
                   </button>
                   {faqState.r1 && (
-                    <div className="px-5 pb-4 text-xs text-[#1F2922]/70 leading-relaxed font-medium">
+                    <div className="px-5 pb-4 text-xs text-[#031333]/70 leading-relaxed font-medium">
                       Yes — bespoke mandates are our most popular engagement. We assemble dedicated analyst pods around your decision needs.
                     </div>
                   )}
                 </div>
 
                 {/* Q3 */}
-                <div className="border border-[#4A6B52]/10 rounded-xl bg-[#FAF8F5]/30 overflow-hidden">
+                <div className="border border-[#a8c940]/10 rounded-xl bg-[#F8FAFC]/30 overflow-hidden">
                   <button
                     onClick={() => toggleFaq("r2")}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#1F2922] focus:outline-none"
+                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#031333] focus:outline-none"
                   >
                     <span>What is your QoM framework?</span>
                     <span className="text-xs font-mono">{faqState.r2 ? '−' : '+'}</span>
                   </button>
                   {faqState.r2 && (
-                    <div className="px-5 pb-4 text-xs text-[#1F2922]/70 leading-relaxed font-medium">
+                    <div className="px-5 pb-4 text-xs text-[#031333]/70 leading-relaxed font-medium">
                       A proprietary Quality of Management framework combining capital allocation history, governance, incentives and forensic financial review.
                     </div>
                   )}
@@ -1688,57 +1690,57 @@ export default function ResearchPage() {
 
             {/* Right Column: WEALTH MANAGEMENT */}
             <div>
-              <div className="flex items-center gap-2 mb-6 border-b border-[#4A6B52]/10 pb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1F2922]"></span>
-                <span className="text-xs font-bold text-[#1F2922]/80 uppercase tracking-wider">
+              <div className="flex items-center gap-2 mb-6 border-b border-[#a8c940]/10 pb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#031333]"></span>
+                <span className="text-xs font-bold text-[#031333]/80 uppercase tracking-wider">
                   WEALTH MANAGEMENT
                 </span>
               </div>
 
               <div className="space-y-4">
                 {/* Q1 */}
-                <div className="border border-[#4A6B52]/10 rounded-xl bg-[#FAF8F5]/30 overflow-hidden">
+                <div className="border border-[#a8c940]/10 rounded-xl bg-[#F8FAFC]/30 overflow-hidden">
                   <button
                     onClick={() => toggleFaq("w0")}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#1F2922] focus:outline-none"
+                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#031333] focus:outline-none"
                   >
                     <span>Are you SEBI registered?</span>
                     <span className="text-xs font-mono">{faqState.w0 ? '−' : '+'}</span>
                   </button>
                   {faqState.w0 && (
-                    <div className="px-5 pb-4 text-xs text-[#1F2922]/70 leading-relaxed font-medium">
+                    <div className="px-5 pb-4 text-xs text-[#031333]/70 leading-relaxed font-medium">
                       Yes. CrispIdea Wealth is a SEBI-registered investment advisor offering goal-based, fiduciary advisory.
                     </div>
                   )}
                 </div>
 
                 {/* Q2 */}
-                <div className="border border-[#4A6B52]/10 rounded-xl bg-[#FAF8F5]/30 overflow-hidden">
+                <div className="border border-[#a8c940]/10 rounded-xl bg-[#F8FAFC]/30 overflow-hidden">
                   <button
                     onClick={() => toggleFaq("w1")}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#1F2922] focus:outline-none"
+                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#031333] focus:outline-none"
                   >
                     <span>Who is the wealth service for?</span>
                     <span className="text-xs font-mono">{faqState.w1 ? '−' : '+'}</span>
                   </button>
                   {faqState.w1 && (
-                    <div className="px-5 pb-4 text-xs text-[#1F2922]/70 leading-relaxed font-medium">
+                    <div className="px-5 pb-4 text-xs text-[#031333]/70 leading-relaxed font-medium">
                       Salaried professionals, high-income individuals, HNIs and family offices in India.
                     </div>
                   )}
                 </div>
 
                 {/* Q3 */}
-                <div className="border border-[#4A6B52]/10 rounded-xl bg-[#FAF8F5]/30 overflow-hidden">
+                <div className="border border-[#a8c940]/10 rounded-xl bg-[#F8FAFC]/30 overflow-hidden">
                   <button
                     onClick={() => toggleFaq("w2")}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#1F2922] focus:outline-none"
+                    className="w-full px-5 py-4 flex items-center justify-between text-left font-bold text-xs md:text-sm text-[#031333] focus:outline-none"
                   >
                     <span>How is your advice different?</span>
                     <span className="text-xs font-mono">{faqState.w2 ? '−' : '+'}</span>
                   </button>
                   {faqState.w2 && (
-                    <div className="px-5 pb-4 text-xs text-[#1F2922]/70 leading-relaxed font-medium">
+                    <div className="px-5 pb-4 text-xs text-[#031333]/70 leading-relaxed font-medium">
                       Every recommendation is backed by primary research from our institutional research desk — not generic model portfolios.
                     </div>
                   )}
@@ -1752,16 +1754,16 @@ export default function ResearchPage() {
       </section>
 
       {/* CHOOSE YOUR PATH GET STARTED SECTION */}
-      <section className="py-20 px-6 lg:px-12 bg-[#FAF8F5] border-b border-[#4A6B52]/10">
+      <section className="py-20 px-6 lg:px-12 bg-[#F8FAFC] border-b border-[#a8c940]/10">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-r from-[#EAF2FA] via-white to-[#EDF5EE] border border-[#4A6B52]/10 rounded-3xl p-8 md:p-12 text-center shadow-sm">
-            <span className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-[0.2em] block mb-3">
+          <div className="bg-gradient-to-r from-[#EAF2FA] via-white to-[#EDF5EE] border border-[#a8c940]/10 rounded-3xl p-8 md:p-12 text-center hover-card-premium no-hover-translate">
+            <span className="text-[10px] font-bold text-[#031333]/50 uppercase tracking-[0.2em] block mb-3">
               GET STARTED
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto font-normal">
+            <h2 className="text-3xl md:text-5xl font-serif text-[#031333] leading-tight mb-4 max-w-2xl mx-auto font-normal">
               Choose your path. Both lead to the same research engine.
             </h2>
-            <p className="text-sm text-[#1F2922]/60 max-w-lg mx-auto mb-10 leading-relaxed">
+            <p className="text-sm text-[#031333]/60 max-w-lg mx-auto mb-10 leading-relaxed">
               Tell us who you are — we'll route you to the right team within one business day.
             </p>
 
@@ -1769,7 +1771,7 @@ export default function ResearchPage() {
               {/* Institution button */}
               <a 
                 href="#contact"
-                className="bg-gradient-to-br from-[#0C2A4E] to-[#04152A] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
+                className="bg-gradient-to-br from-[#0C2A4E] to-[#04152A] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:transition-all duration-200 text-left flex items-center justify-between relative group"
               >
                 <div>
                   <span className="text-[10px] uppercase font-bold text-[#7CA2C8] tracking-wider block mb-1">FOR INSTITUTIONS</span>
@@ -1783,7 +1785,7 @@ export default function ResearchPage() {
               {/* Individual button */}
               <a 
                 href="#contact"
-                className="bg-gradient-to-br from-[#123A23] to-[#05150C] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
+                className="bg-gradient-to-br from-[#123A23] to-[#05150C] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:transition-all duration-200 text-left flex items-center justify-between relative group"
               >
                 <div>
                   <span className="text-[10px] uppercase font-bold text-[#8EAC95] tracking-wider block mb-1">FOR INDIVIDUALS</span>
@@ -1798,75 +1800,75 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <footer className="bg-[#FAF8F5] border-t border-[#4A6B52]/10 py-16 px-6 lg:px-12 text-xs text-[#1F2922]/65">
+      <footer className="bg-[#031333] border-t border-[#a8c940]/10 py-16 px-6 lg:px-12 text-xs text-white/60">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           
           {/* Logo tagline column */}
           <div className="col-span-2 flex flex-col items-start gap-4">
             <a href="/" className="flex items-center gap-3 select-none cursor-pointer">
-              <div className="bg-[#1F2922] text-[#FAF8F5] w-7 h-7 rounded-lg flex items-center justify-center font-bold font-serif text-base">
+              <div className="bg-[#a8c940] text-[#031333] w-7 h-7 rounded-lg flex items-center justify-center font-bold font-serif text-base">
                 C
               </div>
-              <span className="font-bold text-base tracking-tight text-[#1F2922]">CrispIdea</span>
+              <span className="font-bold text-base tracking-tight text-white">Crisp<span className="text-[#a8c940]">Idea</span></span>
             </a>
-            <p className="text-xs leading-relaxed max-w-xs text-[#1F2922]/70 font-medium">
+            <p className="text-xs leading-relaxed max-w-xs text-white/60 font-medium">
               Research-led intelligence for global institutions and India's wealth builders.
             </p>
           </div>
 
           {/* Links Column 1: Research */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Research</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Research</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/research#heatmap" className="hover:text-[#4A6B52] transition">Equity</a></li>
-              <li><a href="/research#recent-reports" className="hover:text-[#4A6B52] transition">Thematic</a></li>
-              <li><a href="/research#methodology" className="hover:text-[#4A6B52] transition">QoM</a></li>
-              <li><a href="/research#methodology" className="hover:text-[#4A6B52] transition">ESG</a></li>
-              <li><a href="/research#methodology" className="hover:text-[#4A6B52] transition">Custom mandates</a></li>
+              <li><a href="/research#heatmap" className="hover:text-[#a8c940] transition">Equity</a></li>
+              <li><a href="/research#recent-reports" className="hover:text-[#a8c940] transition">Thematic</a></li>
+              <li><a href="/research#methodology" className="hover:text-[#a8c940] transition">QoM</a></li>
+              <li><a href="/research#methodology" className="hover:text-[#a8c940] transition">ESG</a></li>
+              <li><a href="/research#methodology" className="hover:text-[#a8c940] transition">Custom mandates</a></li>
             </ul>
           </div>
 
           {/* Links Column 2: Wealth */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Wealth</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Wealth</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">Goal-based plans</a></li>
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">Portfolio advisory</a></li>
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">HNI services</a></li>
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">Private wealth</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">Goal-based plans</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">Portfolio advisory</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">HNI services</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">Private wealth</a></li>
             </ul>
           </div>
 
           {/* Links Column 3: Company */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Company</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Company</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/about" className="hover:text-[#4A6B52] transition">About</a></li>
-              <li><a href="/insights" className="hover:text-[#4A6B52] transition">Insights</a></li>
-              <li><a href="/#pricing" className="hover:text-[#4A6B52] transition">Careers</a></li>
-              <li><a href="/#contact" className="hover:text-[#4A6B52] transition">Contact</a></li>
-              <li><a href="/faq" className="hover:text-[#4A6B52] transition">FAQ</a></li>
+              <li><a href="/about" className="hover:text-[#a8c940] transition">About</a></li>
+              <li><a href="/insights" className="hover:text-[#a8c940] transition">Insights</a></li>
+              <li><a href="/#pricing" className="hover:text-[#a8c940] transition">Careers</a></li>
+              <li><a href="/#contact" className="hover:text-[#a8c940] transition">Contact</a></li>
+              <li><a href="/faq" className="hover:text-[#a8c940] transition">FAQ</a></li>
             </ul>
           </div>
 
           {/* Links Column 4: Legal */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Legal</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Legal</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">SEBI disclosures</a></li>
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">Terms</a></li>
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">Privacy</a></li>
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">Disclaimers</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">SEBI disclosures</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">Terms</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">Privacy</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">Disclaimers</a></li>
             </ul>
           </div>
 
         </div>
 
         {/* Footer bottom bar */}
-        <div className="max-w-7xl mx-auto border-t border-[#4A6B52]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[#1F2922]/50 font-medium">
+        <div className="max-w-7xl mx-auto border-t border-[#a8c940]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 font-medium">
           <span>&copy; {new Date().getFullYear()} CrispIdea. All rights reserved.</span>
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B52]"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#a8c940]"></span>
             <span>SEBI-registered Investment Advisor &bull; INA000000000</span>
           </span>
         </div>

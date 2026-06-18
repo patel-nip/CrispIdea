@@ -193,7 +193,7 @@ export default function About() {
       id: "ny",
       city: "New York",
       badge: "RESEARCH",
-      badgeStyle: "bg-blue-100 text-blue-800 border-blue-200",
+      badgeStyle: "bg-[#0077bd]/10 text-[#0076bb] border-blue-200",
       desc: "Institutional clients • Sell-side coverage",
       practice: "research",
       both: false,
@@ -204,7 +204,7 @@ export default function About() {
       id: "london",
       city: "London",
       badge: "RESEARCH",
-      badgeStyle: "bg-blue-100 text-blue-800 border-blue-200",
+      badgeStyle: "bg-[#0077bd]/10 text-[#0076bb] border-blue-200",
       desc: "EMEA distribution • Macro desk",
       practice: "research",
       both: false,
@@ -215,7 +215,7 @@ export default function About() {
       id: "dubai",
       city: "Dubai",
       badge: "WEALTH",
-      badgeStyle: "bg-[#E6EBE4] text-[#4A6B52] border-[#4A6B52]/20",
+      badgeStyle: "bg-[#F2F6E6] text-[#a8c940] border-[#a8c940]/20",
       desc: "NRI & GCC wealth advisory",
       practice: "wealth",
       both: false,
@@ -266,24 +266,24 @@ export default function About() {
   });
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1F2922] font-sans selection:bg-[#4A6B52]/20 selection:text-[#1F2922]">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#031333] font-sans selection:bg-[#a8c940]/20 selection:text-[#031333]">
       
       {/* HEADER / NAVIGATION BAR */}
-      <header className="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#4A6B52]/10 px-6 lg:px-12 py-4">
+      <header className="sticky top-0 z-50 bg-[#F8FAFC]/90 backdrop-blur-md border-b border-[#a8c940]/10 px-6 lg:px-12 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 select-none cursor-pointer">
-            <div className="bg-[#1F2922] text-[#FAF8F5] w-8 h-8 rounded-lg flex items-center justify-center font-bold font-serif text-lg">
+            <div className="bg-[#031333] text-[#F8FAFC] w-8 h-8 rounded-lg flex items-center justify-center font-bold font-serif text-lg">
               C
             </div>
-            <span className="font-sans font-bold text-lg tracking-tight text-[#1F2922]">CrispIdea</span>
+            <span className="font-sans font-bold text-lg tracking-tight text-[#031333]">Crisp<span className="text-[#a8c940]">Idea</span></span>
           </a>
 
           {/* Center Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="/about" className="text-[#1F2922] transition border-b border-[#1F2922]">About us</a>
-            <a href="/insights" className="text-[#1F2922]/70 hover:text-[#1F2922] transition">Insights</a>
-            <a href="/#pricing" className="text-[#1F2922]/70 hover:text-[#1F2922] transition">Pricing</a>
+            <a href="/about" className="text-[#031333] transition border-b border-[#031333]">About us</a>
+            <a href="/insights" className="text-[#031333]/70 hover:text-[#031333] transition">Insights</a>
+            <a href="/#pricing" className="text-[#031333]/70 hover:text-[#031333] transition">Pricing</a>
             
             {/* Research Dropdown */}
             <div 
@@ -293,9 +293,9 @@ export default function About() {
               <div className="flex items-center gap-0.5 py-1.5">
                 <a 
                   href="/research"
-                  className="flex items-center gap-1.5 text-[#1F2922] hover:text-[#4A6B52] transition"
+                  className="flex items-center gap-1.5 text-[#031333] hover:text-[#a8c940] transition"
                 >
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#0077bd]"></span>
                   <span>Research</span>
                 </a>
                 <button
@@ -306,7 +306,7 @@ export default function About() {
                     e.stopPropagation();
                     setResearchOpen(researchOpen === 2 ? 0 : 2);
                   }}
-                  className="p-0.5 text-[#1F2922]/70 hover:text-[#1F2922] transition cursor-pointer focus:outline-none"
+                  className="p-0.5 text-[#031333]/70 hover:text-[#031333] transition cursor-pointer focus:outline-none"
                   aria-label="Toggle Research menu"
                 >
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${researchOpen ? 'rotate-180' : ''}`} />
@@ -314,39 +314,39 @@ export default function About() {
               </div>
               
               {!!researchOpen && (
-                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#F8FAFC] border border-[#a8c940]/15 p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <a 
                     href="/equity-research" 
                     onClick={() => setResearchOpen(false)}
-                    className="block px-4 py-2.5 rounded-lg hover:bg-[#E6EBE4] transition"
+                    className="block px-4 py-2.5 rounded-lg hover:bg-[#F2F6E6] transition"
                   >
-                    <div className="font-bold text-xs text-[#1F2922]">Equity Research</div>
-                    <div className="text-[10px] text-[#1F2922]/60 mt-0.5 font-medium">Company reports &bull; 2,000+ stocks</div>
+                    <div className="font-bold text-xs text-[#031333]">Equity Research</div>
+                    <div className="text-[10px] text-[#031333]/60 mt-0.5 font-medium">Company reports &bull; 2,000+ stocks</div>
                   </a>
                   <a 
                     href="/thematic-research" 
                     onClick={() => setResearchOpen(false)}
-                    className="block px-4 py-2.5 rounded-lg hover:bg-[#E6EBE4] transition mt-1"
+                    className="block px-4 py-2.5 rounded-lg hover:bg-[#F2F6E6] transition mt-1"
                   >
-                    <div className="font-bold text-xs text-[#1F2922]">Thematic Research</div>
-                    <div className="text-[10px] text-[#1F2922]/60 mt-0.5 font-medium">Sector &amp; cross-industry themes</div>
+                    <div className="font-bold text-xs text-[#031333]">Thematic Research</div>
+                    <div className="text-[10px] text-[#031333]/60 mt-0.5 font-medium">Sector &amp; cross-industry themes</div>
                   </a>
                 </div>
               )}
             </div>
 
-            <a href="/wealth-management" className="flex items-center gap-1.5 text-[#1F2922] hover:text-[#4A6B52] transition">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1F2922]"></span>
+            <a href="/wealth-management" className="flex items-center gap-1.5 text-[#031333] hover:text-[#a8c940] transition">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#031333]"></span>
               <span>Wealth Management</span>
             </a>
           </nav>
 
           {/* Right Action */}
           <div className="flex items-center gap-5">
-            <a href="/#signin" className="text-sm font-medium text-[#1F2922]/70 hover:text-[#1F2922] transition">Sign in</a>
+            <a href="/#signin" className="text-sm font-medium text-[#031333]/70 hover:text-[#031333] transition">Sign in</a>
             <a 
               href="#contact" 
-              className="bg-[#1F2922] text-[#FAF8F5] text-sm font-semibold py-2 px-5 rounded-full hover:bg-[#2A392F] transition duration-200 shadow-sm"
+              className="bg-[#031333] text-[#F8FAFC] text-sm font-semibold py-2 px-5 rounded-full hover:bg-[#2A392F] transition duration-200 "
             >
               Talk to us
             </a>
@@ -355,28 +355,28 @@ export default function About() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-grid pt-16 md:pt-24 pb-20 px-6 lg:px-12 border-b border-[#4A6B52]/10">
+      <section className="relative overflow-hidden bg-grid pt-16 md:pt-24 pb-20 px-6 lg:px-12 border-b border-[#a8c940]/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8 flex flex-col items-start text-left">
-            <span className="text-xs font-bold text-[#4A6B52] tracking-widest uppercase mb-4 block">
+            <span className="text-xs font-bold text-[#a8c940] tracking-widest uppercase mb-4 block">
               ABOUT CRISPIDEA
             </span>
-            <h1 className="text-4xl md:text-6xl font-serif font-black tracking-tight text-[#1F2922] leading-[1.08] mb-6">
+            <h1 className="text-4xl md:text-6xl font-serif font-black tracking-tight text-[#031333] leading-[1.08] mb-6">
               A research house that manages wealth, not the other way around.
             </h1>
-            <p className="text-base md:text-lg text-[#1F2922]/75 leading-relaxed max-w-2xl mb-8 font-medium">
+            <p className="text-base md:text-lg text-[#031333]/75 leading-relaxed max-w-2xl mb-8 font-medium">
               We exist because most advice is borrowed. Ours is built — from primary research, proprietary models and 15+ years of deep-tech conviction. The same DNA powers a global institution allocating billions and an individual building wealth one decision at a time.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a 
                 href="#contact"
-                className="bg-[#1F2922] text-[#FAF8F5] text-sm font-bold py-3 px-6 rounded-full hover:bg-black transition duration-200 shadow-sm flex items-center gap-2"
+                className="bg-[#031333] text-[#F8FAFC] text-sm font-bold py-3 px-6 rounded-full hover:bg-black transition duration-200 flex items-center gap-2"
               >
                 Talk to our team <span className="text-xs">↗</span>
               </a>
               <a 
                 href="/research"
-                className="bg-white/80 backdrop-blur-sm border border-[#4A6B52]/15 text-[#1F2922] text-sm font-bold py-3 px-6 rounded-full hover:bg-[#FAF8F5] transition duration-200"
+                className="bg-white/80 backdrop-blur-sm border border-[#a8c940]/15 text-[#031333] text-sm font-bold py-3 px-6 rounded-full hover:bg-[#F8FAFC] transition duration-200"
               >
                 Explore our research
               </a>
@@ -386,17 +386,17 @@ export default function About() {
       </section>
 
       {/* OUR STORY SECTION */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-4">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-4">
               OUR STORY
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1F2922] leading-[1.15] max-w-md">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#031333] leading-[1.15] max-w-md">
               Built by analysts. For decisions that compound.
             </h2>
           </div>
-          <div className="lg:col-span-7 space-y-6 text-sm text-[#1F2922]/80 leading-relaxed font-medium">
+          <div className="lg:col-span-7 space-y-6 text-sm text-[#031333]/80 leading-relaxed font-medium">
             <p>
               CrispIdea was founded on a simple idea: the best wealth outcomes come from the best research — applied with discipline, over time. Too many advisors recycle reports they don't write and recommend products they don't understand.
             </p>
@@ -411,69 +411,69 @@ export default function About() {
       </section>
 
       {/* WHY PEOPLE TRUST CRISPIDEA */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-3">
               WHY PEOPLE TRUST CRISPIDEA
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1F2922] leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#031333] leading-tight mb-4">
               Independence, depth, and a track record that compounds.
             </h2>
-            <p className="text-sm text-[#1F2922]/60 font-semibold max-w-lg">
+            <p className="text-sm text-[#031333]/60 font-semibold max-w-lg">
               Four reasons clients across institutions and individual portfolios choose us — and stay.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
-            <div className="bg-white border border-[#4A6B52]/15 p-6 rounded-2xl shadow-sm hover:-translate-y-1 transition duration-300">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6">
+            <div className="bg-white border border-[#a8c940]/15 p-6 rounded-2xl hover:-translate-y-1 transition duration-300 hover-card-premium">
+              <div className="w-10 h-10 rounded-xl bg-[#0077bd]/10 flex items-center justify-center text-[#0077bd] mb-6">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-serif font-bold text-lg text-[#1F2922] mb-3">
+              <h3 className="font-serif font-bold text-lg text-[#031333] mb-3">
                 Independent research
               </h3>
-              <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+              <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                 No banking, no underwriting, no conflicts. Our only product is unbiased insight.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white border border-[#4A6B52]/15 p-6 rounded-2xl shadow-sm hover:-translate-y-1 transition duration-300">
+            <div className="bg-white border border-[#a8c940]/15 p-6 rounded-2xl hover:-translate-y-1 transition duration-300 hover-card-premium">
               <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6">
                 <Award className="w-5 h-5" />
               </div>
-              <h3 className="font-serif font-bold text-lg text-[#1F2922] mb-3">
+              <h3 className="font-serif font-bold text-lg text-[#031333] mb-3">
                 15+ years of track record
               </h3>
-              <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+              <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                 Coverage that has driven $10 Tn in incremental market cap and delivered 21%+ alpha in 2026.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white border border-[#4A6B52]/15 p-6 rounded-2xl shadow-sm hover:-translate-y-1 transition duration-300">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-[#4A6B52] mb-6">
+            <div className="bg-white border border-[#a8c940]/15 p-6 rounded-2xl hover:-translate-y-1 transition duration-300 hover-card-premium">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-[#a8c940] mb-6">
                 <Users className="w-5 h-5" />
               </div>
-              <h3 className="font-serif font-bold text-lg text-[#1F2922] mb-3">
+              <h3 className="font-serif font-bold text-lg text-[#031333] mb-3">
                 Analyst-led, not algorithm-led
               </h3>
-              <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+              <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                 Senior sector specialists with prior buy-side and sell-side experience at top global firms.
               </p>
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white border border-[#4A6B52]/15 p-6 rounded-2xl shadow-sm hover:-translate-y-1 transition duration-300">
+            <div className="bg-white border border-[#a8c940]/15 p-6 rounded-2xl hover:-translate-y-1 transition duration-300 hover-card-premium">
               <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 mb-6">
                 <Globe className="w-5 h-5" />
               </div>
-              <h3 className="font-serif font-bold text-lg text-[#1F2922] mb-3">
+              <h3 className="font-serif font-bold text-lg text-[#031333] mb-3">
                 Global footprint
               </h3>
-              <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+              <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                 Clients across North America, Europe, APAC and the Middle East — served from research hubs on three continents.
               </p>
             </div>
@@ -482,16 +482,16 @@ export default function About() {
       </section>
 
       {/* OUR JOURNEY - TIMELINE */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-3">
               OUR JOURNEY
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1F2922] leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#031333] leading-tight mb-4">
               From an idea to a global research-led platform.
             </h2>
-            <p className="text-sm text-[#1F2922]/60 font-semibold">
+            <p className="text-sm text-[#031333]/60 font-semibold">
               Fifteen years of compounding conviction — distilled into the milestones that shaped CrispIdea.
             </p>
           </div>
@@ -499,7 +499,7 @@ export default function About() {
           {/* Vertical Timeline */}
           <div className="relative">
             {/* Center Line for desktop */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-[#4A6B52]/15 -translate-x-1/2"></div>
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-[#a8c940]/15 -translate-x-1/2"></div>
 
             <div className="space-y-12 md:space-y-16">
               {timelineMilestones.map((milestone, idx) => {
@@ -507,19 +507,19 @@ export default function About() {
                 return (
                   <div key={idx} className="relative flex flex-col md:flex-row items-stretch">
                     {/* Timeline Node Dot */}
-                    <div className="absolute left-4 md:left-1/2 top-1.5 w-4 h-4 rounded-full bg-[#1F2922] border-[3px] border-[#FAF8F5] z-10 -translate-x-1/2 shadow-sm transition hover:scale-125 duration-200"></div>
+                    <div className="absolute left-4 md:left-1/2 top-1.5 w-4 h-4 rounded-full bg-[#031333] border-[3px] border-[#F8FAFC] z-10 -translate-x-1/2 transition hover:scale-125 duration-200"></div>
 
                     {/* Left spacing/content column */}
                     <div className={`w-full md:w-1/2 pl-12 md:pl-0 md:pr-12 md:text-right ${isLeft ? 'block' : 'md:opacity-0 pointer-events-none hidden md:block'}`}>
                       {isLeft && (
-                        <div className="bg-[#FAF8F5] border border-[#4A6B52]/10 p-5 rounded-2xl hover:border-[#4A6B52]/30 transition shadow-sm max-w-md md:ml-auto">
-                          <span className="text-sm font-bold text-[#4A6B52] block mb-1">
+                        <div className="bg-[#F8FAFC] border border-[#a8c940]/10 p-5 rounded-2xl hover:border-[#a8c940]/30 transition max-w-md md:ml-auto">
+                          <span className="text-sm font-bold text-[#a8c940] block mb-1">
                             {milestone.year}
                           </span>
-                          <h4 className="font-serif font-bold text-[#1F2922] text-base mb-2">
+                          <h4 className="font-serif font-bold text-[#031333] text-base mb-2">
                             {milestone.title}
                           </h4>
-                          <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+                          <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                             {milestone.desc}
                           </p>
                         </div>
@@ -532,14 +532,14 @@ export default function About() {
                     {/* Right spacing/content column */}
                     <div className={`w-full md:w-1/2 pl-12 md:pl-12 text-left ${!isLeft ? 'block' : 'md:opacity-0 pointer-events-none hidden md:block'}`}>
                       {!isLeft && (
-                        <div className="bg-[#FAF8F5] border border-[#4A6B52]/10 p-5 rounded-2xl hover:border-[#4A6B52]/30 transition shadow-sm max-w-md">
-                          <span className="text-sm font-bold text-[#4A6B52] block mb-1">
+                        <div className="bg-[#F8FAFC] border border-[#a8c940]/10 p-5 rounded-2xl hover:border-[#a8c940]/30 transition max-w-md">
+                          <span className="text-sm font-bold text-[#a8c940] block mb-1">
                             {milestone.year}
                           </span>
-                          <h4 className="font-serif font-bold text-[#1F2922] text-base mb-2">
+                          <h4 className="font-serif font-bold text-[#031333] text-base mb-2">
                             {milestone.title}
                           </h4>
-                          <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+                          <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                             {milestone.desc}
                           </p>
                         </div>
@@ -554,16 +554,16 @@ export default function About() {
       </section>
 
       {/* LEADERSHIP SECTION */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-3">
               LEADERSHIP
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1F2922] leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#031333] leading-tight mb-4">
               The people behind the research.
             </h2>
-            <p className="text-sm text-[#1F2922]/60 font-semibold max-w-lg">
+            <p className="text-sm text-[#031333]/60 font-semibold max-w-lg">
               Founders and advisors who have spent decades doing the work — now building CrispIdea as one research-led platform.
             </p>
           </div>
@@ -572,10 +572,10 @@ export default function About() {
             {leadership.map((member, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-[#4A6B52]/15 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 group"
+                className="bg-white border border-[#a8c940]/15 rounded-3xl overflow-hidden hover:transition duration-300 group hover-card-premium"
               >
                 {/* Image Container */}
-                <div className="relative aspect-[4/5] w-full bg-[#E6EBE4] overflow-hidden">
+                <div className="relative aspect-[4/5] w-full bg-[#F2F6E6] overflow-hidden">
                   <Image 
                     src={member.image} 
                     alt={member.name}
@@ -590,13 +590,13 @@ export default function About() {
                 </div>
                 {/* Details */}
                 <div className="p-6">
-                  <h3 className="font-serif font-bold text-lg text-[#1F2922] mb-1">
+                  <h3 className="font-serif font-bold text-lg text-[#031333] mb-1">
                     {member.name}
                   </h3>
-                  <span className="text-[10px] font-bold text-[#4A6B52] tracking-wider uppercase block mb-4">
+                  <span className="text-[10px] font-bold text-[#a8c940] tracking-wider uppercase block mb-4">
                     {member.role}
                   </span>
-                  <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+                  <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                     {member.bio}
                   </p>
                 </div>
@@ -607,37 +607,37 @@ export default function About() {
       </section>
 
       {/* OUR TEAM ACCORDIONS */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-3">
               OUR TEAM
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1F2922] leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#031333] leading-tight mb-4">
               Senior analysts. Real accountability.
             </h2>
-            <p className="text-sm text-[#1F2922]/60 font-semibold max-w-lg">
+            <p className="text-sm text-[#031333]/60 font-semibold max-w-lg">
               Click any member to read their background. Every name on this page personally owns the work that goes out under it.
             </p>
           </div>
 
           {/* Full Team Photo Placeholder Card */}
-          <div className="mb-12 bg-gradient-to-br from-[#E6EBE4] to-[#FAF8F5] border border-[#4A6B52]/15 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden group min-h-[300px] flex flex-col justify-center items-center">
+          <div className="mb-12 bg-gradient-to-br from-[#F2F6E6] to-[#F8FAFC] border border-[#a8c940]/15 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden group min-h-[300px] flex flex-col justify-center items-center">
             {/* Background design elements */}
             <div className="absolute inset-0 bg-grid opacity-30"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#4A6B52]/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-[#4A6B52]/10 transition duration-500"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#a8c940]/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-[#a8c940]/10 transition duration-500"></div>
             
             <div className="relative z-10 max-w-xl">
-              <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#4A6B52] shadow-sm mb-6 mx-auto">
+              <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#a8c940] mb-6 mx-auto">
                 <Users className="w-6 h-6" />
               </div>
-              <h3 className="font-serif font-bold text-2xl text-[#1F2922] mb-3">
+              <h3 className="font-serif font-bold text-2xl text-[#031333] mb-3">
                 Our Senior Research & Advisory Council
               </h3>
-              <p className="text-xs text-[#1F2922]/65 leading-relaxed font-semibold mb-6">
+              <p className="text-xs text-[#031333]/65 leading-relaxed font-semibold mb-6">
                 A structured network of sector specialists, quant engineers, and wealth architects working across global offices to deliver institutional precision.
               </p>
-              <span className="text-[10px] font-bold text-[#4A6B52]/70 uppercase tracking-widest bg-white/80 border border-[#4A6B52]/10 rounded-full px-4 py-2">
+              <span className="text-[10px] font-bold text-[#a8c940]/70 uppercase tracking-widest bg-white/80 border border-[#a8c940]/10 rounded-full px-4 py-2">
                 16:6 HERO CAPABILITY • 18+ ADVISORS ON STANDBY
               </span>
             </div>
@@ -650,7 +650,7 @@ export default function About() {
               return (
                 <div 
                   key={idx}
-                  className={`border border-[#4A6B52]/10 rounded-2xl bg-[#FAF8F5]/30 overflow-hidden transition-all duration-300 ${isOpen ? 'ring-1 ring-[#4A6B52] bg-white shadow-sm' : 'hover:border-[#4A6B52]/30'}`}
+                  className={`border border-[#a8c940]/10 rounded-2xl bg-[#F8FAFC]/30 overflow-hidden transition-all duration-300 ${isOpen ? 'ring-1 ring-[#a8c940] bg-white ' : 'hover:border-[#a8c940]/30'}`}
                 >
                   <button
                     onClick={() => toggleTeamAccordion(idx)}
@@ -658,32 +658,32 @@ export default function About() {
                   >
                     <div className="flex items-center gap-4">
                       {/* Initials badge */}
-                      <div className="w-12 h-12 rounded-xl bg-[#E6EBE4] text-[#1F2922] font-serif font-bold text-base flex items-center justify-center shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-[#F2F6E6] text-[#031333] font-serif font-bold text-base flex items-center justify-center shrink-0">
                         {member.initials}
                       </div>
                       <div>
-                        <h4 className="font-serif font-bold text-[#1F2922] text-lg leading-tight">
+                        <h4 className="font-serif font-bold text-[#031333] text-lg leading-tight">
                           {member.name}
                         </h4>
-                        <span className="text-[10px] font-bold text-[#4A6B52] tracking-wider uppercase block mt-1">
+                        <span className="text-[10px] font-bold text-[#a8c940] tracking-wider uppercase block mt-1">
                           {member.role}
                         </span>
-                        <p className="text-xs text-[#1F2922]/60 font-semibold mt-1 line-clamp-1">
+                        <p className="text-xs text-[#031333]/60 font-semibold mt-1 line-clamp-1">
                           {member.subtitle}
                         </p>
                       </div>
                     </div>
 
                     {/* Accordion trigger indicator */}
-                    <span className="text-lg font-medium text-[#1F2922]/50 font-serif leading-none mt-1 select-none">
+                    <span className="text-lg font-medium text-[#031333]/50 font-serif leading-none mt-1 select-none">
                       {isOpen ? '−' : '+'}
                     </span>
                   </button>
 
                   {/* Collapsible content segment */}
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-2 border-t border-[#4A6B52]/5 animate-in fade-in duration-200">
-                      <p className="text-xs text-[#1F2922]/80 leading-relaxed font-semibold mb-5">
+                    <div className="px-6 pb-6 pt-2 border-t border-[#a8c940]/5 animate-in fade-in duration-200">
+                      <p className="text-xs text-[#031333]/80 leading-relaxed font-semibold mb-5">
                         {member.bio}
                       </p>
                       {/* Pills list */}
@@ -691,7 +691,7 @@ export default function About() {
                         {member.tags.map((tag, tagIdx) => (
                           <span 
                             key={tagIdx}
-                            className="bg-[#E6EBE4]/70 border border-[#4A6B52]/10 rounded-full px-3 py-0.5 text-[10px] font-bold text-[#4A6B52]"
+                            className="bg-[#F2F6E6]/70 border border-[#a8c940]/10 rounded-full px-3 py-0.5 text-[10px] font-bold text-[#a8c940]"
                           >
                             {tag}
                           </span>
@@ -707,13 +707,13 @@ export default function About() {
       </section>
 
       {/* RELATIONSHIP PROOF / TESTIMONIALS */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-3">
               WHY CLIENTS TRUST US
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1F2922] leading-tight">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#031333] leading-tight">
               The proof is in the relationships.
             </h2>
           </div>
@@ -722,22 +722,22 @@ export default function About() {
             {testimonials.map((t, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-[#4A6B52]/15 p-8 rounded-3xl shadow-sm relative flex flex-col justify-between"
+                className="bg-white border border-[#a8c940]/15 p-8 rounded-3xl relative flex flex-col justify-between"
               >
                 {/* Quote Icon */}
-                <div className="font-serif text-5xl text-[#4A6B52]/10 absolute top-4 left-6 pointer-events-none select-none">
+                <div className="font-serif text-5xl text-[#a8c940]/10 absolute top-4 left-6 pointer-events-none select-none">
                   “
                 </div>
                 <div className="relative z-10">
-                  <p className="text-xs md:text-sm text-[#1F2922]/80 leading-relaxed font-medium mb-8 italic">
+                  <p className="text-xs md:text-sm text-[#031333]/80 leading-relaxed font-medium mb-8 italic">
                     {t.quote}
                   </p>
                 </div>
-                <div className="border-t border-[#4A6B52]/10 pt-4 flex flex-col">
-                  <span className="font-serif font-bold text-[#1F2922] text-sm">
+                <div className="border-t border-[#a8c940]/10 pt-4 flex flex-col">
+                  <span className="font-serif font-bold text-[#031333] text-sm">
                     {t.author}
                   </span>
-                  <span className="text-[10px] font-bold text-[#4A6B52] tracking-wide uppercase mt-0.5">
+                  <span className="text-[10px] font-bold text-[#a8c940] tracking-wide uppercase mt-0.5">
                     {t.context}
                   </span>
                 </div>
@@ -748,38 +748,38 @@ export default function About() {
       </section>
 
       {/* GLOBAL FOOTPRINT INTERACTIVE MAP SECTION */}
-      <section className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-white">
+      <section className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-3">
+            <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-3">
               GLOBAL PRESENCE
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1F2922] leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#031333] leading-tight mb-4">
               On the ground where decisions get made.
             </h2>
-            <p className="text-sm text-[#1F2922]/60 font-semibold mb-8">
+            <p className="text-sm text-[#031333]/60 font-semibold mb-8">
               Toggle between practices to see where our research and wealth management teams operate.
             </p>
 
             {/* Filter Toggle Buttons */}
-            <div className="inline-flex bg-[#FAF8F5] border border-[#4A6B52]/15 rounded-full p-1.5 shadow-sm">
+            <div className="inline-flex bg-[#F8FAFC] border border-[#a8c940]/15 rounded-full p-1.5 ">
               <button
                 onClick={() => setMapFilter("all")}
-                className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold transition focus:outline-none ${mapFilter === "all" ? 'bg-[#1F2922] text-[#FAF8F5]' : 'text-[#1F2922]/70 hover:text-[#1F2922]'}`}
+                className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold transition focus:outline-none ${mapFilter === "all" ? 'bg-[#031333] text-[#F8FAFC]' : 'text-[#031333]/70 hover:text-[#031333]'}`}
               >
                 <Globe className="w-3.5 h-3.5" />
                 <span>All</span>
               </button>
               <button
                 onClick={() => setMapFilter("research")}
-                className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold transition focus:outline-none ${mapFilter === "research" ? 'bg-[#1F2922] text-[#FAF8F5]' : 'text-[#1F2922]/70 hover:text-[#1F2922]'}`}
+                className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold transition focus:outline-none ${mapFilter === "research" ? 'bg-[#031333] text-[#F8FAFC]' : 'text-[#031333]/70 hover:text-[#031333]'}`}
               >
                 <Building2 className="w-3.5 h-3.5" />
                 <span>Research</span>
               </button>
               <button
                 onClick={() => setMapFilter("wealth")}
-                className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold transition focus:outline-none ${mapFilter === "wealth" ? 'bg-[#1F2922] text-[#FAF8F5]' : 'text-[#1F2922]/70 hover:text-[#1F2922]'}`}
+                className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold transition focus:outline-none ${mapFilter === "wealth" ? 'bg-[#031333] text-[#F8FAFC]' : 'text-[#031333]/70 hover:text-[#031333]'}`}
               >
                 <TrendingUp className="w-3.5 h-3.5" />
                 <span>Wealth Management</span>
@@ -788,7 +788,7 @@ export default function About() {
           </div>
 
           {/* Interactive World Map Container */}
-          <div className="bg-[#FAF8F5] border border-[#4A6B52]/15 rounded-3xl p-4 md:p-8 relative shadow-sm overflow-hidden mb-12">
+          <div className="bg-[#F8FAFC] border border-[#a8c940]/15 rounded-3xl p-4 md:p-8 relative overflow-hidden mb-12">
             <div className="relative w-full aspect-[950/620] max-w-5xl mx-auto">
               
               {/* Map SVG Image (Requested Wikimedia map rendered cleanly) */}
@@ -825,15 +825,15 @@ export default function About() {
                       {!isFilteredOut && (
                         <span className={`absolute inline-flex h-full w-full rounded-full opacity-60 animate-ping ${
                           office.practice === 'research' ? 'bg-blue-400' : 
-                          office.practice === 'wealth' ? 'bg-[#4A6B52]' : 'bg-[#1F2922]'
+                          office.practice === 'wealth' ? 'bg-[#a8c940]' : 'bg-[#031333]'
                         }`}></span>
                       )}
 
                       {/* Main dot circle button */}
                       <button 
-                        className={`w-3.5 h-3.5 rounded-full border-2 border-white shadow-md relative z-10 transition-transform ${
-                          office.practice === 'research' ? 'bg-blue-600' : 
-                          office.practice === 'wealth' ? 'bg-[#4A6B52]' : 'bg-white'
+                        className={`w-3.5 h-3.5 rounded-full border-2 border-white relative z-10 transition-transform ${
+                          office.practice === 'research' ? 'bg-[#0077bd]' : 
+                          office.practice === 'wealth' ? 'bg-[#a8c940]' : 'bg-white'
                         } ${hoveredOfficeId === office.id ? 'scale-125' : ''}`}
                         aria-label={`Office in ${office.city}`}
                       />
@@ -841,12 +841,12 @@ export default function About() {
 
                     {/* Desktop Hover Tooltip */}
                     {hoveredOfficeId === office.id && !isFilteredOut && (
-                      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-[#1F2922] text-[#FAF8F5] px-3.5 py-2 rounded-xl text-[10px] font-bold shadow-xl border border-white/10 z-50 whitespace-nowrap animate-in fade-in slide-in-from-bottom-2 duration-150">
+                      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-[#031333] text-[#F8FAFC] px-3.5 py-2 rounded-xl text-[10px] font-bold border border-white/10 z-50 whitespace-nowrap animate-in fade-in slide-in-from-bottom-2 duration-150">
                         <div className="flex items-center gap-1.5 justify-center">
-                          <MapPin className="w-3 h-3 text-[#4A6B52]" />
+                          <MapPin className="w-3 h-3 text-[#a8c940]" />
                           <span>{office.city}</span>
                         </div>
-                        <div className="text-[#FAF8F5]/60 mt-0.5 text-center">{office.badge}</div>
+                        <div className="text-[#F8FAFC]/60 mt-0.5 text-center">{office.badge}</div>
                       </div>
                     )}
                   </div>
@@ -856,17 +856,17 @@ export default function About() {
             </div>
 
             {/* Map Legend */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-6 border-t border-[#4A6B52]/10 pt-6 text-[10px] font-bold text-[#1F2922]/70">
+            <div className="flex flex-wrap items-center justify-center gap-6 mt-6 border-t border-[#a8c940]/10 pt-6 text-[10px] font-bold text-[#031333]/70">
               <span className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-600 border border-white shadow-sm"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#0077bd] border border-white "></span>
                 Research Practice
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#4A6B52] border border-white shadow-sm"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#a8c940] border border-white "></span>
                 Wealth Management
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-white border border-neutral-400 shadow-sm"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white border border-neutral-400 "></span>
                 Both Practices (Hub)
               </span>
             </div>
@@ -877,17 +877,17 @@ export default function About() {
             {filteredOffices.map((office) => (
               <div 
                 key={office.id}
-                className="bg-[#FAF8F5]/50 border border-[#4A6B52]/15 p-6 rounded-2xl hover:border-[#4A6B52]/30 transition duration-200"
+                className="bg-[#F8FAFC]/50 border border-[#a8c940]/15 p-6 rounded-2xl hover:border-[#a8c940]/30 transition duration-200"
               >
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <h3 className="font-serif font-bold text-[#1F2922] text-lg">
+                  <h3 className="font-serif font-bold text-[#031333] text-lg">
                     {office.city}
                   </h3>
                   <span className={`text-[9px] font-bold border rounded-full px-2.5 py-0.5 tracking-wide ${office.badgeStyle}`}>
                     {office.badge}
                   </span>
                 </div>
-                <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold">
+                <p className="text-xs text-[#031333]/70 leading-relaxed font-semibold">
                   {office.desc}
                 </p>
               </div>
@@ -898,15 +898,15 @@ export default function About() {
       </section>
 
       {/* CHOOSE YOUR PATH / BOTTOM CTA SECTION */}
-      <section id="contact" className="py-20 px-6 lg:px-12 border-b border-[#4A6B52]/10 bg-[#FAF8F5]">
-        <div className="max-w-5xl mx-auto bg-gradient-to-r from-[#EAF2FA] via-white to-[#EDF5EE] border border-[#4A6B52]/10 rounded-3xl p-8 md:p-12 text-center shadow-sm">
-          <span className="text-[10px] font-bold text-[#1F2922]/50 uppercase tracking-[0.2em] block mb-3">
+      <section id="contact" className="py-20 px-6 lg:px-12 border-b border-[#a8c940]/10 bg-[#F8FAFC]">
+        <div className="max-w-5xl mx-auto bg-gradient-to-r from-[#EAF2FA] via-white to-[#EDF5EE] border border-[#a8c940]/10 rounded-3xl p-8 md:p-12 text-center ">
+          <span className="text-[10px] font-bold text-[#031333]/50 uppercase tracking-[0.2em] block mb-3">
             GET STARTED
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif text-[#1F2922] leading-tight mb-4 max-w-2xl mx-auto font-normal">
+          <h2 className="text-3xl md:text-5xl font-serif text-[#031333] leading-tight mb-4 max-w-2xl mx-auto font-normal">
             Let's build conviction together.
           </h2>
-          <p className="text-sm text-[#1F2922]/60 max-w-lg mx-auto mb-10 leading-relaxed">
+          <p className="text-sm text-[#031333]/60 max-w-lg mx-auto mb-10 leading-relaxed">
             Whether you're an institution evaluating coverage or an individual planning your next decade — we'll route you to the right team within one business day.
           </p>
 
@@ -914,7 +914,7 @@ export default function About() {
             {/* Institution button */}
             <a 
               href="/#institutional-consult"
-              className="bg-gradient-to-br from-[#0C2A4E] to-[#04152A] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
+              className="bg-gradient-to-br from-[#0C2A4E] to-[#04152A] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:transition-all duration-200 text-left flex items-center justify-between relative group"
             >
               <div>
                 <span className="text-[10px] uppercase font-bold text-[#7CA2C8] tracking-wider block mb-1">FOR INSTITUTIONS</span>
@@ -928,7 +928,7 @@ export default function About() {
             {/* Individual button */}
             <a 
               href="/#wealth-consult"
-              className="bg-gradient-to-br from-[#123A23] to-[#05150C] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:shadow-lg transition-all duration-200 text-left flex items-center justify-between shadow-sm relative group"
+              className="bg-gradient-to-br from-[#123A23] to-[#05150C] text-white p-7 px-8 rounded-2xl hover:scale-[1.01] hover:transition-all duration-200 text-left flex items-center justify-between relative group"
             >
               <div>
                 <span className="text-[10px] uppercase font-bold text-[#8EAC95] tracking-wider block mb-1">FOR INDIVIDUALS</span>
@@ -943,75 +943,75 @@ export default function About() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#FAF8F5] border-t border-[#4A6B52]/10 py-16 px-6 lg:px-12 text-xs text-[#1F2922]/65">
+      <footer className="bg-[#031333] border-t border-[#a8c940]/10 py-16 px-6 lg:px-12 text-xs text-white/60">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           
           {/* Logo tagline column */}
           <div className="col-span-2 flex flex-col items-start gap-4">
             <a href="/" className="flex items-center gap-3 select-none cursor-pointer">
-              <div className="bg-[#1F2922] text-[#FAF8F5] w-7 h-7 rounded-lg flex items-center justify-center font-bold font-serif text-base">
+              <div className="bg-[#a8c940] text-[#031333] w-7 h-7 rounded-lg flex items-center justify-center font-bold font-serif text-base">
                 C
               </div>
-              <span className="font-bold text-base tracking-tight text-[#1F2922]">CrispIdea</span>
+              <span className="font-bold text-base tracking-tight text-white">Crisp<span className="text-[#a8c940]">Idea</span></span>
             </a>
-            <p className="text-xs leading-relaxed max-w-xs text-[#1F2922]/70 font-medium">
+            <p className="text-xs leading-relaxed max-w-xs text-white/60 font-medium">
               Research-led intelligence for global institutions and India's wealth builders.
             </p>
           </div>
 
           {/* Links Column 1: Research */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Research</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Research</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/research#heatmap" className="hover:text-[#4A6B52] transition">Equity</a></li>
-              <li><a href="/research#recent-reports" className="hover:text-[#4A6B52] transition">Thematic</a></li>
-              <li><a href="/research#methodology" className="hover:text-[#4A6B52] transition">QoM</a></li>
-              <li><a href="/research#methodology" className="hover:text-[#4A6B52] transition">ESG</a></li>
-              <li><a href="/research#methodology" className="hover:text-[#4A6B52] transition">Custom mandates</a></li>
+              <li><a href="/research#heatmap" className="hover:text-[#a8c940] transition">Equity</a></li>
+              <li><a href="/research#recent-reports" className="hover:text-[#a8c940] transition">Thematic</a></li>
+              <li><a href="/research#methodology" className="hover:text-[#a8c940] transition">QoM</a></li>
+              <li><a href="/research#methodology" className="hover:text-[#a8c940] transition">ESG</a></li>
+              <li><a href="/research#methodology" className="hover:text-[#a8c940] transition">Custom mandates</a></li>
             </ul>
           </div>
 
           {/* Links Column 2: Wealth */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Wealth</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Wealth</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">Goal-based plans</a></li>
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">Portfolio advisory</a></li>
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">HNI services</a></li>
-              <li><a href="/wealth-management" className="hover:text-[#4A6B52] transition">Private wealth</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">Goal-based plans</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">Portfolio advisory</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">HNI services</a></li>
+              <li><a href="/wealth-management" className="hover:text-[#a8c940] transition">Private wealth</a></li>
             </ul>
           </div>
 
           {/* Links Column 3: Company */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Company</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Company</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/about" className="hover:text-[#4A6B52] transition">About</a></li>
-              <li><a href="/insights" className="hover:text-[#4A6B52] transition">Insights</a></li>
-              <li><a href="/#pricing" className="hover:text-[#4A6B52] transition">Careers</a></li>
-              <li><a href="/#contact" className="hover:text-[#4A6B52] transition">Contact</a></li>
-              <li><a href="/faq" className="hover:text-[#4A6B52] transition">FAQ</a></li>
+              <li><a href="/about" className="hover:text-[#a8c940] transition">About</a></li>
+              <li><a href="/insights" className="hover:text-[#a8c940] transition">Insights</a></li>
+              <li><a href="/#pricing" className="hover:text-[#a8c940] transition">Careers</a></li>
+              <li><a href="/#contact" className="hover:text-[#a8c940] transition">Contact</a></li>
+              <li><a href="/faq" className="hover:text-[#a8c940] transition">FAQ</a></li>
             </ul>
           </div>
 
           {/* Links Column 4: Legal */}
           <div>
-            <h5 className="font-bold text-[#1F2922] mb-4 uppercase tracking-wider text-[10px]">Legal</h5>
+            <h5 className="font-bold text-white mb-4 uppercase tracking-wider text-[10px]">Legal</h5>
             <ul className="space-y-2.5 font-semibold">
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">SEBI disclosures</a></li>
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">Terms</a></li>
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">Privacy</a></li>
-              <li><a href="/#link" className="hover:text-[#4A6B52] transition">Disclaimers</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">SEBI disclosures</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">Terms</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">Privacy</a></li>
+              <li><a href="/#link" className="hover:text-[#a8c940] transition">Disclaimers</a></li>
             </ul>
           </div>
 
         </div>
 
         {/* Footer bottom bar */}
-        <div className="max-w-7xl mx-auto border-t border-[#4A6B52]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[#1F2922]/50 font-medium">
+        <div className="max-w-7xl mx-auto border-t border-[#a8c940]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 font-medium">
           <span>&copy; {new Date().getFullYear()} CrispIdea. All rights reserved.</span>
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B52]"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#a8c940]"></span>
             <span>SEBI-registered Investment Advisor &bull; INA000000000</span>
           </span>
         </div>

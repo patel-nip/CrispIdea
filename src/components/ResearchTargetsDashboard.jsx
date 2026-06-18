@@ -95,22 +95,22 @@ export default function ResearchTargetsDashboard() {
   const getTileStyles = (ticker, upsideVal) => {
     const isSelected = activeTicker === ticker;
     if (isSelected) {
-      return 'bg-[#0B132B] text-white border-2 border-blue-500 scale-[1.03] shadow-lg';
+      return 'bg-[#0B132B] text-white border-2 border-blue-500';
     }
 
     // Convert string percentage like "+72.6%" or "+25%" to float
     const cleanVal = parseFloat(upsideVal.replace(/[+%]/g, '')) || 0;
 
     if (cleanVal >= 70) {
-      return 'bg-[#0A2417] text-[#FAF8F5] border-transparent hover:bg-[#0E3522] hover:scale-[1.01]';
+      return 'bg-[#001a00] text-[#F8FAFC] border-transparent hover:bg-[#0E3522]';
     } else if (cleanVal >= 50) {
-      return 'bg-[#142E1F] text-[#FAF8F5] border-transparent hover:bg-[#1C3E2A] hover:scale-[1.01]';
+      return 'bg-[#001a00] text-[#F8FAFC] border-transparent hover:bg-[#1C3E2A]';
     } else if (cleanVal >= 20) {
-      return 'bg-[#5D7063] text-white border-transparent hover:bg-[#6D8073] hover:scale-[1.01]';
+      return 'bg-[#001a00] text-white border-transparent hover:bg-[#6D8073]';
     } else if (cleanVal >= 10) {
-      return 'bg-[#DCE1DB] text-[#1F2922] border-transparent hover:bg-[#CCD3CA] hover:scale-[1.01]';
+      return 'bg-[#F2F6E6] text-[#031333] border-transparent hover:bg-[#CCD3CA]';
     } else {
-      return 'bg-[#FAF8F5] text-[#1F2922] border-[#4A6B52]/10 hover:bg-[#ECEAE4] hover:scale-[1.01]';
+      return 'bg-[#F8FAFC] text-[#031333] border-[#a8c940]/10 hover:bg-[#ECEAE4]';
     }
   };
 
@@ -119,16 +119,16 @@ export default function ResearchTargetsDashboard() {
       const priceVal = payload[0].value;
       const targetVal = payload[0].payload.Target;
       return (
-        <div className="bg-[#FAF8F5] border border-[#4A6B52]/20 shadow-xl rounded-lg p-3 text-xs text-[#1F2922] font-sans">
-          <p className="font-bold border-b border-[#4A6B52]/10 pb-1 mb-1.5">{payload[0].payload.name}</p>
+        <div className="bg-[#F8FAFC] border border-[#a8c940]/20 rounded-lg p-3 text-xs text-[#031333] font-sans">
+          <p className="font-bold border-b border-[#a8c940]/10 pb-1 mb-1.5">{payload[0].payload.name}</p>
           <div className="space-y-1 font-mono">
             <div className="flex justify-between gap-6">
-              <span className="text-[#1F2922]/70 font-sans">Price:</span>
-              <span className="font-bold text-blue-600">${priceVal.toFixed(2)}</span>
+              <span className="text-[#031333]/70 font-sans">Price:</span>
+              <span className="font-bold text-[#0077bd]">${priceVal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between gap-6">
-              <span className="text-[#1F2922]/70 font-sans">Target Price:</span>
-              <span className="font-semibold text-[#1F2922]">${targetVal.toFixed(2)}</span>
+              <span className="text-[#031333]/70 font-sans">Target Price:</span>
+              <span className="font-semibold text-[#031333]">${targetVal.toFixed(2)}</span>
             </div>
           </div>
         </div>
@@ -138,30 +138,30 @@ export default function ResearchTargetsDashboard() {
   };
 
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch graph-container">
       {/* Left Grid: 17 tiles */}
-      <div className="lg:col-span-5 flex flex-col bg-[#FAF8F5] border border-[#4A6B52]/10 rounded-2xl p-5 shadow-sm">
+      <div className="lg:col-span-5 flex flex-col bg-[#F8FAFC] border border-[#a8c940]/10 rounded-2xl p-5 graph-container">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="text-[10px] uppercase font-bold text-[#4A6B52] tracking-wider block mb-1">
+            <span className="text-[10px] uppercase font-bold text-[#a8c940] tracking-wider block mb-1">
               RECORDED PERFORMANCE
             </span>
-            <h3 className="text-xl font-serif font-bold text-[#1F2922]">
+            <h3 className="text-xl font-serif font-bold text-[#031333]">
               Coverage Heat Map
             </h3>
           </div>
-          <div className="flex gap-2 text-[9px] font-semibold text-[#1F2922]/70 bg-[#FAF8F5] p-1 border border-[#4A6B52]/10 rounded">
-            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#0A2417] rounded-sm"></span>&gt;70%</span>
-            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#142E1F] rounded-sm"></span>&gt;50%</span>
-            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#5D7063] rounded-sm"></span>&gt;20%</span>
-            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#DCE1DB] rounded-sm"></span>&gt;10%</span>
+          <div className="flex gap-2 text-[9px] font-semibold text-[#031333]/70 bg-[#F8FAFC] p-1 border border-[#a8c940]/10 rounded">
+            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#001a00] rounded-sm"></span>&gt;70%</span>
+            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#001a00] rounded-sm"></span>&gt;50%</span>
+            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#001a00] rounded-sm"></span>&gt;20%</span>
+            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 bg-[#F2F6E6] rounded-sm"></span>&gt;10%</span>
           </div>
         </div>
 
         {loading ? (
-          <div className="flex-1 min-h-[350px] flex flex-col items-center justify-center bg-[#FAF8F5]/40 rounded-xl border border-dashed border-[#4A6B52]/10">
-            <div className="w-8 h-8 border-2 border-[#4A6B52] border-t-transparent rounded-full animate-spin"></div>
-            <p className="text-xs text-[#1F2922]/60 mt-3 font-medium">Syncing database...</p>
+          <div className="flex-1 min-h-[350px] flex flex-col items-center justify-center bg-[#F8FAFC]/40 rounded-xl border border-dashed border-[#a8c940]/10">
+            <div className="w-8 h-8 border-2 border-[#a8c940] border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-xs text-[#031333]/60 mt-3 font-medium">Syncing database...</p>
           </div>
         ) : error ? (
           <div className="p-5 flex flex-col items-center justify-center bg-red-50/50 rounded-xl border border-dashed border-red-200">
@@ -175,7 +175,7 @@ export default function ResearchTargetsDashboard() {
               <button
                 key={stock.Ticker}
                 onClick={() => setActiveTicker(stock.Ticker)}
-                className={`p-3 rounded-xl flex flex-col justify-between h-20 text-left transition-all duration-200 border border-[#4A6B52]/10 cursor-pointer ${getTileStyles(stock.Ticker, stock.Upside)}`}
+                className={`p-3 rounded-xl flex flex-col justify-between h-20 text-left transition-all duration-200 border border-[#a8c940]/10 cursor-pointer graph-container ${getTileStyles(stock.Ticker, stock.Upside)}`}
               >
                 <div className="flex justify-between items-start w-full">
                   <span className="font-bold text-xs tracking-wider">{stock.Ticker}</span>
@@ -191,44 +191,44 @@ export default function ResearchTargetsDashboard() {
       </div>
 
       {/* Right Graph: line chart */}
-      <div className="lg:col-span-7 flex flex-col bg-[#FAF8F5] border border-[#4A6B52]/10 rounded-2xl p-6 shadow-sm">
+      <div className="lg:col-span-7 flex flex-col bg-[#F8FAFC] border border-[#a8c940]/10 rounded-2xl p-6 graph-container">
         {activeStock ? (
           <>
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-[#4A6B52]/10 mb-5">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-[#a8c940]/10 mb-5">
               <div>
-                <span className="text-[9px] uppercase font-bold text-[#4A6B52] tracking-wider bg-[#E6EBE4] px-2 py-0.5 rounded">
+                <span className="text-[9px] uppercase font-bold text-[#a8c940] tracking-wider bg-[#F2F6E6] px-2 py-0.5 rounded">
                   {activeStock.Industry}
                 </span>
-                <h3 className="text-xl font-serif font-bold text-[#1F2922] mt-1.5 flex items-center gap-2">
-                  {activeStock.CompanyName} <span className="text-[#1F2922]/50 font-sans font-normal text-sm">({activeStock.Ticker})</span>
+                <h3 className="text-xl font-serif font-bold text-[#031333] mt-1.5 flex items-center gap-2">
+                  {activeStock.CompanyName} <span className="text-[#031333]/50 font-sans font-normal text-sm">({activeStock.Ticker})</span>
                 </h3>
               </div>
               
               <div className="flex gap-4 font-mono">
                 <div className="text-right">
-                  <span className="text-[9px] text-[#1F2922]/50 block font-sans">CALL PRICE</span>
-                  <span className="text-xs font-bold text-[#1F2922]">${activeStock.PriceAtCall.toFixed(2)}</span>
+                  <span className="text-[9px] text-[#031333]/50 block font-sans">CALL PRICE</span>
+                  <span className="text-xs font-bold text-[#031333]">${activeStock.PriceAtCall.toFixed(2)}</span>
                 </div>
-                <div className="text-right border-l border-[#4A6B52]/10 pl-4">
-                  <span className="text-[9px] text-[#1F2922]/50 block font-sans">TARGET PRICE</span>
-                  <span className="text-xs font-bold text-[#1F2922]">${activeStock.TargetPrice.toFixed(2)}</span>
+                <div className="text-right border-l border-[#a8c940]/10 pl-4">
+                  <span className="text-[9px] text-[#031333]/50 block font-sans">TARGET PRICE</span>
+                  <span className="text-xs font-bold text-[#031333]">${activeStock.TargetPrice.toFixed(2)}</span>
                 </div>
-                <div className="text-right border-l border-[#4A6B52]/10 pl-4">
-                  <span className="text-[9px] text-[#1F2922]/50 block font-sans">UPSIDE ACHIEVED</span>
-                  <span className="text-xs font-bold text-[#4A6B52] flex items-center justify-end gap-0.5">
+                <div className="text-right border-l border-[#a8c940]/10 pl-4">
+                  <span className="text-[9px] text-[#031333]/50 block font-sans">UPSIDE ACHIEVED</span>
+                  <span className="text-xs font-bold text-[#a8c940] flex items-center justify-end gap-0.5">
                     {activeStock.Upside}
                     <ArrowUpRight className="w-3 h-3" />
                   </span>
                 </div>
                 <div className="flex items-center pl-2">
-                  <span className="bg-[#4A6B52]/15 text-[#4A6B52] text-[9px] font-bold py-1 px-2.5 rounded-full flex items-center gap-1 border border-[#4A6B52]/20 font-sans">
+                  <span className="bg-[#a8c940]/15 text-[#a8c940] text-[9px] font-bold py-1 px-2.5 rounded-full flex items-center gap-1 border border-[#a8c940]/20 font-sans">
                     <Check className="w-3 h-3" /> TARGET ACHIEVED
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="w-full relative min-h-[300px] flex-1 bg-[#FAF8F5]/50 border border-[#4A6B52]/5 rounded-xl p-3">
+            <div className="w-full relative min-h-[300px] flex-1 bg-[#F8FAFC]/50 border border-[#a8c940]/5 rounded-xl p-3">
               {chartData.length > 0 ? (
                 <div className="w-full h-full">
                   <ResponsiveContainer width="100%" height={320}>
@@ -252,29 +252,29 @@ export default function ResearchTargetsDashboard() {
                         tickFormatter={(val) => `$${val}`}
                       />
                       
-                      <Tooltip
+                      <Tooltip isAnimationActive={false}
                         content={<CustomTooltip />}
-                        cursor={{ strokeDasharray: '4 4', stroke: '#1F2922', strokeOpacity: 0.3 }}
+                        cursor={{ strokeDasharray: '4 4', stroke: '#031333', strokeOpacity: 0.3 }}
                       />
 
                       {/* Dashed Target reference line */}
-                      <Line
+                      <Line isAnimationActive={false}
                         type="monotone"
                         dataKey="Target"
-                        stroke="#1F2922"
+                        stroke="#031333"
                         strokeWidth={1.5}
                         strokeDasharray="5 5"
                         dot={false}
                       />
                       
                       {/* Price curve */}
-                      <Line
+                      <Line isAnimationActive={false}
                         type="monotone"
                         dataKey="Price"
-                        stroke="#2563EB"
+                        stroke="#0077bd"
                         strokeWidth={2}
-                        dot={{ r: 3, fill: '#2563EB', strokeWidth: 0 }}
-                        activeDot={{ r: 5, stroke: '#FAF8F5', strokeWidth: 1.5, fill: '#2563EB' }}
+                        dot={{ r: 3, fill: '#0077bd', strokeWidth: 0 }}
+                        activeDot={{ r: 5, stroke: '#F8FAFC', strokeWidth: 1.5, fill: '#0077bd' }}
                       />
                     </LineChart>
                   </ResponsiveContainer>
@@ -282,25 +282,25 @@ export default function ResearchTargetsDashboard() {
               ) : null}
             </div>
 
-            <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#4A6B52]/5 text-[9px] font-semibold text-[#1F2922]/60">
+            <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#a8c940]/5 text-[9px] font-semibold text-[#031333]/60">
               <div className="flex gap-4">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-0.5 bg-blue-600 block"></span>
+                  <span className="w-3 h-0.5 bg-[#0077bd] block"></span>
                   <span>Price Journey (M1 to M12)</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-0.5 bg-[#1F2922] border-t border-dashed block"></span>
+                  <span className="w-3 h-0.5 bg-[#031333] border-t border-dashed block"></span>
                   <span>Target Price Boundary</span>
                 </div>
               </div>
-              <span className="text-[8px] text-[#1F2922]/40 bg-white border border-[#4A6B52]/5 px-2 py-0.5 rounded uppercase font-sans">
+              <span className="text-[8px] text-[#031333]/40 bg-white border border-[#a8c940]/5 px-2 py-0.5 rounded uppercase font-sans">
                 Illustrative price journey from call date to target achievement
               </span>
             </div>
           </>
         ) : (
-          <div className="h-[350px] flex flex-col items-center justify-center text-center p-6 bg-white rounded-xl border border-[#4A6B52]/10 border-dashed">
-            <p className="text-sm font-semibold text-[#1F2922]/50">No company selected</p>
+          <div className="h-[350px] flex flex-col items-center justify-center text-center p-6 bg-white rounded-xl border border-[#a8c940]/10 border-dashed">
+            <p className="text-sm font-semibold text-[#031333]/50">No company selected</p>
           </div>
         )}
       </div>

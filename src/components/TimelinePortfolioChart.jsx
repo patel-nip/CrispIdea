@@ -137,26 +137,26 @@ export default function TimelinePortfolioChart() {
     if (active && payload && payload.length) {
       const currentPoint = payload[0].payload;
       return (
-        <div className="bg-[#FAF8F5] border border-[#4A6B52]/20 shadow-xl rounded-lg p-3 text-xs text-[#1F2922] font-sans backdrop-blur-md bg-opacity-95 select-none pointer-events-none">
-          <p className="font-semibold text-[#4A6B52] border-b border-[#4A6B52]/10 pb-1 mb-1.5 flex items-center gap-1.5">
+        <div className="bg-[#F8FAFC] border border-[#a8c940]/20 rounded-lg p-3 text-xs text-[#031333] font-sans backdrop-blur-md bg-opacity-95 select-none pointer-events-none">
+          <p className="font-semibold text-[#a8c940] border-b border-[#a8c940]/10 pb-1 mb-1.5 flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5" />
             {currentPoint.Date}
           </p>
           <div className="space-y-1 font-mono">
             <div className="flex justify-between gap-8">
-              <span className="text-[#1F2922]/70 font-sans">CrispIdea:</span>
-              <span className="font-bold text-[#4A6B52]">{(currentPoint.Performance >= 0 ? '+' : '')}{currentPoint.Performance.toFixed(2)}%</span>
+              <span className="text-[#031333]/70 font-sans">CrispIdea:</span>
+              <span className="font-bold text-[#a8c940]">{(currentPoint.Performance >= 0 ? '+' : '')}{currentPoint.Performance.toFixed(2)}%</span>
             </div>
             {currentPoint.Benchmark !== null && (
               <div className="flex justify-between gap-8">
-                <span className="text-[#1F2922]/70 font-sans">BSE 500:</span>
-                <span className="font-medium text-[#1F2922]/80">{(currentPoint.Benchmark >= 0 ? '+' : '')}{currentPoint.Benchmark.toFixed(2)}%</span>
+                <span className="text-[#031333]/70 font-sans">BSE 500:</span>
+                <span className="font-medium text-[#031333]/80">{(currentPoint.Benchmark >= 0 ? '+' : '')}{currentPoint.Benchmark.toFixed(2)}%</span>
               </div>
             )}
             {currentPoint.Benchmark !== null && (
-              <div className="flex justify-between gap-8 border-t border-[#4A6B52]/10 pt-1 mt-1">
-                <span className="text-[#1F2922]/70 font-sans">Alpha:</span>
-                <span className={`font-semibold ${(currentPoint.Performance - currentPoint.Benchmark) >= 0 ? 'text-[#4A6B52]' : 'text-red-700'}`}>
+              <div className="flex justify-between gap-8 border-t border-[#a8c940]/10 pt-1 mt-1">
+                <span className="text-[#031333]/70 font-sans">Alpha:</span>
+                <span className={`font-semibold ${(currentPoint.Performance - currentPoint.Benchmark) >= 0 ? 'text-[#a8c940]' : 'text-red-700'}`}>
                   {(currentPoint.Performance - currentPoint.Benchmark) >= 0 ? '+' : ''}
                   {(currentPoint.Performance - currentPoint.Benchmark).toFixed(2)}%
                 </span>
@@ -174,48 +174,48 @@ export default function TimelinePortfolioChart() {
       {/* Header Info */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
-          <span className="text-xs font-bold text-[#4A6B52] uppercase tracking-wider block mb-1">
+          <span className="text-xs font-bold text-[#a8c940] uppercase tracking-wider block mb-1">
             CRISPIDEA WEALTH MANAGEMENT
           </span>
-          <h3 className="text-2xl font-serif font-bold text-[#1F2922]">
+          <h3 className="text-2xl font-serif font-bold text-[#031333]">
             Disciplined outperformance
           </h3>
-          <p className="text-sm text-[#1F2922]/60 mt-1 max-w-2xl">
+          <p className="text-sm text-[#031333]/60 mt-1 max-w-2xl">
             CrispIdea Model Portfolio vs. HDFC BSE 500 ETF — cumulative price return (%), 31-May-2024 to 31-May-2026.
           </p>
         </div>
 
         {/* Stats Row */}
         {!loading && !error && (
-          <div className="flex flex-wrap items-center gap-6 md:gap-8 bg-[#FAF8F5]/50 px-4 py-2 rounded-xl border border-[#4A6B52]/5">
+          <div className="flex flex-wrap items-center gap-6 md:gap-8 bg-[#F8FAFC]/50 px-4 py-2 rounded-xl border border-[#a8c940]/5">
             <div>
-              <span className="text-[10px] uppercase font-bold text-[#1F2922]/50 block">CRISPIDEA</span>
-              <span className="text-lg font-bold font-mono text-[#1F2922]">+27.55%</span>
+              <span className="text-[10px] uppercase font-bold text-[#031333]/50 block">CRISPIDEA</span>
+              <span className="text-lg font-bold font-mono text-[#031333]">+27.55%</span>
             </div>
-            <div className="border-l border-[#4A6B52]/15 pl-6 md:pl-8">
-              <span className="text-[10px] uppercase font-bold text-[#1F2922]/50 block">BSE 500</span>
-              <span className="text-lg font-bold font-mono text-[#1F2922]/70">-1.87%</span>
+            <div className="border-l border-[#a8c940]/15 pl-6 md:pl-8">
+              <span className="text-[10px] uppercase font-bold text-[#031333]/50 block">BSE 500</span>
+              <span className="text-lg font-bold font-mono text-[#031333]/70">-1.87%</span>
             </div>
-            <div className="border-l border-[#4A6B52]/15 pl-6 md:pl-8">
-              <span className="text-[10px] uppercase font-bold text-[#1F2922]/50 block">ALPHA</span>
-              <span className="text-lg font-bold font-mono text-[#4A6B52]">+29.42%</span>
+            <div className="border-l border-[#a8c940]/15 pl-6 md:pl-8">
+              <span className="text-[10px] uppercase font-bold text-[#031333]/50 block">ALPHA</span>
+              <span className="text-lg font-bold font-mono text-[#a8c940]">+29.42%</span>
             </div>
           </div>
         )}
       </div>
 
       {/* Control row with Timeline selector & Legends */}
-      <div className="flex flex-wrap justify-between items-center gap-4 mb-6 border-b border-[#4A6B52]/5 pb-4">
+      <div className="flex flex-wrap justify-between items-center gap-4 mb-6 border-b border-[#a8c940]/5 pb-4">
         {/* Timeline capsule */}
-        <div className="inline-flex bg-[#FAF8F5] border border-[#4A6B52]/10 p-0.5 rounded-full shadow-inner">
+        <div className="inline-flex bg-[#F8FAFC] border border-[#a8c940]/10 p-0.5 rounded-full ">
           {['1M', '3M', '6M', '1Y', '2Y'].map((t) => (
             <button
               key={t}
               onClick={() => setTimeline(t)}
               className={`px-3.5 py-1 text-xs font-semibold rounded-full transition-all duration-200 ${
                 timeline === t
-                  ? 'bg-[#1F2922] text-[#FAF8F5] shadow-sm'
-                  : 'text-[#1F2922]/50 hover:text-[#1F2922]'
+                  ? 'bg-[#031333] text-[#F8FAFC] '
+                  : 'text-[#031333]/50 hover:text-[#031333]'
               }`}
             >
               {t}
@@ -226,12 +226,12 @@ export default function TimelinePortfolioChart() {
         {/* Recharts Legend representation */}
         <div className="flex items-center gap-4 text-xs font-medium">
           <div className="flex items-center gap-2">
-            <span className="w-3.5 h-3.5 rounded-full bg-[#4A6B52] border border-[#FAF8F5]"></span>
-            <span className="text-[#1F2922]/80">CrispIdea</span>
+            <span className="w-3.5 h-3.5 rounded-full bg-[#a8c940] border border-[#F8FAFC]"></span>
+            <span className="text-[#031333]/80">CrispIdea</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-3.5 h-1 border-t-2 border-dashed border-[#8C9A90] inline-block"></span>
-            <span className="text-[#1F2922]/60">BSE 500</span>
+            <span className="text-[#031333]/60">BSE 500</span>
           </div>
         </div>
       </div>
@@ -239,9 +239,9 @@ export default function TimelinePortfolioChart() {
       {/* Chart Canvas */}
       <div className="w-full relative h-[380px]">
         {loading ? (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#FAF8F5]/50 rounded-xl border border-dashed border-[#4A6B52]/10">
-            <div className="w-8 h-8 border-2 border-[#4A6B52] border-t-transparent rounded-full animate-spin"></div>
-            <p className="text-xs text-[#1F2922]/60 mt-3 font-medium">Resolving historical data stream...</p>
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#F8FAFC]/50 rounded-xl border border-dashed border-[#a8c940]/10">
+            <div className="w-8 h-8 border-2 border-[#a8c940] border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-xs text-[#031333]/60 mt-3 font-medium">Resolving historical data stream...</p>
           </div>
         ) : error ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-red-50/50 rounded-xl border border-dashed border-red-200">
@@ -258,8 +258,8 @@ export default function TimelinePortfolioChart() {
               >
                 <defs>
                   <linearGradient id="colorPerf" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#4A6B52" stopOpacity={0.15} />
-                    <stop offset="95%" stopColor="#4A6B52" stopOpacity={0.0} />
+                    <stop offset="5%" stopColor="#a8c940" stopOpacity={0.15} />
+                    <stop offset="95%" stopColor="#a8c940" stopOpacity={0.0} />
                   </linearGradient>
                 </defs>
                 
@@ -283,13 +283,13 @@ export default function TimelinePortfolioChart() {
                   tickFormatter={(val) => `${val}%`}
                 />
                 
-                <Tooltip
+                <Tooltip isAnimationActive={false}
                   content={<CustomTooltip />}
-                  cursor={{ strokeDasharray: '4 4', stroke: '#4A6B52', strokeWidth: 1 }}
+                  cursor={{ strokeDasharray: '4 4', stroke: '#a8c940', strokeWidth: 1 }}
                 />
                 
                 {/* Comparative Benchmark Curve */}
-                <Area
+                <Area isAnimationActive={false}
                   name="Benchmark"
                   type="monotone"
                   dataKey="Benchmark"
@@ -298,20 +298,20 @@ export default function TimelinePortfolioChart() {
                   strokeDasharray="4 4"
                   fill="none"
                   dot={false}
-                  activeDot={{ r: 3, stroke: '#FAF8F5', strokeWidth: 1, fill: '#8C9A90' }}
+                  activeDot={{ r: 3, stroke: '#F8FAFC', strokeWidth: 1, fill: '#8C9A90' }}
                 />
 
                 {/* Primary Performance Curve */}
-                <Area
+                <Area isAnimationActive={false}
                   name="Performance"
                   type="monotone"
                   dataKey="Performance"
-                  stroke="#4A6B52"
+                  stroke="#a8c940"
                   strokeWidth={2}
                   fillOpacity={1}
                   fill="url(#colorPerf)"
                   dot={false}
-                  activeDot={{ r: 4.5, stroke: '#FAF8F5', strokeWidth: 1.5, fill: '#4A6B52' }}
+                  activeDot={{ r: 4.5, stroke: '#F8FAFC', strokeWidth: 1.5, fill: '#a8c940' }}
                 />
               </AreaChart>
             </ResponsiveContainer>
