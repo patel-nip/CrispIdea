@@ -26,7 +26,7 @@ import {
 
 export default function WealthManagementPage() {
   // Navigation states
-  const [researchOpen, setResearchOpen] = useState(false);
+  const [researchOpen, setResearchOpen] = useState(0);
 
   // FAQ Accordion state
   const [faqState, setFaqState] = useState({
@@ -227,8 +227,7 @@ export default function WealthManagementPage() {
             {/* Research Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setResearchOpen(true)}
-              onMouseLeave={() => setResearchOpen(false)}
+              onMouseLeave={() => { if (researchOpen === 1) setResearchOpen(0); }}
             >
               <div className="flex items-center gap-0.5 py-1.5">
                 <a 
@@ -240,10 +239,11 @@ export default function WealthManagementPage() {
                 </a>
                 <button
                   type="button"
+                  onMouseEnter={() => { if (researchOpen !== 2) setResearchOpen(1); }}
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    setResearchOpen(!researchOpen);
+                    setResearchOpen(researchOpen === 2 ? 0 : 2);
                   }}
                   className="p-0.5 text-[#1F2922]/70 hover:text-[#1F2922] transition cursor-pointer focus:outline-none"
                   aria-label="Toggle Research menu"
@@ -252,8 +252,8 @@ export default function WealthManagementPage() {
                 </button>
               </div>
               
-              {researchOpen && (
-                <div className="absolute left-0 mt-1 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+              {!!researchOpen && (
+                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <a 
                     href="/equity-research" 
                     onClick={() => setResearchOpen(false)}
@@ -1227,6 +1227,7 @@ export default function WealthManagementPage() {
               <li><a href="/insights" className="hover:text-[#4A6B52] transition">Insights</a></li>
               <li><a href="/#pricing" className="hover:text-[#4A6B52] transition">Careers</a></li>
               <li><a href="/#contact" className="hover:text-[#4A6B52] transition">Contact</a></li>
+              <li><a href="/faq" className="hover:text-[#4A6B52] transition">FAQ</a></li>
             </ul>
           </div>
 

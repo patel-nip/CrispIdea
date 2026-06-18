@@ -170,3 +170,19 @@ h1.font-semibold, h2.font-semibold, h3.font-semibold, h4.font-semibold, h5.font-
   animation: marquee 35s linear infinite;
 }
 
+/* Logos Marquee Animation - loops perfectly at -100% */
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-logo-marquee {
+  display: flex;
+  animation: logo-marquee 15s linear infinite;
+}
+
+

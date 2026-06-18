@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import { 
   ChevronDown, 
   ChevronRight, 
@@ -10,12 +11,13 @@ import {
   ArrowUpRight, 
   Check, 
   X,
-  SlidersHorizontal
+  SlidersHorizontal,
+  Calendar
 } from "lucide-react";
 
 export default function ThematicResearchPage() {
   // Navigation states
-  const [researchOpen, setResearchOpen] = useState(false);
+  const [researchOpen, setResearchOpen] = useState(0);
   
   // Filter states
   const [filtersVisible, setFiltersVisible] = useState(false);
@@ -29,105 +31,103 @@ export default function ThematicResearchPage() {
   const [formData, setFormData] = useState({ name: "", email: "", company: "", message: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  // 14 Thematic Research Reports Data
+  // 12 Thematic Research Reports Data
   const reports = useMemo(() => [
     {
+      category: "SOFTWARE",
+      date: "June 12, 2026",
+      title: "The Magnificent 7: Q1 2026 Performance",
+      price: 1200,
+      image: "/research/recent-reports/mag7stocks.jpg",
+      link: "https://www.crispidea.com/report/the-magnificient-7-2026-performance/"
+    },
+    {
+      category: "GREEN FINTECH",
+      date: "June 10, 2026",
+      title: "Green Fintech 2026 Unlocking Value Across the Green Fintech Revolution",
+      price: 230,
+      image: "/research/recent-reports/green-fintech.jpeg",
+      link: "https://www.crispidea.com/report/green-fintech-2026-fintech-revolution/"
+    },
+    {
       category: "AEROSPACE & DEFENSE",
-      date: "Apr 23, 2026",
-      title: "SpaceTech — The Next Industrial Revolution Is Already in Orbit",
-      desc: "Structural transformation of the global space sector from government-led to a commercially driven, multi-layered ecosystem.",
+      date: "June 4, 2026",
+      title: "SpaceX IPO analysis: The rocket that reached everything",
+      price: 299,
+      image: "/research/recent-reports/spacex.png",
+      link: "https://www.crispidea.com/report/spacex-ipo-analysis/"
+    },
+    {
+      category: "DATA CENTER",
+      date: "May 31, 2026",
+      title: "Data Center Industry Report 2026: The physical, and operational realities of dat...",
+      price: 295,
+      image: "/research/recent-reports/data-center-industry-report.png",
+      link: "https://www.crispidea.com/report/data-center-industry-report-2026/"
+    },
+    {
+      category: "SOFTWARE",
+      date: "May 31, 2026",
+      title: "The New Era of High Growth Tech: 50 Disruptors Harnessing AI for Global...",
+      price: 520,
+      image: "/research/recent-reports/the-new-era.png",
+      link: "https://www.crispidea.com/report/50-disruptors-harnessing-ai-for-global-scale/"
+    },
+    {
+      category: "AEROSPACE & DEFENSE",
+      date: "April 23, 2026",
+      title: "The Next Industrial Revolution Is Already in Orbit.",
       price: 300,
+      image: "/research/recent-reports/the-next-industrial.webp",
+      link: "https://www.crispidea.com/report/spacetech-next-industrial-revolution/"
     },
     {
       category: "ESG",
-      date: "Apr 10, 2026",
-      title: "Post-Conflict Market Outlook — A New Geopolitical Order",
-      desc: "Global geopolitical risk landscape at an inflection point — most significant transformation since the Cold War.",
+      date: "April 10, 2026",
+      title: "At The Cusp Of A New Geopolitical Order: Where Markets Go From Here: A...",
       price: 345,
+      image: "/research/recent-reports/at-the-cusp.png",
+      link: "https://www.crispidea.com/report/post-conflict-market-outlook/"
     },
     {
       category: "CP&E",
-      date: "Apr 3, 2026",
-      title: "Consumer Electronics 2025 — Silicon Renaissance",
-      desc: "Structural re-engineering of supply chains away from a China-centric model toward a diversified China+1 strategy.",
+      date: "April 3, 2026",
+      title: "Consumer Electronics 2025 Stock Performance: Silicon Renaissance",
       price: 1832,
+      image: "/research/recent-reports/consumer-electronics.png",
+      link: "https://www.crispidea.com/report/consumer-electronics-2025-stocks/"
     },
     {
       category: "AEROSPACE & DEFENSE",
-      date: "Apr 3, 2026",
-      title: "Aerospace & Defense 2026 — Where Geopolitics Meet Software-Defined Power",
-      desc: "Structurally elevated growth phase driven by geopolitical fragmentation and rising defense budgets.",
+      date: "April 3, 2026",
+      title: "Aerospace & Defense 2026: Where Geopolitics Meet Software's Defined Power",
       price: 1944,
-    },
-    {
-      category: "IT SERVICES",
-      date: "Apr 3, 2026",
-      title: "Redefining Cloud & IT Infrastructure for Autonomous Enterprises — 2026",
-      desc: "Cloud IT infra market: $166.51bn in 2025 -> $679.61bn by 2034 at 16.5% CAGR; North America at 44% share.",
-      price: 2880,
-    },
-    {
-      category: "CROSS-BORDER M&A",
-      date: "Mar 20, 2026",
-      title: "Global Cross-border M&A Outlook 2026",
-      desc: "Cross-border deal volumes accelerate as regulatory clarity returns and corporates rebuild international footprints.",
-      price: 2100,
+      image: "/research/recent-reports/aerospace.png",
+      link: "https://www.crispidea.com/report/aerospace-defense-2026/"
     },
     {
       category: "AEROSPACE & DEFENSE",
-      date: "Mar 13, 2026",
+      date: "March 13, 2026",
       title: "Advancing the Future of Aerospace & Defense 2026",
-      desc: "A&D sector functioned as a primary engine of alpha generation in 2025, decoupling from the broader market.",
       price: 1912,
+      image: "/research/recent-reports/advancing-future.png",
+      link: "https://www.crispidea.com/report/aerospace-defense-2025-performance/"
     },
     {
       category: "SOFTWARE",
-      date: "Mar 6, 2026",
-      title: "Quantum Computing — 2025 Stock Performance Review",
-      desc: "Quantum computing in rapid transformation driven by steady commercialization and industry-shaping factors.",
+      date: "March 6, 2026",
+      title: "Quantum Computing: Review of 2025 performance of stocks",
       price: 1784,
+      image: "/research/recent-reports/quantum-computing.png",
+      link: "https://www.crispidea.com/report/quantum-computing-2025-stock-performance/"
     },
     {
       category: "FOOD & BEVERAGES",
-      date: "Feb 25, 2026",
-      title: "Food & Beverages 2026 — Consumer Demand Meets Margin Discipline",
-      desc: "$9.25T global market analysis: consumer trends, margin pressures, premiumization and digital transformation through 2030.",
+      date: "February 25, 2026",
+      title: "Food & Beverages 2026: Where Consumer Demand Meets Margin Discipline",
       price: 3280,
-    },
-    {
-      category: "PRIVATE EQUITY",
-      date: "Feb 12, 2026",
-      title: "Private Equity Dry Powder & Deployment Trends",
-      desc: "Record $2.5T in dry powder fuels selective deal-making; mid-market deals dominate as mega-deals slow.",
-      price: 1850,
-    },
-    {
-      category: "SEMICONDUCTORS",
-      date: "Jan 23, 2026",
-      title: "ANTIQ FY25 — Collective Semiconductor Stock Performance",
-      desc: "Global semi revenue grew to $570bn in 2024 and is set to reach $650bn in 2026 (+11.22%) — positioning for AI demand.",
-      price: 2224,
-    },
-    {
-      category: "SOFTWARE",
-      date: "Jan 15, 2026",
-      title: "The Magnificent 7 — FY25 Performance",
-      desc: "World Infotech index -32.18% and Nasdaq -29.57% in FY25; Mag 7 outperformed broadly ex-Tesla and Microsoft.",
-      price: 1976,
-    },
-    {
-      category: "AUTOMOTIVE",
-      date: "Jan 14, 2026",
-      title: "Electric Vehicles Industry Report 2025 — Powering the Next Era",
-      desc: "Global EV market entering a decisive growth phase — transitioning from early adoption to mass-market penetration.",
-      price: 2952,
-    },
-    {
-      category: "CYBER SECURITY",
-      date: "Jan 14, 2026",
-      title: "AI in Cyber Security 2025 — Reactive to Predictive Protection",
-      desc: "AI moving from differentiator to necessity in protecting digital assets, ensuring compliance and maintaining trust.",
-      price: 2424,
+      image: "/research/recent-reports/food-beverage.png",
+      link: "https://www.crispidea.com/report/food-and-beverages-sector-report-2026/"
     }
   ], []);
 
@@ -155,7 +155,7 @@ export default function ThematicResearchPage() {
       result = result.filter(
         (r) =>
           r.title.toLowerCase().includes(q) ||
-          r.desc.toLowerCase().includes(q) ||
+          (r.desc && r.desc.toLowerCase().includes(q)) ||
           r.category.toLowerCase().includes(q)
       );
     }
@@ -219,8 +219,7 @@ export default function ThematicResearchPage() {
             {/* Research Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setResearchOpen(true)}
-              onMouseLeave={() => setResearchOpen(false)}
+              onMouseLeave={() => { if (researchOpen === 1) setResearchOpen(0); }}
             >
               <div className="flex items-center gap-0.5 py-1.5">
                 <a 
@@ -232,10 +231,11 @@ export default function ThematicResearchPage() {
                 </a>
                 <button
                   type="button"
+                  onMouseEnter={() => { if (researchOpen !== 2) setResearchOpen(1); }}
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    setResearchOpen(!researchOpen);
+                    setResearchOpen(researchOpen === 2 ? 0 : 2);
                   }}
                   className="p-0.5 text-[#4A6B52] hover:text-[#4A6B52] transition cursor-pointer focus:outline-none"
                   aria-label="Toggle Research menu"
@@ -244,8 +244,8 @@ export default function ThematicResearchPage() {
                 </button>
               </div>
               
-              {researchOpen && (
-                <div className="absolute left-0 mt-1 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+              {!!researchOpen && (
+                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <a 
                     href="/equity-research" 
                     onClick={() => setResearchOpen(false)}
@@ -426,51 +426,53 @@ export default function ThematicResearchPage() {
 
           {/* Catalog Grid */}
           {filteredReports.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
               {filteredReports.map((report, idx) => (
                 <div 
                   key={idx}
-                  className="bg-[#FAF8F5]/40 border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between hover:border-[#4A6B52]/30 hover:shadow-md transition duration-300 group"
+                  className="bg-white border border-[#4A6B52]/10 rounded-[24px] flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md hover:border-[#4A6B52]/25 hover:-translate-y-1.5 transition-all duration-300 h-[380px] md:h-[400px] group"
                 >
-                  <div>
-                    {/* Header */}
-                    <div className="flex justify-between items-start mb-4 border-b border-[#4A6B52]/5 pb-3.5">
-                      <div>
-                        <span className="text-[8px] font-bold text-[#4A6B52] uppercase tracking-widest block">
-                          {report.category}
-                        </span>
-                        <span className="text-[10px] font-mono font-bold text-neutral-400 block mt-1">
-                          {report.date}
-                        </span>
-                      </div>
-                      <div className="bg-[#FAF8F5] p-2 border border-[#4A6B52]/10 rounded-lg group-hover:bg-[#E6EBE4] transition">
-                        <FileText className="w-4 h-4 text-[#4A6B52]" />
-                      </div>
+                  {/* Image wrapper */}
+                  <div className="pt-4 px-4 relative shrink-0">
+                    <div className="relative w-full h-40 rounded-xl overflow-hidden bg-slate-50 border border-slate-100">
+                      <Image 
+                        src={report.image} 
+                        alt={report.title}
+                        fill
+                        className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                        sizes="(max-w-768px) 100vw, 280px"
+                      />
                     </div>
-
-                    {/* Title */}
-                    <h3 className="font-serif font-bold text-base md:text-lg text-[#1F2922] leading-snug mb-3 group-hover:text-[#4A6B52] transition">
-                      {report.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold mb-6">
-                      {report.desc}
-                    </p>
                   </div>
 
-                  {/* Pricing / CTA */}
-                  <div className="flex justify-between items-center pt-4 border-t border-[#4A6B52]/5">
-                    <div>
-                      <span className="text-[8px] text-[#1F2922]/40 block font-bold uppercase tracking-wider">THEME REPORT PRICE</span>
-                      <span className="text-base font-bold font-mono text-[#1F2922]">${report.price}</span>
-                    </div>
-                    <button
-                      onClick={() => handleViewReportClick(report.title)}
-                      className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 group-hover:translate-x-0.5 transition cursor-pointer"
+                  {/* Date strip */}
+                  <div className="bg-[#EAF2FA]/50 text-[#1F2922]/70 text-[11px] font-bold py-2.5 px-4 flex items-center justify-center gap-1.5 mt-3 border-y border-[#4A6B52]/5">
+                    <Calendar className="w-3.5 h-3.5 text-[#1F2922]/50" />
+                    <span>{report.date}</span>
+                  </div>
+
+                  {/* Text Info */}
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <a 
+                      href={report.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      View report <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                      <h4 className="text-xs md:text-sm font-bold text-[#1F2922] hover:text-blue-600 leading-snug line-clamp-3 mb-4 font-sans transition-colors cursor-pointer">
+                        {report.title}
+                      </h4>
+                    </a>
+                    
+                    <div className="mt-auto">
+                      <a 
+                        href={report.link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors font-sans hover:underline"
+                      >
+                        ${report.price} Purchase <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -576,6 +578,7 @@ export default function ThematicResearchPage() {
               <li><a href="/insights" className="hover:text-[#4A6B52] transition">Insights</a></li>
               <li><a href="/#pricing" className="hover:text-[#4A6B52] transition">Careers</a></li>
               <li><a href="/#contact" className="hover:text-[#4A6B52] transition">Contact</a></li>
+              <li><a href="/faq" className="hover:text-[#4A6B52] transition">FAQ</a></li>
             </ul>
           </div>
 

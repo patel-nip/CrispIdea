@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import { 
   ChevronDown, 
   ChevronRight, 
@@ -10,12 +11,13 @@ import {
   ArrowUpRight, 
   Check, 
   X,
-  SlidersHorizontal
+  SlidersHorizontal,
+  Calendar
 } from "lucide-react";
 
 export default function EquityResearchPage() {
   // Navigation states
-  const [researchOpen, setResearchOpen] = useState(false);
+  const [researchOpen, setResearchOpen] = useState(0);
   
   // Filter states
   const [filtersVisible, setFiltersVisible] = useState(false);
@@ -32,100 +34,112 @@ export default function EquityResearchPage() {
   // 12 Equity Research Reports Data
   const reports = useMemo(() => [
     {
-      category: "FOOD & BEVERAGES",
-      ticker: "CAG",
-      date: "May 5, 2026",
-      title: "Conagra Brands Inc Q3FY26 — Inflation & volumes weigh on margins",
-      desc: "Strong U.S. household reach, ~105% FCF conversion and ~$800mn net debt reduction, constrained by mature categories.",
-      price: 216,
+      category: "DISRUPTIVE & CONSUMER SERVICES",
+      ticker: "TGT",
+      date: "June 17, 2026",
+      title: "Target Corp Q1FY27 (TGT) – Digital growth amid consumer uncertainty",
+      price: 256,
+      image: "/research/equity-research/target-corp.png",
+      link: "https://www.crispidea.com/report/target-corp-q1fy27-tgt/"
+    },
+    {
+      category: "SOLAR",
+      ticker: "FSLR",
+      date: "June 17, 2026",
+      title: "First Solar Inc Q1FY26 (FSLR) – Subsidy dependency and litigation...",
+      price: 248,
+      image: "/research/equity-research/first-solar-inc.png",
+      link: "https://www.crispidea.com/report/first-solar-inc-q1fy26-fslr/"
+    },
+    {
+      category: "CONSUMER ELECTRONICS",
+      ticker: "AAPL",
+      date: "June 17, 2026",
+      title: "Apple Inc. (Q2FY26) (AAPL) – $100 Billion Buyback- Is it the time to Invest?",
+      price: 256,
+      image: "/research/equity-research/apple-inc.png",
+      link: "https://www.crispidea.com/report/apple-inc-q2fy26-aapl/"
     },
     {
       category: "SOFTWARE",
-      ticker: "ORCL",
-      date: "May 5, 2026",
-      title: "Oracle Corporation Q3FY26 — Oracle sees surge in AI demand",
-      desc: "Structural transformation driven by AI infrastructure demand and a multi-cloud strategy with AI-enabled SaaS expansion.",
-      price: 240,
-    },
-    {
-      category: "DISRUPTIVE & CONSUMER SERVICES",
-      ticker: "TTWO",
-      date: "May 5, 2026",
-      title: "Take-Two Interactive Q3FY26 — Mobile & direct monetization",
-      desc: "Transition toward an engagement-driven, diversified revenue model with strong franchise momentum.",
-      price: 224,
-    },
-    {
-      category: "SEMICONDUCTORS",
-      ticker: "TXN",
-      date: "May 4, 2026",
-      title: "Texas Instruments Q1FY26 — Efficiency rebounds with ROE at 30%",
-      desc: "Shift from distributors to direct sales — 80%+ of revenue now direct vs ~30% in 2019.",
-      price: 240,
-    },
-    {
-      category: "MANUFACTURING",
-      ticker: "OSK",
-      date: "May 4, 2026",
-      title: "Oshkosh Corporation Q4FY25 — Portfolio diversity, margin expansion",
-      desc: "Successfully managed regulatory shifts including OBBBA which lowered 2025 tax payments by $90mn.",
-      price: 248,
-    },
-    {
-      category: "SEMICONDUCTORS",
-      ticker: "STM",
-      date: "May 4, 2026",
-      title: "STMicroelectronics Q1FY26 — AI hype or real growth?",
-      desc: "257.8x trailing P/E with 35.8x forward — earnings expected to jump 7x as AI and space contracts hit.",
+      ticker: "DDOG",
+      date: "June 16, 2026",
+      title: "Datadog, Inc. (DDOG) (Q1FY26) – AI momentum priced into shares",
       price: 232,
-    },
-    {
-      category: "PACKAGED FOOD",
-      ticker: "LOTB",
-      date: "May 4, 2026",
-      title: "Lotus Bakeries H2FY25 — Natural Foods leads growth",
-      desc: "Natural Foods delivering 17% revenue growth to ~€300mn, led by TREK and BEAR brands.",
-      price: 200,
-    },
-    {
-      category: "SEMICONDUCTORS",
-      ticker: "AMD",
-      date: "May 2, 2026",
-      title: "Advanced Micro Devices Q4FY25 — Record $2.1B free cash flow",
-      desc: "Multi-year chiplet investments meet generative AI infrastructure demand at a critical inflection point.",
-      price: 232,
-    },
-    {
-      category: "CYBER SECURITY",
-      ticker: "GEN",
-      date: "May 2, 2026",
-      title: "Gen Digital Q3FY26 — Redefining consumer protection through AI",
-      desc: "Repositioning from legacy endpoint security to an AI-driven unified digital protection platform.",
-      price: 200,
+      image: "/research/equity-research/datadog-inc.png",
+      link: "https://www.crispidea.com/report/datadog-inc-ddog-q1fy26/"
     },
     {
       category: "AUTOMOTIVE",
-      ticker: "TSLA",
-      date: "May 2, 2026",
-      title: "Tesla Q1FY26 — Structural attrition meets the $25bn capital treadmill",
-      desc: "Q1FY26 outperformance viewed as transitory — driven by one-time tariff benefits and favorable FX.",
-      price: 256,
+      ticker: "F",
+      date: "June 15, 2026",
+      title: "Ford Motor Company Q1FY26 (F) – Core insulation confronts EV attrition and...",
+      price: 216,
+      image: "/research/equity-research/ford-motor.png",
+      link: "https://www.crispidea.com/report/ford-motor-company-q1fy26-f/"
     },
     {
-      category: "CYBER SECURITY",
-      ticker: "OKTA",
-      date: "May 2, 2026",
-      title: "Okta Q4FY26 — AI identity promising but monetization early",
-      desc: "Strong enterprise demand, expanding product capabilities and a credible long-term AI opportunity.",
+      category: "RETAIL",
+      ticker: "GAP",
+      date: "June 14, 2026",
+      title: "Gap Inc Q1FY27 (GAP) – Growth initiatives face promotional pressure",
       price: 256,
+      image: "/research/equity-research/gap-inc.png",
+      link: "https://www.crispidea.com/report/gap-inc-q1fy27-gap/"
     },
     {
-      category: "IT SERVICES",
-      ticker: "NTCT",
-      date: "May 2, 2026",
-      title: "NetScout Systems Q3FY26 — Resilient mix, structural headwinds",
-      desc: "AI in network monitoring enabling faster insights — intelligence-driven solutions over basic tools.",
-      price: 200,
+      category: "SEMICONDUCTORS",
+      ticker: "UMC",
+      date: "June 14, 2026",
+      title: "United Microelectronics Corp Q1FY26 (UMC) – Fifty Million Share Buyback: Saf...",
+      price: 240,
+      image: "/research/equity-research/umc.png",
+      link: "https://www.crispidea.com/report/united-microelectronics-corp-q1fy26-umc/"
+    },
+    {
+      category: "RETAIL",
+      ticker: "URBN",
+      date: "June 14, 2026",
+      title: "Urban Outfitters, Inc. (Q1FY27) (URBN) – Nuuly growth faces freight...",
+      price: 272,
+      image: "/research/equity-research/urban-outfitters.png",
+      link: "https://www.crispidea.com/report/urban-outfitters-inc-q1fy27-urbn/"
+    },
+    {
+      category: "SOFTWARE",
+      ticker: "PLTR",
+      date: "June 14, 2026",
+      title: "Palantir Technologies, Inc. (Q1FY26) (PLTR)- High Growth Meets Strong Cash...",
+      price: 248,
+      image: "/research/equity-research/palantir.png",
+      link: "https://www.crispidea.com/report/palantir-technologies-inc-pltr-q1fy26/"
+    },
+    {
+      category: "SOFTWARE",
+      ticker: "SHOP",
+      date: "June 12, 2026",
+      title: "Shopify Inc. (Q1FY26) (SHOP) – Solid growth amid valuation pressure",
+      price: 224,
+      image: "/research/equity-research/shopify.png",
+      link: "https://www.crispidea.com/report/shopify-inc-q1fy26-shop/"
+    },
+    {
+      category: "SOLAR",
+      ticker: "ENPH",
+      date: "June 12, 2026",
+      title: "Enphase Energy, Inc (Q1FY26) (ENPH) – Cash defense buffers cyclical...",
+      price: 216,
+      image: "/research/equity-research/enphase.png",
+      link: "https://www.crispidea.com/report/enphase-energy-inc-q1fy26-enph/"
+    },
+    {
+      category: "SEMICONDUCTORS",
+      ticker: "KLAC",
+      date: "June 12, 2026",
+      title: "KLA Corporation (Q3FY26) (KLAC) – Where does KLA's $4B cash go?",
+      price: 248,
+      image: "/research/equity-research/kla.png",
+      link: "https://www.crispidea.com/report/kla-corporation-q3fy26-klac/"
     }
   ], []);
 
@@ -153,7 +167,7 @@ export default function EquityResearchPage() {
       result = result.filter(
         (r) =>
           r.title.toLowerCase().includes(q) ||
-          r.desc.toLowerCase().includes(q) ||
+          (r.desc && r.desc.toLowerCase().includes(q)) ||
           r.ticker.toLowerCase().includes(q) ||
           r.category.toLowerCase().includes(q)
       );
@@ -220,8 +234,7 @@ export default function EquityResearchPage() {
             {/* Research Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setResearchOpen(true)}
-              onMouseLeave={() => setResearchOpen(false)}
+              onMouseLeave={() => { if (researchOpen === 1) setResearchOpen(0); }}
             >
               <div className="flex items-center gap-0.5 py-1.5">
                 <a 
@@ -233,10 +246,11 @@ export default function EquityResearchPage() {
                 </a>
                 <button
                   type="button"
+                  onMouseEnter={() => { if (researchOpen !== 2) setResearchOpen(1); }}
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    setResearchOpen(!researchOpen);
+                    setResearchOpen(researchOpen === 2 ? 0 : 2);
                   }}
                   className="p-0.5 text-[#4A6B52] hover:text-[#4A6B52] transition cursor-pointer focus:outline-none"
                   aria-label="Toggle Research menu"
@@ -245,8 +259,8 @@ export default function EquityResearchPage() {
                 </button>
               </div>
               
-              {researchOpen && (
-                <div className="absolute left-0 mt-1 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+              {!!researchOpen && (
+                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <a 
                     href="/equity-research" 
                     onClick={() => setResearchOpen(false)}
@@ -427,51 +441,55 @@ export default function EquityResearchPage() {
 
           {/* Catalog Grid */}
           {filteredReports.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
               {filteredReports.map((report, idx) => (
                 <div 
                   key={idx}
-                  className="bg-[#FAF8F5]/40 border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between hover:border-[#4A6B52]/30 hover:shadow-md transition duration-300 group"
+                  className="bg-white border border-[#4A6B52]/10 rounded-[24px] flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md hover:border-[#4A6B52]/25 hover:-translate-y-1.5 transition-all duration-300 h-[380px] md:h-[400px] group"
                 >
-                  <div>
-                    {/* Header */}
-                    <div className="flex justify-between items-start mb-4 border-b border-[#4A6B52]/5 pb-3.5">
-                      <div>
-                        <span className="text-[8px] font-bold text-[#4A6B52] uppercase tracking-widest block">
-                          {report.category}
-                        </span>
-                        <span className="text-[10px] font-mono font-bold text-neutral-400 block mt-1">
-                          {report.date} • {report.ticker}
-                        </span>
-                      </div>
-                      <div className="bg-[#FAF8F5] p-2 border border-[#4A6B52]/10 rounded-lg group-hover:bg-[#E6EBE4] transition">
-                        <FileText className="w-4 h-4 text-[#4A6B52]" />
+                  {/* Image wrapper */}
+                  <div className="pt-4 px-4 relative shrink-0">
+                    <div className="relative w-full h-40 rounded-xl overflow-hidden bg-white border border-slate-100">
+                      <div className="absolute inset-4">
+                        <Image 
+                          src={report.image} 
+                          alt={report.title}
+                          fill
+                          className="object-contain group-hover:scale-[1.02] transition-transform duration-300"
+                          sizes="(max-w-768px) 100vw, 280px"
+                        />
                       </div>
                     </div>
-
-                    {/* Title */}
-                    <h3 className="font-serif font-bold text-base md:text-lg text-[#1F2922] leading-snug mb-3 group-hover:text-[#4A6B52] transition">
-                      {report.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-xs text-[#1F2922]/70 leading-relaxed font-semibold mb-6">
-                      {report.desc}
-                    </p>
                   </div>
 
-                  {/* Pricing / CTA */}
-                  <div className="flex justify-between items-center pt-4 border-t border-[#4A6B52]/5">
-                    <div>
-                      <span className="text-[8px] text-[#1F2922]/40 block font-bold uppercase tracking-wider">REPORT PRICE</span>
-                      <span className="text-base font-bold font-mono text-[#1F2922]">${report.price}</span>
-                    </div>
-                    <button
-                      onClick={() => handleViewReportClick(report.title)}
-                      className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 group-hover:translate-x-0.5 transition cursor-pointer"
+                  {/* Date strip */}
+                  <div className="bg-[#EAF2FA]/50 text-[#1F2922]/70 text-[11px] font-bold py-2.5 px-4 flex items-center justify-center gap-1.5 mt-3 border-y border-[#4A6B52]/5">
+                    <Calendar className="w-3.5 h-3.5 text-[#1F2922]/50" />
+                    <span>{report.date}</span>
+                  </div>
+
+                  {/* Text Info */}
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <a 
+                      href={report.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      View report <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                      <h4 className="text-xs md:text-sm font-bold text-[#1F2922] hover:text-blue-600 leading-snug line-clamp-3 mb-4 font-sans transition-colors cursor-pointer">
+                        {report.title}
+                      </h4>
+                    </a>
+                    
+                    <div className="mt-auto">
+                      <a 
+                        href={report.link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors font-sans hover:underline"
+                      >
+                        ${report.price} Purchase <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -577,6 +595,7 @@ export default function EquityResearchPage() {
               <li><a href="/insights" className="hover:text-[#4A6B52] transition">Insights</a></li>
               <li><a href="/#pricing" className="hover:text-[#4A6B52] transition">Careers</a></li>
               <li><a href="/#contact" className="hover:text-[#4A6B52] transition">Contact</a></li>
+              <li><a href="/faq" className="hover:text-[#4A6B52] transition">FAQ</a></li>
             </ul>
           </div>
 

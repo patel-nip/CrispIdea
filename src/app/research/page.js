@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { 
   Layers, 
@@ -22,18 +22,126 @@ import {
   Settings,
   HelpCircle,
   Percent,
-  Play
+  Play,
+  Calendar
 } from "lucide-react";
 
 import ResearchTargetsDashboard from "@/components/ResearchTargetsDashboard";
 
 export default function ResearchPage() {
   // Navigation drop-downs
-  const [researchOpen, setResearchOpen] = useState(false);
+  const [researchOpen, setResearchOpen] = useState(0);
   const [menuMobileOpen, setMenuMobileOpen] = useState(false);
 
   // Carousel Index for "Recent Reports"
   const [reportIndex, setReportIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  // 8 Reports list for carousel
+  const reportsList = [
+    {
+      date: "June 12, 2026",
+      title: "The Magnificent 7: Q1 2026 Performance",
+      image: "/research/recent-reports/mag7stocks.jpg",
+      price: "$1200",
+      link: "https://www.crispidea.com/report/the-magnificient-7-2026-performance/"
+    },
+    {
+      date: "June 10, 2026",
+      title: "Green Fintech 2026 Unlocking Value Across the Green Fintech Revolution",
+      image: "/research/recent-reports/green-fintech.jpeg",
+      price: "$230",
+      link: "https://www.crispidea.com/report/green-fintech-2026-fintech-revolution/"
+    },
+    {
+      date: "June 4, 2026",
+      title: "SpaceX IPO analysis: The rocket that reached everything",
+      image: "/research/recent-reports/spacex.png",
+      price: "$299",
+      link: "https://www.crispidea.com/report/spacex-ipo-analysis/"
+    },
+    {
+      date: "May 31, 2026",
+      title: "Data Center Industry Report 2026: The physical, and operational realities of dat...",
+      image: "/research/recent-reports/data-center-industry-report.png",
+      price: "$295",
+      link: "https://www.crispidea.com/report/data-center-industry-report-2026/"
+    },
+    {
+      date: "May 31, 2026",
+      title: "The New Era of High Growth Tech: 50 Disruptors Harnessing AI for Global...",
+      image: "/research/recent-reports/the-new-era.png",
+      price: "$520",
+      link: "https://www.crispidea.com/report/50-disruptors-harnessing-ai-for-global-scale/"
+    },
+    {
+      date: "April 23, 2026",
+      title: "The Next Industrial Revolution Is Already in Orbit.",
+      image: "/research/recent-reports/the-next-industrial.webp",
+      price: "$300",
+      link: "https://www.crispidea.com/report/spacetech-next-industrial-revolution/"
+    },
+    {
+      date: "April 10, 2026",
+      title: "At The Cusp Of A New Geopolitical Order: Where Markets Go From Here: A...",
+      image: "/research/recent-reports/at-the-cusp.png",
+      price: "$345",
+      link: "https://www.crispidea.com/report/post-conflict-market-outlook/"
+    },
+    {
+      date: "April 3, 2026",
+      title: "Consumer Electronics 2025 Stock Performance: Silicon Renaissance",
+      image: "/research/recent-reports/consumer-electronics.png",
+      price: "$1832",
+      link: "https://www.crispidea.com/report/consumer-electronics-2025-stocks/"
+    }
+  ];
+
+  const handleNextReport = () => {
+    if (reportIndex === 8) return;
+    setReportIndex((prev) => prev + 1);
+  };
+
+  const handlePrevReport = () => {
+    if (reportIndex === 0) {
+      setIsTransitioning(false);
+      setReportIndex(8);
+      setTimeout(() => {
+        setIsTransitioning(true);
+        setReportIndex(7);
+      }, 50);
+    } else {
+      setReportIndex((prev) => prev - 1);
+    }
+  };
+
+  // Auto-slide effect (3.5 seconds)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextReport();
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [reportIndex, isTransitioning]);
+
+  // Seamless loop reset effect
+  useEffect(() => {
+    if (reportIndex === 8) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setReportIndex(0);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [reportIndex]);
+
+  useEffect(() => {
+    if (!isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
 
   // Pricing Matrix selection
   const [pricingTab, setPricingTab] = useState("research"); // "research" | "wealth"
@@ -50,66 +158,6 @@ export default function ResearchPage() {
 
   const toggleFaq = (key) => {
     setFaqState(prev => ({ ...prev, [key]: !prev[key] }));
-  };
-
-  // 6 Reports list for carousel
-  const reportsList = [
-    {
-      type: "EQUITY RESEARCH",
-      isEquity: true,
-      badge: "BUY",
-      title: "Larsen & Toubro · Initiating Coverage",
-      desc: "Multi-year capex cycle, margin expansion ahead.",
-      upside: "+24%",
-    },
-    {
-      type: "THEMATIC RESEARCH",
-      isEquity: false,
-      badge: "Overweight",
-      title: "AI Compute Value Chain 2026",
-      desc: "Foundry, HBM, networking — winners through the cycle.",
-      upside: "Theme",
-    },
-    {
-      type: "EQUITY RESEARCH",
-      isEquity: true,
-      badge: "HOLD",
-      title: "Tata Elxsi · Q3 Update",
-      desc: "Auto ER&D mix shifts; EBITDA guide intact.",
-      upside: "+9%",
-    },
-    {
-      type: "THEMATIC RESEARCH",
-      isEquity: false,
-      badge: "Overweight",
-      title: "India Defence Indigenisation",
-      desc: "Order book visibility 5x trailing revenue.",
-      upside: "Theme",
-    },
-    {
-      type: "EQUITY RESEARCH",
-      isEquity: true,
-      badge: "BUY",
-      title: "Kaynes Technology · Deep-Dive",
-      desc: "OSAT optionality, electronics PLI tailwinds.",
-      upside: "+31%",
-    },
-    {
-      type: "THEMATIC RESEARCH",
-      isEquity: false,
-      badge: "Overweight",
-      title: "Energy Transition · 2026 Map",
-      desc: "Storage, grid and BESS economics inflect.",
-      upside: "Theme",
-    }
-  ];
-
-  const handleNextReport = () => {
-    setReportIndex((prev) => (prev < reportsList.length - 3 ? prev + 1 : 0));
-  };
-
-  const handlePrevReport = () => {
-    setReportIndex((prev) => (prev > 0 ? prev - 1 : reportsList.length - 3));
   };
 
   // Deep tech sector cards list
@@ -203,8 +251,7 @@ export default function ResearchPage() {
             {/* Research Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setResearchOpen(true)}
-              onMouseLeave={() => setResearchOpen(false)}
+              onMouseLeave={() => { if (researchOpen === 1) setResearchOpen(0); }}
             >
               <div className="flex items-center gap-0.5 py-1.5">
                 <a 
@@ -216,10 +263,11 @@ export default function ResearchPage() {
                 </a>
                 <button
                   type="button"
+                  onMouseEnter={() => { if (researchOpen !== 2) setResearchOpen(1); }}
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    setResearchOpen(!researchOpen);
+                    setResearchOpen(researchOpen === 2 ? 0 : 2);
                   }}
                   className="p-0.5 text-[#4A6B52] hover:text-[#4A6B52] transition cursor-pointer focus:outline-none"
                   aria-label="Toggle Research menu"
@@ -228,8 +276,8 @@ export default function ResearchPage() {
                 </button>
               </div>
               
-              {researchOpen && (
-                <div className="absolute left-0 mt-1 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+              {!!researchOpen && (
+                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <a 
                     href="/equity-research" 
                     onClick={() => setResearchOpen(false)}
@@ -585,38 +633,57 @@ export default function ResearchPage() {
           </div>
 
           {/* Cards viewport */}
-          <div className="w-full overflow-hidden">
+          <div className="w-full overflow-hidden py-4 -my-4 px-2 -mx-2">
             <div 
-              className="flex gap-6 transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${reportIndex * 34.5}%)` }}
+              className={`flex gap-6 [--slides-visible:1] md:[--slides-visible:3] ${isTransitioning ? 'transition-transform duration-500 ease-out' : 'transition-none'}`}
+              style={{ transform: `translateX(calc(-${reportIndex} * (100% + 24px) / var(--slides-visible)))` }}
             >
-              {reportsList.map((card, i) => (
+              {[...reportsList, reportsList[0], reportsList[1], reportsList[2]].map((card, i) => (
                 <div 
                   key={i} 
-                  className="w-full md:w-[32%] shrink-0 bg-[#FAF8F5]/50 border border-[#4A6B52]/10 rounded-2xl p-6 flex flex-col justify-between h-56"
+                  className="w-full md:w-[calc((100%-48px)/3)] shrink-0 bg-white border border-[#4A6B52]/10 rounded-[24px] flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md hover:border-[#4A6B52]/25 hover:-translate-y-1.5 transition-all duration-300 h-[390px] md:h-[400px] group"
                 >
-                  <div>
-                    <div className="flex justify-between items-center mb-4">
-                      <span className={`text-[9px] font-bold tracking-wider ${card.isEquity ? 'text-blue-600' : 'text-[#1F2922]/50'}`}>
-                        {card.type}
-                      </span>
-                      <span className="bg-white border border-[#4A6B52]/10 px-2 py-0.5 rounded-full text-[9px] font-bold text-[#1F2922]">
-                        {card.badge}
-                      </span>
+                  {/* Image wrapper */}
+                  <div className="pt-4 px-4 relative shrink-0">
+                    <div className="relative w-full h-44 rounded-xl overflow-hidden bg-slate-50 border border-slate-100">
+                      <Image 
+                        src={card.image} 
+                        alt={card.title}
+                        fill
+                        className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                        sizes="(max-w-768px) 100vw, 380px"
+                      />
                     </div>
-                    <h4 className="text-base font-serif font-bold text-[#1F2922] leading-snug mb-2">
-                      {card.title}
-                    </h4>
-                    <p className="text-xs text-[#1F2922]/60 leading-relaxed font-medium">
-                      {card.desc}
-                    </p>
                   </div>
 
-                  <div className="flex justify-between items-end border-t border-[#4A6B52]/5 pt-4 text-[10px] font-bold">
-                    <span className="text-[#1F2922]/40 tracking-wider">UPSIDE / VIEW</span>
-                    <span className={card.isEquity ? 'text-[#4A6B52] font-mono text-sm' : 'text-blue-600 font-mono text-sm'}>
-                      {card.upside}
-                    </span>
+                  {/* Date strip */}
+                  <div className="bg-[#EAF2FA]/50 text-[#1F2922]/70 text-[11px] font-bold py-2.5 px-4 flex items-center justify-center gap-1.5 mt-3 border-y border-[#4A6B52]/5">
+                    <Calendar className="w-3.5 h-3.5 text-[#1F2922]/50" />
+                    <span>{card.date}</span>
+                  </div>
+
+                  {/* Text Info */}
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <a 
+                      href={card.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <h4 className="text-sm md:text-base font-bold text-[#1F2922] hover:text-blue-600 leading-snug line-clamp-2 mb-4 font-sans transition-colors cursor-pointer">
+                        {card.title}
+                      </h4>
+                    </a>
+                    
+                    <div className="mt-auto">
+                      <a 
+                        href={card.link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors font-sans hover:underline"
+                      >
+                        {card.price} Purchase <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -1778,6 +1845,7 @@ export default function ResearchPage() {
               <li><a href="/insights" className="hover:text-[#4A6B52] transition">Insights</a></li>
               <li><a href="/#pricing" className="hover:text-[#4A6B52] transition">Careers</a></li>
               <li><a href="/#contact" className="hover:text-[#4A6B52] transition">Contact</a></li>
+              <li><a href="/faq" className="hover:text-[#4A6B52] transition">FAQ</a></li>
             </ul>
           </div>
 

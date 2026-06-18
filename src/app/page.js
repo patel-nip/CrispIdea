@@ -40,9 +40,22 @@ const Linkedin = ({ className }) => (
 );
 
 
+const companyLogos = [
+  { name: "JP Morgan", src: "/company-logo/J_P_Morgan_Logo_2008.svg.png", width: 184 },
+  { name: "Bridgewater", src: "/company-logo/Bridgewater_Associates.png", width: 90 },
+  { name: "Invesco", src: "/company-logo/invesco1.png", width: 235 },
+  { name: "Schroders", src: "/company-logo/Schroders_plc_logo.svg.png", width: 223 },
+  { name: "Nomura", src: "/company-logo/Nomura_Holdings_logo.svg.png", width: 223 },
+  { name: "HSBC", src: "/company-logo/HSBC_logo_(2018).svg.png", width: 148 },
+  { name: "Citi", src: "/company-logo/Citi.svg.png", width: 61 },
+  { name: "Barclays", src: "/company-logo/Barclays-Logo.svg.png", width: 237 },
+  { name: "BlackRock", src: "/company-logo/BlackRock-logo.png", width: 282 }
+];
+
+
 export default function Home() {
   // Navigation active state
-  const [researchOpen, setResearchOpen] = useState(false);
+  const [researchOpen, setResearchOpen] = useState(0);
 
   // Methodology active tab
   const [methodologyTab, setMethodologyTab] = useState("research"); // "research" | "wealth"
@@ -228,33 +241,51 @@ export default function Home() {
   const insightsData = [
     {
       id: "article1",
-      title: "NRE vs NRO vs FCNR Choosing the Right Account Structure for Your Indian Assets",
-      linkTitle: "NRE vs NRO vs FCNR: Choosing the Right Account Structure for Your Indian Assets",
-      link: "#article1",
-      date: "May 21, 2026",
-      desc: "Why Your Account Choice Matters More Than You Think. Most NRIs open a bank account in India because their bank...",
-      tags: "Finance · Banking",
-      gradient: "from-amber-400 to-rose-400"
+      title: "Large Cap vs Mid Cap vs Small Cap: How to Allocate Your Portfolio in 2026",
+      link: "https://www.crispidea.com/large-cap-vs-mid-cap-vs-small-cap-allocate-portfolio-2026/",
+      date: "May 7, 2026",
+      desc: "If you started investing in India three or four years ago, your portfolio probably had a simple logic: a few",
+      image: "/insights/Large-mid-small-700x394.webp"
     },
     {
       id: "article2",
-      title: "Food and Beverage Industry Restructuring Why Acquisitions, Separations, and Partnerships Are Rising",
-      linkTitle: "Food and Beverage Industry Restructuring: Why Acquisitions, Separations, and Partnerships Are Rising",
-      link: "#article2",
-      date: "May 19, 2026",
-      desc: "The global food and beverage industry restructuring is becoming one of the most important global business trends as companies respond...",
-      tags: "Consumables · Corporate",
-      gradient: "from-purple-500 to-pink-500"
+      title: "Industrial Compounders: Why Some Diversified Industrials Compound While Others Stall",
+      link: "https://www.crispidea.com/industrial-compounders-diversified-industrials-compound/",
+      date: "May 6, 2026",
+      desc: "Two companies. Same sector. Same macro backdrop. A decade later, one has tripled its ROIC and commands a 20x EV/EBITDA",
+      image: "/insights/industrial-compounders-1.svg"
     },
     {
       id: "article3",
-      title: "Technology & Deep Tech Equity Research The Complete Guide for Institutional Investors",
-      linkTitle: "Technology & Deep Tech Equity Research: The Complete Guide for Institutional Investors",
-      link: "#article3",
+      title: "NRI Financial Planning in India: The Complete Guide",
+      link: "https://www.crispidea.com/nri-financial-planning-india-complete-guide/",
+      date: "May 5, 2026",
+      desc: "Everything you need to know about managing Indian wealth from abroad, accounts, tax obligations, asset allocation, global diversification, and planning",
+      image: "/insights/NRI-pillar-700x394.png"
+    },
+    {
+      id: "article4",
+      title: "NRE vs NRO vs FCNR: Choosing the Right Account Structure for Your Indian Assets",
+      link: "https://www.crispidea.com/nre-vs-nro-vs-fcnr-nri-guide/",
+      date: "May 21, 2026",
+      desc: "Why Your Account Choice Matters More Than You Think. Most NRIs open a bank account in India because their bank...",
+      image: "/insights/NRE-vs-NRO-vs-FCNR.svg"
+    },
+    {
+      id: "article5",
+      title: "Food and Beverage Industry Restructuring: Why Acquisitions, Separations, and Partnerships Are Rising",
+      link: "https://www.crispidea.com/food-and-beverage-industry-restructuring/",
+      date: "May 19, 2026",
+      desc: "The global food and beverage industry restructuring is becoming one of the most important global business trends as companies respond...",
+      image: "/insights/Food-and-Beverage-Industry-Restructuring.svg"
+    },
+    {
+      id: "article6",
+      title: "Technology & Deep Tech Equity Research: The Complete Guide for Institutional Investors",
+      link: "https://www.crispidea.com/technology-deep-tech-equity-research/",
       date: "May 19, 2026",
       desc: "AI & Machine Learning · Semiconductors · Cloud & SaaS · Cybersecurity · Quantum Computing · Data Infrastructure · IoT...",
-      tags: "Deep Tech · Semiconductors",
-      gradient: "from-cyan-500 to-blue-500"
+      image: "/insights/Technology-Deep-Tech-Equity-Research.svg"
     }
   ];
 
@@ -281,8 +312,7 @@ export default function Home() {
             {/* Research Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setResearchOpen(true)}
-              onMouseLeave={() => setResearchOpen(false)}
+              onMouseLeave={() => { if (researchOpen === 1) setResearchOpen(0); }}
             >
               <div className="flex items-center gap-0.5 py-1.5">
                 <a 
@@ -294,10 +324,11 @@ export default function Home() {
                 </a>
                 <button
                   type="button"
+                  onMouseEnter={() => { if (researchOpen !== 2) setResearchOpen(1); }}
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    setResearchOpen(!researchOpen);
+                    setResearchOpen(researchOpen === 2 ? 0 : 2);
                   }}
                   className="p-0.5 text-[#1F2922]/70 hover:text-[#1F2922] transition cursor-pointer focus:outline-none"
                   aria-label="Toggle Research menu"
@@ -306,8 +337,8 @@ export default function Home() {
                 </button>
               </div>
               
-              {researchOpen && (
-                <div className="absolute left-0 mt-1 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+              {!!researchOpen && (
+                <div className="absolute left-0 mt-0 w-64 rounded-xl bg-[#FAF8F5] border border-[#4A6B52]/15 shadow-xl p-2.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <a 
                     href="/equity-research" 
                     onClick={() => setResearchOpen(false)}
@@ -925,16 +956,47 @@ export default function Home() {
           <p className="text-[10px] font-bold text-[#1F2922]/40 tracking-wider text-center uppercase mb-6">
             TRUSTED BY LEADING GLOBAL INSTITUTIONS
           </p>
-          <div className="flex justify-center flex-wrap gap-x-12 gap-y-6 text-sm font-semibold text-[#1F2922]/40 font-serif items-center">
-            <span>JP Morgan</span>
-            <span>Bridgewater</span>
-            <span>Invesco</span>
-            <span>Schroders</span>
-            <span>Nomura</span>
-            <span>HSBC</span>
-            <span>Citi</span>
-            <span>Barclays</span>
-            <span>BlackRock</span>
+          <div className="relative w-full overflow-hidden py-8 flex">
+            {/* Smooth side fading masks */}
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex whitespace-nowrap min-w-full">
+              <div className="animate-logo-marquee flex items-center gap-16 pr-16 shrink-0">
+                {companyLogos.map((logo, index) => (
+                  <div 
+                    key={index} 
+                    className="relative h-10 shrink-0 transition-all duration-300 hover:scale-[1.12] hover:-translate-y-2 cursor-pointer" 
+                    style={{ width: `${logo.width}px` }}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      fill
+                      className="object-contain"
+                      sizes={`${logo.width}px`}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="animate-logo-marquee flex items-center gap-16 pr-16 shrink-0">
+                {companyLogos.map((logo, index) => (
+                  <div 
+                    key={index} 
+                    className="relative h-10 shrink-0 transition-all duration-300 hover:scale-[1.12] hover:-translate-y-2 cursor-pointer" 
+                    style={{ width: `${logo.width}px` }}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      fill
+                      className="object-contain"
+                      sizes={`${logo.width}px`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1442,35 +1504,41 @@ export default function Home() {
                 key={`${item.id}-${idx}`}
                 className="flex flex-col h-[430px] md:h-[470px] bg-white border border-[#4A6B52]/10 rounded-2xl overflow-hidden shadow-sm group hover:border-[#4A6B52]/20 transition w-[290px] md:w-[380px] shrink-0"
               >
-                {/* Graphic Cover */}
-                <div className="bg-[#1F2922] p-6 text-white relative min-h-[180px] flex flex-col justify-between overflow-hidden">
-                  <span className="text-[8px] font-bold tracking-widest text-[#FAF8F5]/50 uppercase">CRISPidea&reg;</span>
-                  <h4 className="text-base font-bold font-serif max-w-[85%] mt-4 leading-snug">
-                    {item.title}
-                  </h4>
-                  <div className="flex justify-between items-end mt-4 z-10">
-                    <span className="text-[9px] font-bold text-white bg-white/10 px-3 py-1 rounded-full uppercase">READ NOW</span>
-                    <span className="text-[8px] font-mono text-white/55">www.crispidea.com</span>
-                  </div>
-                  {/* Colorful circle element */}
-                  <div className={`absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-gradient-to-tr ${item.gradient} opacity-80 blur-[2px]`}></div>
+                {/* Thumbnail Image Cover */}
+                <div className="relative w-full h-[180px] md:h-[220px] overflow-hidden bg-slate-100 shrink-0">
+                  <Image 
+                    src={item.image} 
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                    sizes="(max-w-768px) 290px, 380px"
+                  />
                 </div>
                 {/* Text Info */}
-                <div className="p-5 flex-1 flex flex-col justify-between">
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <a href={item.link} className="text-sm font-bold text-blue-600 hover:underline block mb-2 leading-snug">
-                      {item.linkTitle}
+                    <a 
+                      href={item.link} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base font-bold text-[#0066cc] hover:text-blue-800 hover:underline block mb-2 leading-snug font-sans"
+                    >
+                      {item.title}
                     </a>
                     <span className="text-[10px] text-[#1F2922]/40 font-semibold block mb-3">{item.date}</span>
-                    <p className="text-xs text-[#1F2922]/65 leading-relaxed mb-6">
+                    <p className="text-xs md:text-sm text-[#1F2922]/70 leading-relaxed font-sans">
                       {item.desc}
                     </p>
                   </div>
-                  <div className="border-t border-[#4A6B52]/5 pt-4 flex justify-between items-center mt-auto">
-                    <span className="text-[9px] font-semibold text-[#1F2922]/50">{item.tags}</span>
-                    <span className="text-xs font-bold text-[#1F2922] flex items-center gap-1 group-hover:text-[#4A6B52] transition-colors">
+                  <div className="flex justify-between items-center mt-auto">
+                    <a 
+                      href={item.link} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-[#0066cc] hover:text-blue-800 flex items-center gap-1 transition-colors font-sans"
+                    >
                       Read More &raquo;
-                    </span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -2110,6 +2178,7 @@ export default function Home() {
               <li><a href="/insights" className="hover:text-[#4A6B52] transition">Insights</a></li>
               <li><a href="/#pricing" className="hover:text-[#4A6B52] transition">Careers</a></li>
               <li><a href="/#contact" className="hover:text-[#4A6B52] transition">Contact</a></li>
+              <li><a href="/faq" className="hover:text-[#4A6B52] transition">FAQ</a></li>
             </ul>
           </div>
 
